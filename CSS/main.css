@@ -1,0 +1,9 @@
+main{
+    display: grid;
+    margin: 1rem;
+    gap: 1rem;
+}
+section{
+    background-color: var(--gris-claro);
+    border-radius: 1rem;
+}
