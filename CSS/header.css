@@ -1,1 +1,18 @@
 @import url("variables.css");
+h1{
+    text-align: center;
+    position: relative;
+    top: 2rem;
+    font-size: 4rem;
+}
+h1 span{
+    color: var(--amarillo-vivo);
+}
+p{
+    font-family: 'cursiva';
+    font-weight: 100;
+    font-size: 1.25rem;
+    text-align: center;
+    position: relative;
+    top: 2.5rem;
+}
