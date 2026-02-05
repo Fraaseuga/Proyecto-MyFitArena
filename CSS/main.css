@@ -1,9 +1,135 @@
 main{
+    min-height: 50rem;
     display: grid;
     margin: 1rem;
     gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr); 
+    grid-template-areas: 
+    "entrenamiento entrenamiento imc"
+    "entrenamiento entrenamiento clubs"
+    "form form form";
 }
 section{
     background-color: var(--gris-claro);
+    border: 1px #757575 solid;
     border-radius: 1rem;
+}
+
+.entrenamientos{
+    grid-area: entrenamiento;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, var(--gris-claro) 0%, var(--gris-oscuro) 100%);
+    overflow-y: auto;
+}
+
+.entrenamientos h2{
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.entrenamientos h2::first-letter{
+    color: var(--amarillo-vivo);
+    font-size: 3.5rem;
+}
+
+.entrenamientos h2::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--amarillo-vivo), transparent);
+}
+
+.entrenamientos .titulo_entrenamientos{
+    display: flex;
+    align-items: center;
+    font-style: italic;
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+}
+
+.entrenamientos .linea_separatoria{
+    margin: 2rem 0;
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #757575, transparent);
+}
+
+.entrenamientos .bloque-emoji-texto{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    border-left: 4px solid var(--amarillo-vivo);
+    transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
+}
+
+.entrenamientos .bloque-emoji-texto:hover{
+    background-color: rgba(0, 0, 0, 0.35);
+    transform: translateX(.5rem);
+    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.entrenamientos .emoji{
+    font-family: 'gym_emojis';
+    font-size: 5rem;
+    min-width: 5.5rem;
+    max-width: 5.5rem;
+    text-align: center;
+    color: var(--amarillo-vivo);
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
+    transition: all 0.3s ease;
+}
+
+.entrenamientos .bloque-emoji-texto:hover .emoji{
+    transform: scale(1.15) rotate(-5deg);
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
+}
+
+.entrenamientos p{
+    color: var(--amarillo-texto);
+    text-align: justify;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    flex: 1;
+}
+
+.entrenamientos p span{
+    color: #fff;
+    font-weight: 800;
+    position: relative;
+}
+
+.entrenamientos p span::after{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--amarillo-vivo);
+    opacity: 0.4;
+}
+
+.calcIMC{
+    grid-area: imc;
+}
+.clubs{
+    grid-area: clubs;
+}
+.form{
+    grid-area: form;
 }
