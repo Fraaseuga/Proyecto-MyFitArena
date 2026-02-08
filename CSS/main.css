@@ -4,7 +4,7 @@ main{
     margin: 1rem;
     gap: 1rem;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr); 
+    grid-template-rows: .5fr repeat(2, 1fr); 
     grid-template-areas: 
     "entrenamiento entrenamiento imc"
     "entrenamiento entrenamiento clubs"
@@ -15,6 +15,8 @@ section{
     border: 1px #757575 solid;
     border-radius: 1rem;
 }
+
+/* BLOQUE DE ENTRENAMIENTOS */
 
 .entrenamientos{
     grid-area: entrenamiento;
@@ -124,12 +126,136 @@ section{
     opacity: 0.4;
 }
 
+/* BLOQUE DE CALCULADORA IMC */ 
+
 .calcIMC{
     grid-area: imc;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, var(--gris-claro) 0%, var(--gris-oscuro) 100%);
 }
+
+.calcIMC h2{
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+}
+
+.calcIMC h2::first-letter{
+    color: var(--amarillo-vivo);
+    font-size: 2.5rem;
+}
+
+.calcIMC h2 span{
+    color: var(--amarillo-vivo);
+}
+
+.bloque-calculo-IMC{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    border: 2px solid var(--amarillo-vivo);
+}
+
+.bloque-calculo-IMC label{
+    font-size: 1rem;
+    color: var(--amarillo-texto);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.bloque-calculo-IMC input{
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 2px solid #757575;
+    border-radius: 0.5rem;
+    background-color: var(--gris-muy-oscuro);
+    color: white;
+    font-family: "Geom", sans-serif;
+    transition: all 0.3s ease;
+}
+
+.bloque-calculo-IMC input:focus{
+    outline: none;
+    border-color: var(--amarillo-vivo);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.bloque-calculo-IMC input::placeholder{
+    color: #757575;
+}
+
+.botones-imc{
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.bloque-calculo-IMC button{
+    flex: 1;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-family: "Geom", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    transition: all 0.3s ease;
+}
+
+#calcular-imc{
+    background-color: var(--amarillo-vivo);
+    color: var(--negro);
+}
+
+#calcular-imc:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+#reiniciar-imc{
+    background-color: #757575;
+    color: white;
+}
+
+#reiniciar-imc:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(117, 117, 117, 0.4);
+}
+
+.resultado-IMC{
+    margin-top: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 0.5rem;
+    border: 2px solid var(--amarillo-vivo);
+    color: var(--amarillo-vivo);
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* BLOQUE DE CLUBS */ 
+
 .clubs{
     grid-area: clubs;
 }
+
+/* BLOQUE DE FORMULARIO */ 
+
 .form{
     grid-area: form;
 }
