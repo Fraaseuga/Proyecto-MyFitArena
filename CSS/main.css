@@ -106,7 +106,6 @@ section{
     text-align: justify;
     line-height: 1.6;
     font-size: 0.95rem;
-    flex: 1;
 }
 
 .entrenamientos p span{
@@ -198,7 +197,6 @@ section{
 }
 
 .bloque-calculo-IMC button{
-    flex: 1;
     padding: 0.8rem;
     font-size: 1rem;
     font-weight: 700;
@@ -252,6 +250,81 @@ section{
 
 .clubs{
     grid-area: clubs;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--gris-claro) 0%, var(--gris-oscuro) 100%);
+    display: flex;
+    flex-direction: column;
+}
+
+.clubs h2{
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+}
+
+.clubs h2::first-letter{
+    color: var(--amarillo-vivo);
+    font-size: 2.5rem;
+}
+
+.club-cta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1.5rem;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    border: 2px solid var(--amarillo-vivo);
+}
+
+.club-cta h3{
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.club-cta p{
+    color: var(--amarillo-texto);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.stats-clubs{
+    display: flex;
+    justify-content: space-around;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    padding: 3rem 0;
+    border-top: 1px solid var(--amarillo-vivo);
+    border-bottom: 1px solid var(--amarillo-vivo);
+}
+
+.stat{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stat .numero{
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--amarillo-vivo);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.stat .numero-texto{
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
 }
 
 /* BLOQUE DE FORMULARIO */ 
