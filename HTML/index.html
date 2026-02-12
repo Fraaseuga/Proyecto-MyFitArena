@@ -19,10 +19,15 @@
             <p id="frase"></p>
         </header>
         <nav>
-            NAVEGACION
+            <div class="menu-nav">
+                <a href="#entrenamientos" class="activo">Entrenamientos</a>
+                <a href="#calcIMC">Calculadora IMC</a>
+                <a href="#clubs">Clubs</a>
+                <a href="#contacto">Contacto</a>
+            </div>
         </nav>
         <main>
-            <section class="entrenamientos">
+            <section class="entrenamientos" id="entrenamientos">
                 <h2>Entrenamientos</h2>
                 <h3 class="titulo_entrenamientos">Calistenia </h3>
                 <div class="bloque-emoji-texto">
@@ -59,7 +64,7 @@
                 </div>
             </section>
 
-            <section class="calcIMC">
+            <section class="calcIMC" id="calcIMC">
                 <h2>Calculadora <span>IMC</span></h2>
                 <div class="bloque-calculo-IMC">
                     <label for="altura">Altura en cm:</label>
@@ -77,7 +82,7 @@
                 </div>
             </section>
 
-            <section class="clubs">
+            <section class="clubs" id="clubs">
                 <h2>Clubs Comunitarios</h2>
                 <div class="club-cta">
                     <span class="icono-club"></span>
@@ -100,7 +105,7 @@
                 </div>
             </section>
             
-            <section class="form">
+            <section class="form" id="contacto">
                 <h2>Contacto</h2>
                 <form class="formulario-contacto" id="formulario-contacto">
                     <div class="grupo-input">
@@ -135,6 +140,7 @@
             <p>© My Fit Arena. Todos los derechos reservados. Queda prohibida la reproducción total o parcial de este sitio web, incluyendo textos, imágenes, logotipos y cualquier contenido, sin la autorización previa y por escrito de My Fit Arena.</p>
         </footer>
     </div>
+    <script src="../JS/nav.js"></script>
     <script src="../JS/fraseRandom.js"></script>
     <script src="../JS/calculoIMC.js"></script>
 </body>
