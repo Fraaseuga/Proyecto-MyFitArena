@@ -1,0 +1,199 @@
+-- Database: Proyecto
+
+-- DROP DATABASE IF EXISTS "Proyecto";
+
+--DROP TABLE PROGRESO
+--DROP TABLE OBTENER
+--DROP TABLE LOGRO
+--DROP TABLE RECOMENDACIONES
+--DROP TABLE REALIZAR
+--DROP TABLE TENER_AMIGOS
+--DROP TABLE PARTICIPAR
+--DROP TABLE TENER
+--DROP TABLE USUARIO
+--DROP TABLE EVENTO
+--DROP TABLE ANUNCIO
+--DROP TABLE CLUB
+--DROP TABLE PLAN_ALIMENTICIO
+--DROP TABLE ELASTICIDAD
+--DROP TABLE CARDIO
+--DROP TABLE POWERLIFTING
+--DROP TABLE HIPERTROFIA
+--DROP TABLE CALISTENIA
+--DROP TABLE ENTRENAMIENTO
+--DROP TABLE EJERCICIO
+
+
+CREATE TABLE EJERCICIO(
+	CodEjercicio VARCHAR(5) PRIMARY KEY,
+	nombre VARCHAR(30),
+	series NUMERIC(2),
+	repeticiones NUMERIC(2)
+);
+
+CREATE TABLE ENTRENAMIENTO(
+	 CodEntrenamiento VARCHAR(5) PRIMARY KEY,
+	 dificultad VARCHAR(20),
+	 duracion NUMERIC(3),
+	 cantidad NUMERIC(2),
+	 descripcion VARCHAR(100)
+);
+
+CREATE TABLE CALISTENIA(
+	CodEntrena VARCHAR(5) PRIMARY KEY,
+	tipo_ejercicio VARCHAR(30),
+
+	CONSTRAINT FK_calistenia FOREIGN KEY (CodEntrena)
+		REFERENCES ENTRENAMIENTO (CodEntrenamiento)
+);
+
+CREATE TABLE HIPERTROFIA(
+	CodEntrena VARCHAR(5) PRIMARY KEY,
+	tecnica VARCHAR(100),
+
+	CONSTRAINT FK_hipertrofia FOREIGN KEY (CodEntrena)
+		REFERENCES ENTRENAMIENTO (CodEntrenamiento)
+);
+
+CREATE TABLE POWERLIFTING(
+	CodEntrena VARCHAR(5) PRIMARY KEY,
+	peso_levantado NUMERIC(5,2),
+
+	CONSTRAINT FK_powerlifting FOREIGN KEY (CodEntrena)
+		REFERENCES ENTRENAMIENTO (CodEntrenamiento)
+);
+
+CREATE TABLE CARDIO(
+	CodEntrena VARCHAR(5) PRIMARY KEY,
+	min_realizados NUMERIC(3),
+
+	CONSTRAINT FK_cardio FOREIGN KEY (CodEntrena)
+		REFERENCES ENTRENAMIENTO (CodEntrenamiento)
+);
+
+CREATE TABLE ELASTICIDAD(
+	CodEntrena VARCHAR(5) PRIMARY KEY,
+	dificultad VARCHAR(20),
+
+	CONSTRAINT FK_elasticidad FOREIGN KEY (CodEntrena)
+		REFERENCES ENTRENAMIENTO (CodEntrenamiento)
+);
+
+CREATE TABLE PLAN_ALIMENTICIO(
+	CodPlan VARCHAR(5) PRIMARY KEY,
+	calorias_diarias NUMERIC(5),
+	proteinas NUMERIC(4,1),
+	grasas NUMERIC(4,1),
+	carbohidratos NUMERIC(4,1)
+);
+
+CREATE TABLE CLUB(
+	CodClub VARCHAR(5) PRIMARY KEY,
+	nombre VARCHAR(30),
+	descripcion VARCHAR(60),
+	fechaCreacion DATE,
+	num_miembros NUMERIC(4)
+);
+
+CREATE TABLE ANUNCIO (
+	codAnuncio VARCHAR(5) PRIMARY KEY,
+	titulo VARCHAR(40),
+	contenido VARCHAR(150),
+	fecha_publicacion DATE
+);
+
+CREATE TABLE EVENTO (
+	codEvento VARCHAR(5) PRIMARY KEY,
+	tipo VARCHAR(30),
+	descripcion VARCHAR(100),
+	ubicacion VARCHAR(50),
+	fecha_y_hora TIMESTAMP
+);
+
+CREATE TABLE TENER (
+	cod_evento VARCHAR(5),
+	cod_anuncio VARCHAR(5),
+	cod_club VARCHAR(5) NOT NULL,
+
+	PRIMARY KEY (cod_evento, cod_anuncio),
+	FOREIGN KEY (cod_evento) REFERENCES EVENTO(codEvento),
+	FOREIGN KEY (cod_anuncio) REFERENCES ANUNCIO(codAnuncio),
+	FOREIGN KEY (cod_club) REFERENCES CLUB(codClub)
+);
+
+CREATE TABLE USUARIO (
+	DNI VARCHAR(9) PRIMARY KEY,
+	nombre VARCHAR(30),
+	apellidos VARCHAR(50),
+	telefono VARCHAR(15),
+	correo_electronico VARCHAR(50),
+	codPlan VARCHAR(5) UNIQUE,
+	cod_club VARCHAR(5),
+
+	FOREIGN KEY (codPlan) REFERENCES PLAN_ALIMENTICIO(CodPlan),
+	FOREIGN KEY (cod_club) REFERENCES CLUB(codClub)
+);
+
+CREATE TABLE PARTICIPAR (
+	cod_evento VARCHAR(5),
+	dni_usuario VARCHAR(9),
+
+	PRIMARY KEY (cod_evento, dni_usuario),
+	FOREIGN KEY (cod_evento) REFERENCES EVENTO(codEvento),
+	FOREIGN KEY (dni_usuario) REFERENCES USUARIO(DNI)
+);
+
+CREATE TABLE TENER_AMIGOS (
+	amigo1 VARCHAR(9),
+	amigo2 VARCHAR(9),
+
+	PRIMARY KEY (amigo1, amigo2),
+	FOREIGN KEY (amigo1) REFERENCES USUARIO(DNI),
+	FOREIGN KEY (amigo2) REFERENCES USUARIO(DNI)
+);
+
+CREATE TABLE REALIZAR (
+	dni_usuario VARCHAR(9),
+	cod_entrenamiento VARCHAR(5),
+
+	PRIMARY KEY (dni_usuario, cod_entrenamiento),
+	FOREIGN KEY (dni_usuario) REFERENCES USUARIO(DNI),
+	FOREIGN KEY (cod_entrenamiento) REFERENCES ENTRENAMIENTO(CodEntrenamiento)
+);
+
+CREATE TABLE RECOMENDACIONES (
+	codRecomendacion VARCHAR(5) PRIMARY KEY,
+	descripcion VARCHAR(150),
+	prioridad NUMERIC(1),
+	dni_usuario VARCHAR(9),
+	cod_entrenamiento VARCHAR(5),
+
+	FOREIGN KEY (dni_usuario, cod_entrenamiento)
+		REFERENCES REALIZAR(dni_usuario, cod_entrenamiento)
+);
+
+CREATE TABLE LOGRO (
+	codLogro VARCHAR(5) PRIMARY KEY,
+	nombre VARCHAR(30),
+	descripcion VARCHAR(100)
+);
+
+CREATE TABLE OBTENER (
+	dni_usuario VARCHAR(9),
+	cod_logro VARCHAR(5),
+
+	PRIMARY KEY (dni_usuario, cod_logro),
+	FOREIGN KEY (dni_usuario) REFERENCES USUARIO(DNI),
+	FOREIGN KEY (cod_logro) REFERENCES LOGRO(codLogro)
+);
+
+CREATE TABLE PROGRESO (
+	codProgreso VARCHAR(5) PRIMARY KEY,
+	fecha_y_hora TIMESTAMP,
+	nivel VARCHAR(20),
+	dni_usuario VARCHAR(9) NOT NULL,
+
+	FOREIGN KEY (dni_usuario) REFERENCES USUARIO(DNI)
+);
+
+
