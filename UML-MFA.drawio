@@ -1,0 +1,211 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="2271" dy="1284" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="RtkqbIqkmFOSl8mh690I-4" parent="WIyWlLk6GJQsqaUBKTNV-1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Entrenamiento&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="250" width="260" x="884" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-5" parent="RtkqbIqkmFOSl8mh690I-4" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- dificultad: String&lt;div&gt;- duracion: int&lt;/div&gt;&lt;div&gt;- ejercicios: ArrayList&amp;lt;Ejercicio&amp;gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="54" width="260" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-6" parent="RtkqbIqkmFOSl8mh690I-4" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="260" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-7" parent="RtkqbIqkmFOSl8mh690I-4" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;+ Entrenamiento()&lt;/div&gt;&lt;div&gt;+ Entrenamiento(String dificultad, int duracion)&lt;/div&gt;+ getDificultad(): String&lt;div&gt;+ setDificultad(String): void&lt;/div&gt;&lt;div&gt;+ getDuracion(): int&lt;/div&gt;&lt;div&gt;+ setDuracion(int): void&lt;/div&gt;&lt;div&gt;+ buscarEjercicio(String): Ejercicio&lt;/div&gt;&lt;div&gt;+ addEjercicio(Ejercicio): void&lt;/div&gt;&lt;div&gt;+ removeEjercicio(Ejercicio): void&lt;/div&gt;&lt;div&gt;+ mostrarTodosEjercicios(): String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="162" width="260" y="88" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-8" parent="WIyWlLk6GJQsqaUBKTNV-1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Calistenia" vertex="1">
+          <mxGeometry height="160" width="210" x="689" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-9" parent="RtkqbIqkmFOSl8mh690I-8" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- lastre: double" vertex="1">
+          <mxGeometry height="26" width="210" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-10" parent="RtkqbIqkmFOSl8mh690I-8" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="210" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-11" parent="RtkqbIqkmFOSl8mh690I-8" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;+ Calistenia(&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;String dificultad, int duracion, double lastre&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;)&lt;/span&gt;&lt;/div&gt;+ getLastre(): double&lt;div&gt;+ setLastre(double lastre): void&lt;/div&gt;&lt;div&gt;+ usaLastre(): boolean&lt;/div&gt;&lt;div&gt;+ calcularCalorias(): int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="210" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-12" parent="WIyWlLk6GJQsqaUBKTNV-1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Hipertrofia" vertex="1">
+          <mxGeometry height="160" width="210" x="1129" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-13" parent="RtkqbIqkmFOSl8mh690I-12" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- pesoMedio: double" vertex="1">
+          <mxGeometry height="26" width="210" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-14" parent="RtkqbIqkmFOSl8mh690I-12" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="210" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-15" parent="RtkqbIqkmFOSl8mh690I-12" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;+ Hipertrofia(&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;String dificultad, int duracion, double pesoMedio&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;)&lt;/span&gt;&lt;/div&gt;+ getPesoMedio(): double&lt;div&gt;+ setPesoMedio(double peso): void&lt;/div&gt;&lt;div&gt;+ calcularVolumen(): double&lt;/div&gt;&lt;div&gt;+ calcularCalorias(): int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="210" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-16" parent="WIyWlLk6GJQsqaUBKTNV-1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Cardio" vertex="1">
+          <mxGeometry height="160" width="210" x="469" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-17" parent="RtkqbIqkmFOSl8mh690I-16" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- ritmo: int" vertex="1">
+          <mxGeometry height="26" width="210" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-18" parent="RtkqbIqkmFOSl8mh690I-16" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="210" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-19" parent="RtkqbIqkmFOSl8mh690I-16" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;+ Cardio(&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;String dificultad, int duracion, int ritmo&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;)&lt;/span&gt;&lt;/div&gt;+ getRitmo(): int&lt;div&gt;+ setRitmo(int ritmo): void&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ calcularCalorias(): int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="210" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-20" parent="WIyWlLk6GJQsqaUBKTNV-1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Powerlifting" vertex="1">
+          <mxGeometry height="160" width="210" x="909" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-21" parent="RtkqbIqkmFOSl8mh690I-20" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- pesoMaximo: double" vertex="1">
+          <mxGeometry height="26" width="210" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-22" parent="RtkqbIqkmFOSl8mh690I-20" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="210" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-23" parent="RtkqbIqkmFOSl8mh690I-20" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;+ Powerlifting(&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;String dificultad, int duracion, double pesoMaximo&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;)&lt;/span&gt;&lt;/div&gt;+ getPesoMaximo(): double&lt;div&gt;+ setPesoMaximo(double peso): void&lt;/div&gt;&lt;div&gt;+ esRecord(double antiguo): boolean&lt;/div&gt;&lt;div&gt;+ calcularCalorias(): int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="210" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-24" parent="WIyWlLk6GJQsqaUBKTNV-1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Elasticidad&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="210" x="1349" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-25" parent="RtkqbIqkmFOSl8mh690I-24" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- nivelElasticidad: int" vertex="1">
+          <mxGeometry height="26" width="210" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-26" parent="RtkqbIqkmFOSl8mh690I-24" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="210" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-27" parent="RtkqbIqkmFOSl8mh690I-24" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;+ Elasticidad(String dificultad, int duracion, int nivelElasticidad)&lt;/div&gt;+ getNivel(): int&lt;div&gt;+ setNivel(int nivel): void&lt;/div&gt;&lt;div&gt;+ esAvanzado(): boolean&lt;/div&gt;&lt;div&gt;+ calcularCalorias(): int&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="210" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-28" parent="WIyWlLk6GJQsqaUBKTNV-1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Recomendacion&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="170" width="190" x="374" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-29" parent="RtkqbIqkmFOSl8mh690I-28" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- mensaje: String {final}&lt;div&gt;- prioridad: int {final}&lt;/div&gt;" vertex="1">
+          <mxGeometry height="44" width="190" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-30" parent="RtkqbIqkmFOSl8mh690I-28" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="190" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-31" parent="RtkqbIqkmFOSl8mh690I-28" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ getMensaje(): String&lt;div&gt;+ setMensaje(String): void&lt;br&gt;&lt;div&gt;+ getPrioridad(): int&lt;/div&gt;&lt;div&gt;+ setPrioridad(int): void&lt;/div&gt;&lt;div&gt;+ toString(): String&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="92" width="190" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-33" parent="WIyWlLk6GJQsqaUBKTNV-1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;PlanAlimenticio&lt;/div&gt;" vertex="1">
+          <mxGeometry height="300" width="210" x="104" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-34" parent="RtkqbIqkmFOSl8mh690I-33" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- caloriasTotales: int&lt;div&gt;- proteinas: double&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- grasas: double&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;- carbohidratos: double&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- objetivo: String&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="84" width="210" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-35" parent="RtkqbIqkmFOSl8mh690I-33" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="210" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="RtkqbIqkmFOSl8mh690I-36" parent="RtkqbIqkmFOSl8mh690I-33" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ getCaloriasTotales(): int&lt;div&gt;+ setCaloriasTotales(int): void&lt;br&gt;&lt;div&gt;+ getProteinas(): double&lt;/div&gt;&lt;div&gt;+ setProteinas(double): void&lt;/div&gt;&lt;div&gt;+ getGrasas(): double&lt;/div&gt;&lt;div&gt;+ setGrasas(double): void&lt;/div&gt;&lt;div&gt;+ getCarbohidratos(): doub&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;le&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ setCarbohidratos(double): void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+ getObjetivo(): String&lt;/div&gt;&lt;div&gt;+ setObjetivo(String): void&lt;/div&gt;&lt;div&gt;+ toString(): String&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="182" width="210" y="118" as="geometry" />
+        </mxCell>
+        <mxCell id="I8l7cPRtUKcnZIU0OmZX-0" parent="WIyWlLk6GJQsqaUBKTNV-1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Ejercicio&lt;/div&gt;" vertex="1">
+          <mxGeometry height="210" width="210" x="614" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="I8l7cPRtUKcnZIU0OmZX-1" parent="I8l7cPRtUKcnZIU0OmZX-0" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- nombreEjercicio: String&lt;div&gt;- series: int&lt;/div&gt;&lt;div&gt;- repeticiones: int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="54" width="210" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="I8l7cPRtUKcnZIU0OmZX-2" parent="I8l7cPRtUKcnZIU0OmZX-0" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="210" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="I8l7cPRtUKcnZIU0OmZX-3" parent="I8l7cPRtUKcnZIU0OmZX-0" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ getNombreEjercicio(): String&lt;div&gt;+ setNombreEjercicio(String): void&lt;br&gt;&lt;div&gt;+ getSeries(): int&lt;/div&gt;&lt;div&gt;+ setSeries(int): void&lt;/div&gt;&lt;div&gt;+ getRepeticiones(): int&lt;/div&gt;&lt;div&gt;+ setRepeticiones(int): void&lt;/div&gt;&lt;div&gt;+ toString(): String&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="122" width="210" y="88" as="geometry" />
+        </mxCell>
+        <mxCell id="Oc0yCEQIvbMSLi2GCA-x-3" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RtkqbIqkmFOSl8mh690I-20" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.495;entryY=1.002;entryDx=0;entryDy=0;entryPerimeter=0;" target="RtkqbIqkmFOSl8mh690I-7" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="989" y="450" as="sourcePoint" />
+            <mxPoint x="1004" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Oc0yCEQIvbMSLi2GCA-x-4" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RtkqbIqkmFOSl8mh690I-16" style="endArrow=classic;html=1;rounded=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=-0.005;entryY=1.002;entryDx=0;entryDy=0;entryPerimeter=0;" target="RtkqbIqkmFOSl8mh690I-7" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="744" y="450" as="sourcePoint" />
+            <mxPoint x="794" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Oc0yCEQIvbMSLi2GCA-x-5" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RtkqbIqkmFOSl8mh690I-8" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.251;entryY=0.998;entryDx=0;entryDy=0;entryPerimeter=0;" target="RtkqbIqkmFOSl8mh690I-7" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="874" y="480" as="sourcePoint" />
+            <mxPoint x="924" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Oc0yCEQIvbMSLi2GCA-x-6" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RtkqbIqkmFOSl8mh690I-12" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.756;entryY=0.998;entryDx=0;entryDy=0;entryPerimeter=0;" target="RtkqbIqkmFOSl8mh690I-7" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="1154" y="400" />
+            </Array>
+            <mxPoint x="1174" y="450" as="sourcePoint" />
+            <mxPoint x="1224" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Oc0yCEQIvbMSLi2GCA-x-7" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="RtkqbIqkmFOSl8mh690I-24" style="endArrow=classic;html=1;rounded=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1.002;entryDx=0;entryDy=0;entryPerimeter=0;" target="RtkqbIqkmFOSl8mh690I-7" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1304" y="420" as="sourcePoint" />
+            <mxPoint x="1354" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Oc0yCEQIvbMSLi2GCA-x-8" parent="WIyWlLk6GJQsqaUBKTNV-1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Usuario&lt;/div&gt;" vertex="1">
+          <mxGeometry height="340" width="310" x="104" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="Oc0yCEQIvbMSLi2GCA-x-9" parent="Oc0yCEQIvbMSLi2GCA-x-8" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- dni: String&lt;br&gt;- nombre: String&lt;br&gt;- apellidos: String&lt;br&gt;- telefono: int&lt;br&gt;- correoElectronico: String" vertex="1">
+          <mxGeometry height="84" width="310" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Oc0yCEQIvbMSLi2GCA-x-10" parent="Oc0yCEQIvbMSLi2GCA-x-8" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="310" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="Oc0yCEQIvbMSLi2GCA-x-11" parent="Oc0yCEQIvbMSLi2GCA-x-8" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ Usuario()&lt;br&gt;+ Usuario(String dni, String nombre, String apellidos, int telefono, String correoElectronico)&lt;br&gt;+ getDni(): String&lt;br&gt;+ setDni(String dni): void&lt;br&gt;+ getNombre(): String&lt;br&gt;+ setNombre(String nombre): void&lt;br&gt;+ getApellidos(): String&lt;br&gt;+ setApellidos(String apellidos): void&lt;br&gt;+ getTelefono(): int&lt;br&gt;+ setTelefono(int telefono): void&lt;br&gt;+ getCorreoElectronico(): String&lt;br&gt;+ setCorreoElectronico(String correoElectronico): void&lt;br&gt;+ toString(): String" vertex="1">
+          <mxGeometry height="222" width="310" y="118" as="geometry" />
+        </mxCell>
+        <mxCell id="Oc0yCEQIvbMSLi2GCA-x-12" parent="WIyWlLk6GJQsqaUBKTNV-1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Anuncio&lt;/div&gt;" vertex="1">
+          <mxGeometry height="230" width="360" x="1194" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="Oc0yCEQIvbMSLi2GCA-x-13" parent="Oc0yCEQIvbMSLi2GCA-x-12" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;- titulo: String&lt;br&gt;- contenido: String&lt;br&gt;- fechaPublicacion: String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="54" width="360" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Oc0yCEQIvbMSLi2GCA-x-14" parent="Oc0yCEQIvbMSLi2GCA-x-12" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="360" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Oc0yCEQIvbMSLi2GCA-x-15" parent="Oc0yCEQIvbMSLi2GCA-x-12" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;+ Anuncio()&lt;br&gt;+ Anuncio(String titulo, String contenido, String fechaPublicacion)&lt;br&gt;+ getTitulo(): String&lt;br&gt;+ setTitulo(String titulo): void&lt;br&gt;+ getContenido(): String&lt;br&gt;+ setContenido(String contenido): void&lt;br&gt;+ getFechaPublicacion(): String&lt;br&gt;+ setFechaPublicacion(String fechaPublicacion): void&lt;br&gt;+ toString(): String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="142" width="360" y="88" as="geometry" />
+        </mxCell>
+        <mxCell id="Oc0yCEQIvbMSLi2GCA-x-16" parent="WIyWlLk6GJQsqaUBKTNV-1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Club&lt;/div&gt;" vertex="1">
+          <mxGeometry height="380" width="315" x="104" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="Oc0yCEQIvbMSLi2GCA-x-17" parent="Oc0yCEQIvbMSLi2GCA-x-16" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;- nombre: String&lt;br&gt;- descripcion: String&lt;br&gt;- fechaCreacion: String&lt;br&gt;- miembros: ArrayList&amp;lt;Usuario&amp;gt;&lt;br&gt;- anuncios: ArrayList&amp;lt;Anuncio&amp;gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="84" width="315" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Oc0yCEQIvbMSLi2GCA-x-18" parent="Oc0yCEQIvbMSLi2GCA-x-16" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="315" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="Oc0yCEQIvbMSLi2GCA-x-19" parent="Oc0yCEQIvbMSLi2GCA-x-16" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;+ Club()&lt;br&gt;+ Club(String nombre, String descripcion, String fechaCreacion)&lt;br&gt;+ getNombre(): String&lt;br&gt;+ setNombre(String nombre): void&lt;br&gt;+ getDescripcion(): String&lt;br&gt;+ setDescripcion(String descripcion): void&lt;br&gt;+ getFechaCreacion(): String&lt;br&gt;+ setFechaCreacion(String fechaCreacion): void&lt;br&gt;+ getMiembros(): ArrayList&amp;lt;Usuario&amp;gt;&lt;br&gt;+ setMiembros(ArrayList&amp;lt;Usuario&amp;gt; miembros): void&lt;br&gt;+ getAnuncios(): ArrayList&amp;lt;Anuncio&amp;gt;&lt;br&gt;+ setAnuncios(ArrayList&amp;lt;Anuncio&amp;gt; anuncios): void&lt;br&gt;+ addMiembro(Usuario usuario): void&lt;br&gt;+ removeMiembro(Usuario usuario): void&lt;br&gt;+ addAnuncio(Anuncio anuncio): void&lt;br&gt;+ toString(): String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="262" width="315" y="118" as="geometry" />
+        </mxCell>
+        <mxCell id="Oc0yCEQIvbMSLi2GCA-x-20" parent="WIyWlLk6GJQsqaUBKTNV-1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Evento&lt;/div&gt;" vertex="1">
+          <mxGeometry height="380" width="335" x="469" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="Oc0yCEQIvbMSLi2GCA-x-21" parent="Oc0yCEQIvbMSLi2GCA-x-20" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;- tipo: String&lt;br&gt;- descripcion: String&lt;br&gt;- ubicacion: String&lt;br&gt;- fechaHora: String&lt;br&gt;- participantes: ArrayList&amp;lt;Usuario&amp;gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="84" width="335" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Oc0yCEQIvbMSLi2GCA-x-22" parent="Oc0yCEQIvbMSLi2GCA-x-20" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="335" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="Oc0yCEQIvbMSLi2GCA-x-23" parent="Oc0yCEQIvbMSLi2GCA-x-20" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;span&gt;+ Evento()&lt;br&gt;&lt;/span&gt;&lt;span&gt;+ Evento(String tipo, String descripcion, String ubicacion, String fechaHora)&lt;br&gt;&lt;/span&gt;&lt;span&gt;+ getTipo(): String&lt;br&gt;&lt;/span&gt;&lt;span&gt;+ setTipo(String tipo): void&lt;br&gt;&lt;/span&gt;&lt;span&gt;+ getDescripcion(): String&lt;br&gt;&lt;/span&gt;&lt;span&gt;+ setDescripcion(String descripcion): void&lt;br&gt;&lt;/span&gt;&lt;span&gt;+ getUbicacion(): String&lt;br&gt;&lt;/span&gt;&lt;span&gt;+ setUbicacion(String ubicacion): void&lt;br&gt;&lt;/span&gt;&lt;span&gt;+ getFechaHora(): String&lt;br&gt;&lt;/span&gt;&lt;span&gt;+ setFechaHora(String fechaHora): void&lt;br&gt;&lt;/span&gt;&lt;span&gt;+ getParticipantes(): ArrayList&amp;lt;Usuario&amp;gt;&lt;br&gt;&lt;/span&gt;&lt;span&gt;+ setParticipantes(ArrayList&amp;lt;Usuario&amp;gt; participantes): void&lt;br&gt;&lt;/span&gt;&lt;span&gt;+ añadirParticipante(Usuario usuario): void&lt;br&gt;&lt;/span&gt;&lt;span&gt;+ eliminarParticipante(Usuario usuario): void&lt;br&gt;&lt;/span&gt;&lt;span&gt;+ getNumParticipantes(): int&lt;br&gt;&lt;/span&gt;&lt;span&gt;+ toString(): String&lt;/span&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="262" width="335" y="118" as="geometry" />
+        </mxCell>
+        <mxCell id="Oc0yCEQIvbMSLi2GCA-x-24" parent="WIyWlLk6GJQsqaUBKTNV-1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Progreso&lt;/div&gt;" vertex="1">
+          <mxGeometry height="210" width="310" x="844" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="Oc0yCEQIvbMSLi2GCA-x-25" parent="Oc0yCEQIvbMSLi2GCA-x-24" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;- fechaHora: String&lt;br&gt;- nivel: int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="44" width="310" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Oc0yCEQIvbMSLi2GCA-x-26" parent="Oc0yCEQIvbMSLi2GCA-x-24" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="310" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Oc0yCEQIvbMSLi2GCA-x-27" parent="Oc0yCEQIvbMSLi2GCA-x-24" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;+ Progreso()&lt;br&gt;+ Progreso(String fechaHora, int nivel)&lt;br&gt;+ getFechaHora(): String&lt;br&gt;+ setFechaHora(String fechaHora): void&lt;br&gt;+ getNivel(): int&lt;br&gt;+ setNivel(int nivel): void&lt;br&gt;+ haSubidoNivel(int nivelAnterior): boolean&lt;br&gt;+ toString(): String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="132" width="310" y="78" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
