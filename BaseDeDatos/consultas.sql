@@ -38,20 +38,20 @@ WHERE codRecomendacion = 'R004';
 -- 3 Consultas con más de 1 tabla
 -- 1. Mostrar usuarios con su club
 SELECT u.nombre, u.apellidos, c.nombre AS club
-FROM USUARIO u
-JOIN CLUB c ON u.cod_club = c.CodClub;
+FROM USUARIO u, CLUB c
+WHERE u.cod_club = c.CodClub;
 
 -- 2. Mostrar eventos con su anuncio asociado
 SELECT e.tipo, e.descripcion, a.titulo
-FROM EVENTO e
-JOIN TENER t ON e.codEvento = t.cod_evento
-JOIN ANUNCIO a ON t.cod_anuncio = a.codAnuncio;
+FROM EVENTO e, TENER t, ANUNCIO a
+WHERE e.codEvento = t.cod_evento
+  AND t.cod_anuncio = a.codAnuncio;
 
 -- 3. Mostrar usuarios y los entrenamientos que realizan
 SELECT u.nombre, u.apellidos, e.descripcion
-FROM REALIZAR r
-JOIN USUARIO u ON r.dni_usuario = u.DNI
-JOIN ENTRENAMIENTO e ON r.cod_entrenamiento = e.CodEntrenamiento;
+FROM REALIZAR r, USUARIO u, ENTRENAMIENTO e
+WHERE r.dni_usuario = u.DNI
+  AND r.cod_entrenamiento = e.CodEntrenamiento;
 
 -- -------------------------------------------------------------------------------------------------------------
 -- 3 Consultas usando funciones
