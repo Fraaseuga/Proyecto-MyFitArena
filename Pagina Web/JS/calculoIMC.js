@@ -5,6 +5,26 @@ const calcularBtn = document.getElementById('calcular-imc');
 const reiniciarBtn = document.getElementById('reiniciar-imc');
 const resultadoP = document.querySelector('.resultado-IMC');
 
+// Función para obtener categoría traducida
+function obtenerCategoriaTraducida(imc) {
+    const idiomaActual = localStorage.getItem('idioma') || 'es';
+    const traducciones = window.traducciones || {};
+    
+    let claveCategoria = '';
+    
+    if (imc < 18.5) {
+        claveCategoria = 'imc-bajo-peso';
+    } else if (imc >= 18.5 && imc < 25) {
+        claveCategoria = 'imc-peso-normal';
+    } else if (imc >= 25 && imc < 30) {
+        claveCategoria = 'imc-sobrepeso';
+    } else {
+        claveCategoria = 'imc-obesidad';
+    }
+    
+    return traducciones[idiomaActual]?.[claveCategoria] || '';
+}
+
 // Función para calcular IMC
 function calcularIMC() {
     const alturaTexto = alturaInput.value.trim();
@@ -25,17 +45,8 @@ function calcularIMC() {
     // Calcular IMC: peso / (altura²)
     const imc = peso / (alturaMetros * alturaMetros);
 
-    // Determinar la categoría
-    let categoria = '';
-    if (imc < 18.5) {
-        categoria = 'Bajo peso';
-    } else if (imc >= 18.5 && imc < 25) {
-        categoria = 'Peso normal';
-    } else if (imc >= 25 && imc < 30) {
-        categoria = 'Sobrepeso';
-    } else {
-        categoria = 'Obesidad';
-    }
+    // Obtener categoría traducida
+    const categoria = obtenerCategoriaTraducida(imc);
 
     resultadoP.textContent = `IMC: ${imc.toFixed(2)} - ${categoria}`;
 }
@@ -44,7 +55,12 @@ function calcularIMC() {
 function reiniciar() {
     alturaInput.value = '';
     pesoInput.value = '';
-    resultadoP.textContent = 'Resultado';
+    
+    const idiomaActual = localStorage.getItem('idioma') || 'es';
+    const traducciones = window.traducciones || {};
+    const textoResultado = traducciones[idiomaActual]?.['imc-resultado'] || 'Resultado';
+    
+    resultadoP.textContent = textoResultado;
 }
 
 // Funciones a ejecutar al hacer clic en cada botón

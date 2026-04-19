@@ -1,4 +1,6 @@
 @import url("variables.css");
+
+/* Estilos del header */
 h1{
     text-align: center;
     position: relative;
@@ -15,4 +17,37 @@ header p{
     text-align: center;
     position: relative;
     top: 2.5rem;
+}
+
+/* Botón de cambio de idioma */
+.btn-idioma {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    background-color: var(--amarillo-vivo);
+    color: var(--negro);
+    border: 2px solid var(--amarillo-vivo);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-family: "Geom", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 3px 10px rgba(255, 215, 0, 0.3);
+}
+
+.btn-idioma:hover {
+    background-color: transparent;
+    color: var(--amarillo-vivo);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
+}
+
+.btn-idioma:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
 }
