@@ -1,4 +1,4 @@
-// Sistema de traducción multiidioma
+// Sistema de traducción para My Fit Arena
 const traducciones = {
     es: {
         // Header
@@ -61,14 +61,23 @@ const traducciones = {
         'contacto-placeholder-mensaje': 'Escribe tu mensaje aquí...',
         'contacto-btn-enviar': 'Enviar Mensaje',
         
-        // Footer
-        'footer-text': '© My Fit Arena. Todos los derechos reservados. Queda prohibida la reproducción total o parcial de este sitio web, incluyendo textos, imágenes, logotipos y cualquier contenido, sin la autorización previa y por escrito de My Fit Arena.',
-        
         // Categorías IMC
         'imc-bajo-peso': 'Bajo peso',
         'imc-peso-normal': 'Peso normal',
         'imc-sobrepeso': 'Sobrepeso',
-        'imc-obesidad': 'Obesidad'
+        'imc-obesidad': 'Obesidad',
+        
+        // Tabla de tickets
+        'titulo-historial': 'Historial de Consultas',
+        'th-ticket': 'Nº Ticket',
+        'th-nombre': 'Nombre',
+        'th-email': 'Email',
+        'th-asunto': 'Asunto',
+        'th-fecha': 'Fecha',
+        'th-acciones': 'Acción',
+        
+        // Footer
+        'footer-text': '© My Fit Arena. Todos los derechos reservados. Queda prohibida la reproducción total o parcial de este sitio web, incluyendo textos, imágenes, logotipos y cualquier contenido, sin la autorización previa y por escrito de My Fit Arena.'
     },
     en: {
         // Header
@@ -131,25 +140,37 @@ const traducciones = {
         'contacto-placeholder-mensaje': 'Write your message here...',
         'contacto-btn-enviar': 'Send Message',
         
-        // Footer
-        'footer-text': '© My Fit Arena. All rights reserved. The total or partial reproduction of this website, including texts, images, logos, and any content, is prohibited without prior written authorization from My Fit Arena.',
-        
         // BMI Categories
         'imc-bajo-peso': 'Underweight',
         'imc-peso-normal': 'Normal weight',
         'imc-sobrepeso': 'Overweight',
-        'imc-obesidad': 'Obesity'
+        'imc-obesidad': 'Obesity',
+        
+        // Tickets table
+        'titulo-historial': 'Query History',
+        'th-ticket': 'Ticket No.',
+        'th-nombre': 'Name',
+        'th-email': 'Email',
+        'th-asunto': 'Subject',
+        'th-fecha': 'Date',
+        'th-acciones': 'Action',
+        
+        // Footer
+        'footer-text': '© My Fit Arena. All rights reserved. Total or partial reproduction of this website, including texts, images, logos and any content, is prohibited without prior written authorization from My Fit Arena.'
     }
 };
+window.traducciones = traducciones;
 
 // Idioma actual (por defecto español)
 let idiomaActual = localStorage.getItem('idioma') || 'es';
+window.idiomaActual = idiomaActual;
 
 // Función para cambiar el idioma
 function cambiarIdioma() {
     // Alternar entre español e inglés
     idiomaActual = idiomaActual === 'es' ? 'en' : 'es';
-    
+    window.idiomaActual = idiomaActual;
+
     // Guardar preferencia
     localStorage.setItem('idioma', idiomaActual);
     
@@ -161,11 +182,17 @@ function cambiarIdioma() {
     
     // Actualizar texto del botón
     actualizarBotonIdioma();
-    
+
     // Actualizar frase motivacional
     if (typeof actualizarFraseIdioma === 'function') {
         actualizarFraseIdioma();
     }
+
+    // Actualiza la parte de los tickets
+    if (typeof cargarTickets === 'function') {
+        cargarTickets();
+    }
+
 }
 
 // Función para aplicar las traducciones
@@ -218,7 +245,3 @@ document.addEventListener('DOMContentLoaded', function() {
         btnIdioma.addEventListener('click', cambiarIdioma);
     }
 });
-
-// Exportar para uso en otros scripts
-window.idiomaActual = idiomaActual;
-window.traducciones = traducciones;

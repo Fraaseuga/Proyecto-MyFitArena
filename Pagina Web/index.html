@@ -1,24 +1,28 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Fit Arena</title>
     
-    <link rel="icon" href="../img/logo.png" type="image/png">
+    <link rel="icon" href="img/logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Geom:ital,wght@0,300..900;1,300..900&family=Momo+Trust+Display&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
     <div class="contenedor">
+
+        <!-- ENCABEZADO -->
         <header>
-            <button id="btn-idioma" class="btn-idioma" title="Cambiar idioma">ES</button>
+            <button id="btn-idioma" class="btn-idioma" title="Cambiar idioma" onclick="">ES</button>
             <h1><span>M</span>y <span>F</span>it <span>A</span>rena</h1>
             <p id="frase"></p>
         </header>
+
+        <!-- BARRA LATERAL DE NAVEGACIÓN -->
         <nav>
             <div class="menu-nav">
                 <a href="#entrenamientos" class="activo" data-translate="nav-entrenamientos">Entrenamientos</a>
@@ -27,6 +31,8 @@
                 <a href="#contacto" data-translate="nav-contacto">Contacto</a>
             </div>
         </nav>
+
+        <!-- CONTENEDORES PRINCIPALES -->
         <main>
             <section class="entrenamientos" id="entrenamientos">
                 <h2 data-translate="section-entrenamientos-title">Entrenamientos</h2>
@@ -65,6 +71,7 @@
                 </div>
             </section>
 
+            <!-- CALCULADORA IMC -->
             <section class="calcIMC" id="calcIMC">
                 <h2 data-translate="section-imc-title">Calculadora <span>IMC</span></h2>
                 <div class="bloque-calculo-IMC">
@@ -83,6 +90,7 @@
                 </div>
             </section>
 
+            <!-- SECCIÓN DE CLUBS -->
             <section class="clubs" id="clubs">
                 <h2 data-translate="section-clubs-title">Clubs Comunitarios</h2>
                 <div class="club-cta">
@@ -106,7 +114,10 @@
                 </div>
             </section>
             
+            <!-- BLOQUE DE CONTACTO -->
             <section class="form" id="contacto">
+                
+                <!-- FORMULARIO -->
                 <h2 data-translate="section-contacto-title">Contacto</h2>
                 <form class="formulario-contacto" id="formulario-contacto">
                     <div class="grupo-input">
@@ -133,17 +144,46 @@
                     </div>
 
                     <button type="submit" class="btn-submit" data-translate="contacto-btn-enviar">Enviar Mensaje</button>
-                    <p class="mensaje-resultado"></p>
                 </form>
+                
+                <p class="mensaje-resultado"></p>
+
+                <!-- SECCIÓN DE TICKETS - ACCESO A LA BASE DE DATOS -->
+                <div class="seccion-tickets">
+                    <h3 data-translate="titulo-historial">Historial de Consultas</h3>
+                    <div class="tabla-contenedor">
+                        <table class="tabla-tickets">
+                            <thead>
+                                <tr>
+                                    <th data-translate="th-ticket">Nº Ticket</th>
+                                    <th data-translate="th-nombre">Nombre</th>
+                                    <th data-translate="th-asunto">Asunto</th>
+                                    <th data-translate="th-fecha">Fecha</th>
+                                    <th data-translate="th-acciones">Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabla-tickets">
+                                <tr>
+                                    <td colspan="6" style="text-align: center; padding: 2rem;">
+                                        Cargando tickets...
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </section>
         </main>
+
+        <!-- PIE DE PÁGINA -->
         <footer>
-            <p data-translate="footer-text">© My Fit Arena. Todos los derechos reservados. Queda prohibida la reproducción total o parcial de este sitio web, incluyendo textos, imágenes, logotipos y cualquier contenido, sin la autorización previa y por escrito de My Fit Arena.</p>
+            <p>© My Fit Arena. Todos los derechos reservados. Queda prohibida la reproducción total o parcial de este sitio web, incluyendo textos, imágenes, logotipos y cualquier contenido, sin la autorización previa y por escrito de My Fit Arena.</p>
         </footer>
     </div>
-    <script src="../JS/idioma.js"></script>
-    <script src="../JS/nav.js"></script>
-    <script src="../JS/fraseRandom.js"></script>
-    <script src="../JS/calculoIMC.js"></script>
+    <script src="JS/nav.js"></script>
+    <script src="JS/fraseRandom.js"></script>
+    <script src="JS/calculoIMC.js"></script>
+    <script src="JS/idioma.js"></script>
+    <script src="JS/gestionTickets.js"></script>
 </body>
 </html>

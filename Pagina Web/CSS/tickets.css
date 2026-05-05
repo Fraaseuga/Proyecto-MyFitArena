@@ -1,0 +1,181 @@
+/*ESTILOS PARA SECCIÓN DE TICKETS*/
+
+.seccion-tickets {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--amarillo-vivo);
+}
+
+.seccion-tickets h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+}
+
+.seccion-tickets h3::first-letter{
+    color: var(--amarillo-vivo);
+    font-size: 2.5rem;
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: 2px solid var(--amarillo-vivo);
+}
+
+.tabla-tickets {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.tabla-tickets thead {
+    background-color: rgba(255, 215, 0, 0.1);
+}
+
+.tabla-tickets thead th {
+    padding: 1rem;
+    text-align: left;
+    color: var(--amarillo-vivo);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    border-bottom: 2px solid var(--amarillo-vivo);
+}
+
+.tabla-tickets thead th:last-child{
+    text-align: center;
+}
+
+.tabla-tickets tbody tr {
+    border-bottom: 1px solid #757575;
+    transition: all 0.3s ease;
+}
+
+.tabla-tickets tbody tr:hover {
+    background-color: rgba(255, 215, 0, 0.05);
+}
+
+.tabla-tickets tbody td {
+    padding: 1rem;
+    color: var(--amarillo-texto);
+}
+
+/* BOTON DE ACCIÓN */
+.acciones-ticket {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.btn-eliminar {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.3rem;
+    transition: all 0.3s ease;
+    left: 5rem;
+}
+
+.btn-eliminar:hover {
+    transform: scale(1.2);
+    background-color: rgba(239, 68, 68, 0.2);
+}
+
+/* RESPONSIVE PARA TABLA */
+@media (max-width: 1024px) {
+    .tabla-tickets {
+        font-size: 0.9rem;
+    }
+
+    .tabla-tickets thead th,
+    .tabla-tickets tbody td {
+        padding: 0.8rem;
+    }
+
+    .btn-accion {
+        font-size: 1.1rem;
+        padding: 0.2rem 0.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .seccion-tickets h3 {
+        font-size: 1.5rem;
+    }
+
+    .tabla-contenedor {
+        padding: 1rem;
+    }
+
+    .tabla-tickets {
+        font-size: 0.85rem;
+    }
+
+    .tabla-tickets thead th,
+    .tabla-tickets tbody td {
+        padding: 0.6rem;
+    }
+
+    /* Hacer tabla scrollable horizontalmente en móviles */
+    .tabla-tickets thead th:nth-child(3),
+    .tabla-tickets tbody td:nth-child(3) {
+        display: none;
+    }
+
+    .badge {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .detalle-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .modal-contenido {
+        width: 95%;
+    }
+
+    .modal-body {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .seccion-tickets h3 {
+        font-size: 1.3rem;
+    }
+
+    .tabla-tickets {
+        font-size: 0.8rem;
+    }
+
+    .tabla-tickets thead th,
+    .tabla-tickets tbody td {
+        padding: 0.5rem;
+    }
+
+    /* Ocultar columnas menos importantes en móviles pequeños */
+    .tabla-tickets thead th:nth-child(2),
+    .tabla-tickets tbody td:nth-child(2),
+    .tabla-tickets thead th:nth-child(4),
+    .tabla-tickets tbody td:nth-child(4) {
+        display: none;
+    }
+
+    .btn-accion {
+        font-size: 1rem;
+    }
+
+    .acciones-ticket {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+}

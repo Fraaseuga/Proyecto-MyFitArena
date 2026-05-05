@@ -19,35 +19,53 @@ header p{
     top: 2.5rem;
 }
 
-/* Botón de cambio de idioma */
-.btn-idioma {
+/* Botón de traducción */
+#btn-idioma {
     position: absolute;
     top: 1.5rem;
     right: 2rem;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    font-weight: 700;
     background-color: var(--amarillo-vivo);
     color: var(--negro);
-    border: 2px solid var(--amarillo-vivo);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 700;
     border-radius: 0.5rem;
     cursor: pointer;
     font-family: "Geom", sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     transition: all 0.3s ease;
-    z-index: 10;
     box-shadow: 0 3px 10px rgba(255, 215, 0, 0.3);
+    z-index: 10;
 }
 
-.btn-idioma:hover {
-    background-color: transparent;
-    color: var(--amarillo-vivo);
+#btn-idioma:hover {
+    background-color: #FFD700;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
 }
 
-.btn-idioma:active {
+#btn-idioma:active {
     transform: translateY(0);
     box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+}
+
+/* Responsive para botón de traducción */
+@media (max-width: 768px) {
+    #btn-idioma {
+        top: 1rem;
+        right: 1rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #btn-idioma {
+        top: 0.5rem;
+        right: 0.5rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
 }

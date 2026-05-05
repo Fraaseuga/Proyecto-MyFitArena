@@ -15,31 +15,33 @@ nav{
     flex-direction: column;
     gap: 0.8rem;
     margin-top: 3rem;
+    position: sticky;
+    top: 2rem;
 }
 
 .menu-nav a{
     padding: 1rem 1.5rem;
     background-color: rgba(0, 0, 0, 0.2);
-    border-left: 3px solid transparent;
+    border-bottom: 3px solid transparent;
     border-radius: 0.5rem;
     text-decoration: none;
     color: var(--amarillo-texto);
     font-weight: 600;
     font-size: 1rem;
     transition: all 0.3s ease;
-    text-align: left;
+    text-align: center;
 }
 
 .menu-nav a:hover{
     background-color: rgba(0, 0, 0, 0.4);
-    border-left-color: var(--amarillo-vivo);
+    border-bottom-color: var(--amarillo-vivo);
     color: white;
-    transform: translateX(5px);
+    transform: translateY(-3px);
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 
 .menu-nav a.activo{
     background-color: rgba(255, 215, 0, 0.1);
-    border-left-color: var(--amarillo-vivo);
+    border-bottom-color: var(--amarillo-vivo);
     color: var(--amarillo-vivo);
 }

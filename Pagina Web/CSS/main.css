@@ -4,7 +4,7 @@ main{
     margin: 1rem;
     gap: 1rem;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: .5fr repeat(2, 1fr); 
+    grid-template-rows: .5fr .6fr 1fr; 
     grid-template-areas: 
     "entrenamiento entrenamiento imc"
     "entrenamiento entrenamiento clubs"
@@ -347,6 +347,7 @@ section{
 
 .form h2::first-letter{
     color: var(--amarillo-vivo);
+    font-size: 3rem;
 }
 
 .form h2::after{
