@@ -14,17 +14,16 @@ import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 import java.awt.Font;
-import javax.swing.UIManager;
-import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.Toolkit;
 
 public class VentanaIniciarSesion extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField tfNombre;
+	private JTextField tfContraseña;
 
 	/**
 	 * Launch the application./
@@ -42,6 +41,8 @@ public class VentanaIniciarSesion extends JFrame {
 		});
 	}
 	public VentanaIniciarSesion() {
+		setTitle("Inicio de Sesión");
+		setIconImage(Toolkit.getDefaultToolkit().getImage("E:\\Proyecto\\Proyecto-MyFitArena-\\Aplicacion\\src\\Interfaces\\logoPequeño.png"));
 		//Ajustes de la ventana
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 700, 550);
@@ -53,7 +54,7 @@ public class VentanaIniciarSesion extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+		//PANEL SECUNDARIO
 		JPanel panelSecundario = new JPanel();
 		panelSecundario.setForeground(new Color(255, 255, 255));
 		panelSecundario.setBackground(new Color(0, 0, 0));
@@ -64,41 +65,40 @@ public class VentanaIniciarSesion extends JFrame {
 		//Se crea un border con 3 pixeles de ancho
 		Border borde = BorderFactory.createLineBorder(Colores.amarilloVivo, 3);
         panelSecundario.setBorder(borde);
+		//LABELS
+		JLabel lblNombre = new JLabel("Nombre de usuario:");
+		lblNombre.setBounds(10, 10, 144, 38);
+		panelSecundario.add(lblNombre);
+		lblNombre.setForeground(Colores.amarilloVivo);
+		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		
-		JLabel lblNewLabel_1 = new JLabel("Nombre de usuario:");
-		lblNewLabel_1.setBounds(10, 10, 144, 38);
-		panelSecundario.add(lblNewLabel_1);
-		lblNewLabel_1.setForeground(Colores.amarilloVivo);
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		JLabel lblContraseña = new JLabel("Contraseña:");
+		lblContraseña.setBounds(10, 100, 144, 38);
+		panelSecundario.add(lblContraseña);
+		lblContraseña.setForeground(Colores.amarilloVivo);
+		lblContraseña.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		
-		JLabel lblNewLabel_2 = new JLabel("Contraseña:");
-		lblNewLabel_2.setBounds(10, 100, 144, 38);
-		panelSecundario.add(lblNewLabel_2);
-		lblNewLabel_2.setForeground(Colores.amarilloVivo);
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		JLabel LogoMFA = new JLabel("");
+		LogoMFA.setHorizontalAlignment(SwingConstants.CENTER);
+		LogoMFA.setIcon(new ImageIcon("E:\\Proyecto\\Proyecto-MyFitArena-\\Aplicacion\\src\\Interfaces\\logoPequeño.png"));
+		LogoMFA.setBounds(10, 10, 676, 166);
+		contentPane.add(LogoMFA);
+		//TEXTFIELDS
+		tfNombre = new JTextField();
+		tfNombre.setBounds(10, 58, 380, 25);
+		panelSecundario.add(tfNombre);
+		tfNombre.setColumns(10);
 		
-		textField = new JTextField();
-		textField.setBounds(10, 58, 380, 25);
-		panelSecundario.add(textField);
-		textField.setColumns(10);
-		
-		textField_1 = new JTextField();
-		textField_1.setBounds(10, 148, 380, 25);
-		panelSecundario.add(textField_1);
-		textField_1.setColumns(10);
-		
+		tfContraseña = new JTextField();
+		tfContraseña.setBounds(10, 148, 380, 25);
+		panelSecundario.add(tfContraseña);
+		tfContraseña.setColumns(10);
+		//BOTONES
 		JButton btnIniciarSesion = new JButton("Iniciar Sesión");
 		btnIniciarSesion.setBackground(Colores.amarilloVivo);
 		btnIniciarSesion.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnIniciarSesion.setBounds(10, 270, 380, 25);
 		panelSecundario.add(btnIniciarSesion);
 		
-		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setIcon(new ImageIcon("E:\\Proyecto\\Proyecto-MyFitArena-\\Aplicacion\\src\\Interfaces\\logoPequeño.png"));
-		lblNewLabel.setBounds(10, 10, 676, 166);
-		contentPane.add(lblNewLabel);
-
 	}
 }
