@@ -104,6 +104,7 @@ public class VentanaRegistrar extends JFrame {
 		JButton btnRegistrar = new JButton("Resgistrar");
 		btnRegistrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 			}
 		});
 		btnRegistrar.setBackground(Colores.amarilloVivo);
