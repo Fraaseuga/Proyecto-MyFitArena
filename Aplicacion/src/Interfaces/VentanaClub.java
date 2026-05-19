@@ -1,0 +1,194 @@
+package Interfaces;
+
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+
+import Funcionalidades.Colores;
+
+import java.awt.*;
+import java.awt.event.*;
+
+public class VentanaClub extends JFrame {
+
+    private static final long serialVersionUID = 1L;
+    private JPanel contentPane;
+    private JTable tablaClubs;
+    private DefaultTableModel modelo;
+
+    public VentanaClub(VentanaPrincipal vp) {
+    	setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaClub.class.getResource("/Interfaces/logo.png")));
+
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                new VentanaPrincipal().setVisible(true);
+                VentanaClub.this.setVisible(false);
+            }
+        });
+
+        setTitle("Clubs");
+        setBounds(100, 100, 851, 500);
+        setLocationRelativeTo(null);
+
+        contentPane = new JPanel();
+        contentPane.setBackground(Colores.negro);
+        contentPane.setLayout(null);
+        setContentPane(contentPane);
+
+        JLabel lblTitulo = new JLabel("Gestión de Clubs");
+        lblTitulo.setForeground(Colores.amarilloVivo);
+        lblTitulo.setFont(new Font("Tahoma", Font.PLAIN, 28));
+        lblTitulo.setBounds(30, 20, 300, 40);
+        contentPane.add(lblTitulo);
+
+        // TABLA
+        String[] columnas = {"Club", "Miembros", "Capacidad", "Descripción"};
+
+        modelo = new DefaultTableModel(null, columnas);
+        tablaClubs = new JTable(modelo);
+        tablaClubs.setFillsViewportHeight(true);
+        tablaClubs.setBackground(Colores.grisMuyOscuro);
+        tablaClubs.setForeground(Colores.amarilloTexto);
+        tablaClubs.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        tablaClubs.setRowHeight(28);
+        tablaClubs.setGridColor(Colores.grisClaro);
+
+        JScrollPane spTabla = new JScrollPane(tablaClubs);
+        spTabla.setBounds(30, 80, 570, 350);
+        spTabla.setBorder(null);
+        contentPane.add(spTabla);
+
+        // BOTONES
+        JButton btnOrdenarNombre = new JButton("Ordenar por Club");
+        btnOrdenarNombre.setBackground(Colores.grisMedio);
+        btnOrdenarNombre.setForeground(Colores.amarilloVivo);
+        btnOrdenarNombre.setBorder(null);
+        btnOrdenarNombre.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        btnOrdenarNombre.setBounds(632, 313, 180, 35);
+        contentPane.add(btnOrdenarNombre);
+
+        JButton btnOrdenarMiembros = new JButton("Ordenar por Miembros");
+        btnOrdenarMiembros.setBackground(Colores.grisMedio);
+        btnOrdenarMiembros.setForeground(Colores.amarilloVivo);
+        btnOrdenarMiembros.setBorder(null);
+        btnOrdenarMiembros.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        btnOrdenarMiembros.setBounds(632, 358, 180, 35);
+        contentPane.add(btnOrdenarMiembros);
+
+        JButton btnOrdenarCapacidad = new JButton("Ordenar por Capacidad");
+        btnOrdenarCapacidad.setBackground(Colores.grisMedio);
+        btnOrdenarCapacidad.setForeground(Colores.amarilloVivo);
+        btnOrdenarCapacidad.setBorder(null);
+        btnOrdenarCapacidad.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        btnOrdenarCapacidad.setBounds(632, 268, 180, 35);
+        contentPane.add(btnOrdenarCapacidad);
+
+        JButton btnCrearClub = new JButton("Crear Club");
+        btnCrearClub.setBackground(Colores.grisMedio);
+        btnCrearClub.setForeground(Colores.amarilloVivo);
+        btnCrearClub.setBorder(null);
+        btnCrearClub.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        btnCrearClub.setBounds(632, 104, 180, 35);
+        contentPane.add(btnCrearClub);
+
+        JButton btnVerDetalles = new JButton("Ver Detalles");
+        btnVerDetalles.setBackground(Colores.grisMedio);
+        btnVerDetalles.setForeground(Colores.amarilloVivo);
+        btnVerDetalles.setBorder(null);
+        btnVerDetalles.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        btnVerDetalles.setBounds(632, 154, 180, 35);
+        contentPane.add(btnVerDetalles);
+        
+        JSeparator separator_2_5_2 = new JSeparator();
+        separator_2_5_2.setBackground(Color.WHITE);
+        separator_2_5_2.setBounds(681, 226, 83, 68);
+        contentPane.add(separator_2_5_2);
+
+        // ACCIONES
+        btnOrdenarNombre.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                ordenarTabla(0);
+            }
+        });
+
+        btnOrdenarMiembros.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                ordenarTabla(1);
+            }
+        });
+
+        btnOrdenarCapacidad.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                ordenarTabla(2);
+            }
+        });
+
+        btnCrearClub.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                VentanaCrearClub vcc = new VentanaCrearClub(vp);
+                vcc.setVisible(true);
+                VentanaClub.this.setVisible(false);
+            }
+        });
+
+        btnVerDetalles.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                int fila = tablaClubs.getSelectedRow();
+                if (fila == -1) {
+                    JOptionPane.showMessageDialog(contentPane, "Selecciona un club primero");
+                    return;
+                }
+
+                String nombre = modelo.getValueAt(fila, 0).toString();
+                String miembros = modelo.getValueAt(fila, 1).toString();
+                String capacidad = modelo.getValueAt(fila, 2).toString();
+                String descripcion = modelo.getValueAt(fila, 3).toString();
+
+                VentanaDetallesClub vdc = new VentanaDetallesClub(vp, nombre, miembros, capacidad, descripcion);
+                vdc.setVisible(true);
+                VentanaClub.this.setVisible(false);
+            }
+        });
+
+        // Datos de ejemplo
+        modelo.addRow(new Object[]{"PowerGym", 120, 200, "Club de fuerza y rendimiento"});
+        modelo.addRow(new Object[]{"StrongFit", 80, 150, "Entrenamiento funcional y pesas"});
+        modelo.addRow(new Object[]{"OldSchool", 40, 100, "Estilo clásico, pesas libres"});
+    }
+
+    // ORDENACIÓN CLÁSICA
+    private void ordenarTabla(int columna) {
+
+        int filas = modelo.getRowCount();
+        int columnas = modelo.getColumnCount();
+
+        for (int i = 0; i < filas - 1; i++) {
+            for (int j = 0; j < filas - i - 1; j++) {
+
+                Object o1 = modelo.getValueAt(j, columna);
+                Object o2 = modelo.getValueAt(j + 1, columna);
+
+                boolean intercambiar = false;
+
+                if (o1 instanceof Integer && o2 instanceof Integer) {
+                    if ((int) o1 > (int) o2) {
+                        intercambiar = true;
+                    }
+                } else {
+                    if (o1.toString().compareTo(o2.toString()) > 0) {
+                        intercambiar = true;
+                    }
+                }
+
+                if (intercambiar) {
+                    for (int c = 0; c < columnas; c++) {
+                        Object temp = modelo.getValueAt(j, c);
+                        modelo.setValueAt(modelo.getValueAt(j + 1, c), j, c);
+                        modelo.setValueAt(temp, j + 1, c);
+                    }
+                }
+            }
+        }
+    }
+}
