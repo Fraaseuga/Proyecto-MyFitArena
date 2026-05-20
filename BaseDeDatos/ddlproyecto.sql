@@ -127,6 +127,7 @@ CREATE TABLE USUARIO (
 	apellidos VARCHAR(50),
 	telefono VARCHAR(15),
 	correo_electronico VARCHAR(50),
+	contrasena VARCHAR(100),
 	codPlan VARCHAR(5) UNIQUE,
 	cod_club VARCHAR(5),
 
@@ -195,5 +196,3 @@ CREATE TABLE PROGRESO (
 
 	FOREIGN KEY (dni_usuario) REFERENCES USUARIO(DNI)
 );
-
-

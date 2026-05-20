@@ -1,3 +1,4 @@
+-- INSERTS PARA EJERCICIO (mantenemos los originales)
 INSERT INTO EJERCICIO VALUES
 ('E001','Flexiones',4,12),
 ('E002','Sentadillas',4,15),
@@ -10,6 +11,7 @@ INSERT INTO EJERCICIO VALUES
 ('E009','Curl bíceps',4,10),
 ('E010','Remo',4,12);
 
+-- INSERTS PARA ENTRENAMIENTO (mantenemos los originales)
 INSERT INTO ENTRENAMIENTO VALUES
 ('T001','Fácil',30,5,'Entrenamiento básico de movilidad'),
 ('T002','Media',45,6,'Rutina de fuerza general'),
@@ -22,6 +24,7 @@ INSERT INTO ENTRENAMIENTO VALUES
 ('T009','Difícil',55,8,'Cardio HIIT'),
 ('T010','Media',45,6,'Elasticidad y movilidad');
 
+-- INSERTS PARA ESPECIALIZACIONES DE ENTRENAMIENTO
 INSERT INTO CALISTENIA VALUES
 ('T001','Movilidad general'),
 ('T008','Calistenia básica');
@@ -42,6 +45,7 @@ INSERT INTO ELASTICIDAD VALUES
 ('T005','Baja'),
 ('T010','Alta');
 
+-- INSERTS PARA PLAN_ALIMENTICIO (120 planes para 120 usuarios)
 INSERT INTO PLAN_ALIMENTICIO VALUES
 ('P001',2200,120.5,60.2,250.3),
 ('P002',1800,90.0,50.0,200.0),
@@ -52,20 +56,152 @@ INSERT INTO PLAN_ALIMENTICIO VALUES
 ('P007',1900,95.0,45.0,210.0),
 ('P008',3000,180.0,90.0,350.0),
 ('P009',2100,105.0,50.0,230.0),
-('P010',2600,140.0,75.0,290.0);
+('P010',2600,140.0,75.0,290.0),
+('P011',2400,125.0,62.0,270.0),
+('P012',1850,92.5,48.0,205.0),
+('P013',2550,155.0,72.0,310.0),
+('P014',2050,112.0,56.0,225.0),
+('P015',2750,165.0,82.0,330.0),
+('P016',2350,132.0,66.0,265.0),
+('P017',1950,97.0,47.0,215.0),
+('P018',3050,185.0,92.0,360.0),
+('P019',2150,107.0,52.0,235.0),
+('P020',2650,142.0,77.0,295.0),
+('P021',2250,122.0,61.0,255.0),
+('P022',1900,93.0,49.0,208.0),
+('P023',2600,157.0,73.0,315.0),
+('P024',2100,113.0,57.0,228.0),
+('P025',2800,167.0,83.0,335.0),
+('P026',2400,133.0,67.0,268.0),
+('P027',2000,98.0,48.0,218.0),
+('P028',3100,187.0,93.0,365.0),
+('P029',2200,108.0,53.0,238.0),
+('P030',2700,143.0,78.0,298.0),
+('P031',2300,123.0,62.5,258.0),
+('P032',1920,94.0,49.5,209.0),
+('P033',2620,158.0,73.5,318.0),
+('P034',2120,114.0,57.5,229.0),
+('P035',2820,168.0,83.5,338.0),
+('P036',2420,134.0,67.5,269.0),
+('P037',2020,99.0,48.5,219.0),
+('P038',3120,188.0,93.5,368.0),
+('P039',2220,109.0,53.5,239.0),
+('P040',2720,144.0,78.5,299.0),
+('P041',2320,124.0,63.0,259.0),
+('P042',1940,95.0,50.0,210.5),
+('P043',2640,159.0,74.0,319.0),
+('P044',2140,115.0,58.0,230.0),
+('P045',2840,169.0,84.0,339.0),
+('P046',2440,135.0,68.0,270.0),
+('P047',2040,100.0,49.0,220.0),
+('P048',3140,189.0,94.0,369.0),
+('P049',2240,110.0,54.0,240.0),
+('P050',2740,145.0,79.0,300.0),
+('P051',2340,125.5,63.5,260.0),
+('P052',1960,96.0,50.5,211.0),
+('P053',2660,160.0,74.5,320.0),
+('P054',2160,116.0,58.5,231.0),
+('P055',2860,170.0,84.5,340.0),
+('P056',2460,136.0,68.5,271.0),
+('P057',2060,101.0,49.5,221.0),
+('P058',3160,190.0,94.5,370.0),
+('P059',2260,111.0,54.5,241.0),
+('P060',2760,146.0,79.5,301.0),
+('P061',2360,126.0,64.0,261.0),
+('P062',1980,97.0,51.0,212.0),
+('P063',2680,161.0,75.0,321.0),
+('P064',2180,117.0,59.0,232.0),
+('P065',2880,171.0,85.0,341.0),
+('P066',2480,137.0,69.0,272.0),
+('P067',2080,102.0,50.0,222.0),
+('P068',3180,191.0,95.0,371.0),
+('P069',2280,112.0,55.0,242.0),
+('P070',2780,147.0,80.0,302.0),
+('P071',2380,127.0,64.5,262.0),
+('P072',2010,98.0,51.5,213.0),
+('P073',2710,162.0,75.5,322.0),
+('P074',2210,118.0,59.5,233.0),
+('P075',2910,172.0,85.5,342.0),
+('P076',2510,138.0,69.5,273.0),
+('P077',2110,103.0,50.5,223.0),
+('P078',3210,192.0,95.5,372.0),
+('P079',2310,113.0,55.5,243.0),
+('P080',2810,148.0,80.5,303.0),
+('P081',2410,128.0,65.0,263.0),
+('P082',2030,99.0,52.0,214.0),
+('P083',2730,163.0,76.0,323.0),
+('P084',2230,119.0,60.0,234.0),
+('P085',2930,173.0,86.0,343.0),
+('P086',2530,139.0,70.0,274.0),
+('P087',2130,104.0,51.0,224.0),
+('P088',3230,193.0,96.0,373.0),
+('P089',2330,114.0,56.0,244.0),
+('P090',2830,149.0,81.0,304.0),
+('P091',2430,129.0,65.5,264.0),
+('P092',2050,100.0,52.5,215.0),
+('P093',2750,164.0,76.5,324.0),
+('P094',2250,120.0,60.5,235.0),
+('P095',2950,174.0,86.5,344.0),
+('P096',2550,140.0,70.5,275.0),
+('P097',2150,105.0,51.5,225.0),
+('P098',3250,194.0,96.5,374.0),
+('P099',2350,115.0,56.5,245.0),
+('P100',2850,150.0,81.5,305.0),
+('P101',2450,130.0,66.0,265.0),
+('P102',2070,101.0,53.0,216.0),
+('P103',2770,165.0,77.0,325.0),
+('P104',2270,121.0,61.0,236.0),
+('P105',2970,175.0,87.0,345.0),
+('P106',2570,141.0,71.0,276.0),
+('P107',2170,106.0,52.0,226.0),
+('P108',3270,195.0,97.0,375.0),
+('P109',2370,116.0,57.0,246.0),
+('P110',2870,151.0,82.0,306.0),
+('P111',2470,131.0,66.5,266.0),
+('P112',2090,102.0,53.5,217.0),
+('P113',2790,166.0,77.5,326.0),
+('P114',2290,122.0,61.5,237.0),
+('P115',2990,176.0,87.5,346.0),
+('P116',2590,142.0,71.5,277.0),
+('P117',2190,107.0,52.5,227.0),
+('P118',3290,196.0,97.5,376.0),
+('P119',2390,117.0,57.5,247.0),
+('P120',2890,152.0,82.5,307.0);
 
+-- INSERTS PARA 30 CLUBS
 INSERT INTO CLUB VALUES
-('C001','Fitness Pro','Club de entrenamiento avanzado','2020-01-10',120),
-('C002','CardioMax','Club de cardio y running','2019-05-22',90),
-('C003','PowerClub','Powerlifting y fuerza','2021-03-15',70),
-('C004','FlexFit','Elasticidad y movilidad','2018-11-30',60),
-('C005','NutriLife','Club de nutrición','2022-02-18',40),
-('C006','CalisTeam','Calistenia y street workout','2020-07-09',85),
-('C007','MuscleLab','Hipertrofia avanzada','2019-09-12',110),
-('C008','ZenFit','Bienestar y estiramientos','2021-12-01',50),
-('C009','RunFast','Running profesional','2017-04-25',95),
-('C010','StrongNation','Fuerza general','2023-01-05',30);
+('C001','Fitness Pro','Club de entrenamiento avanzado','2020-01-10',45),
+('C002','CardioMax','Club de cardio y running','2019-05-22',38),
+('C003','PowerClub','Powerlifting y fuerza','2021-03-15',42),
+('C004','FlexFit','Elasticidad y movilidad','2018-11-30',35),
+('C005','NutriLife','Club de nutrición','2022-02-18',29),
+('C006','CalisTeam','Calistenia y street workout','2020-07-09',40),
+('C007','MuscleLab','Hipertrofia avanzada','2019-09-12',48),
+('C008','ZenFit','Bienestar y estiramientos','2021-12-01',32),
+('C009','RunFast','Running profesional','2017-04-25',44),
+('C010','StrongNation','Fuerza general','2023-01-05',28),
+('C011','BodyBalance','Equilibrio cuerpo-mente','2020-06-15',36),
+('C012','IronWarriors','Levantamiento de pesas','2019-08-20',41),
+('C013','SpeedDemon','Velocidad y agilidad','2021-05-10',33),
+('C014','YogaFlow','Yoga y meditación','2018-03-25',39),
+('C015','CrossFit Elite','CrossFit competitivo','2022-09-12',47),
+('C016','SwimPro','Natación profesional','2020-02-28',31),
+('C017','FitFamily','Fitness familiar','2019-11-05',43),
+('C018','GymRats','Entrenamiento hardcore','2021-07-18',37),
+('C019','HealthFirst','Salud preventiva','2018-12-08',34),
+('C020','AthleteZone','Alto rendimiento','2022-04-22',46),
+('C021','FlexZone','Flexibilidad avanzada','2020-10-14',30),
+('C022','EnduranceCrew','Resistencia extrema','2019-06-30',42),
+('C023','MindBody','Conexión mente-cuerpo','2021-02-17',35),
+('C024','StrengthHub','Centro de fuerza','2018-09-05',40),
+('C025','ActiveLife','Vida activa','2022-11-28',33),
+('C026','FitnessFusion','Entrenamiento mixto','2020-03-11',38),
+('C027','WellnessClub','Bienestar integral','2019-12-22',36),
+('C028','PeakPerformance','Rendimiento máximo','2021-08-09',45),
+('C029','VitalityGroup','Vitalidad y energía','2018-05-15',31),
+('C030','UltraFit','Fitness ultra','2022-07-03',39);
 
+-- INSERTS PARA ANUNCIO (mantenemos los originales)
 INSERT INTO ANUNCIO VALUES
 ('A001','Nuevo evento','Participa en nuestro evento mensual','2024-01-10'),
 ('A002','Promoción','Descuento en planes','2024-02-15'),
@@ -78,6 +214,7 @@ INSERT INTO ANUNCIO VALUES
 ('A009','Seminario','Seminario de salud','2024-09-14'),
 ('A010','Fiesta','Fiesta anual del club','2024-10-01');
 
+-- INSERTS PARA EVENTO (mantenemos los originales)
 INSERT INTO EVENTO VALUES
 ('E001','Competencia','Competencia mensual','Gimnasio','2024-01-15 10:00'),
 ('E002','Taller','Taller de cocina','Sala 2','2024-02-20 17:00'),
@@ -90,6 +227,7 @@ INSERT INTO EVENTO VALUES
 ('E009','Entrenamiento','Clase grupal','Pista','2024-09-22 19:00'),
 ('E010','Fiesta','Fiesta anual','Terraza','2024-10-10 21:00');
 
+-- INSERTS PARA TENER (mantenemos los originales)
 INSERT INTO TENER VALUES
 ('E001','A001','C001'),
 ('E002','A002','C002'),
@@ -102,18 +240,130 @@ INSERT INTO TENER VALUES
 ('E009','A009','C009'),
 ('E010','A010','C010');
 
+-- INSERTS PARA 120 USUARIOS (algunos con club, otros sin club NULL)
 INSERT INTO USUARIO VALUES
-('11111111A','Juan','Pérez López','600111222','juan@mail.com','P001','C001'),
-('22222222B','Ana','García Ruiz','600222333','ana@mail.com','P002','C002'),
-('33333333C','Luis','Martínez Gil','600333444','luis@mail.com','P003','C003'),
-('44444444D','Marta','Sánchez Díaz','600444555','marta@mail.com','P004','C004'),
-('55555555E','Carlos','López Vega','600555666','carlos@mail.com','P005','C005'),
-('66666666F','Laura','Torres Soler','600666777','laura@mail.com','P006','C006'),
-('77777777G','David','Hernández Mora','600777888','david@mail.com','P007','C007'),
-('88888888H','Sara','Navarro León','600888999','sara@mail.com','P008','C008'),
-('99999999I','Pablo','Castro Ríos','600999000','pablo@mail.com','P009','C009'),
-('00000000J','Elena','Romero Sáez','600000111','elena@mail.com','P010','C010');
+('11111111A','Juan','Pérez López','600111222','juan.perez@mail.com','Pass1234!','P001','C001'),
+('22222222B','Ana','García Ruiz','600222333','ana.garcia@mail.com','Ana2024@','P002','C002'),
+('33333333C','Luis','Martínez Gil','600333444','luis.martinez@mail.com','Luis#456','P003','C003'),
+('44444444D','Marta','Sánchez Díaz','600444555','marta.sanchez@mail.com','Marta789$','P004','C004'),
+('55555555E','Carlos','López Vega','600555666','carlos.lopez@mail.com','Carlos!2024','P005','C005'),
+('66666666F','Laura','Torres Soler','600666777','laura.torres@mail.com','Laura@Pass','P006','C006'),
+('77777777G','David','Hernández Mora','600777888','david.hernandez@mail.com','David#123','P007','C007'),
+('88888888H','Sara','Navarro León','600888999','sara.navarro@mail.com','Sara2024!','P008','C008'),
+('99999999I','Pablo','Castro Ríos','600999000','pablo.castro@mail.com','Pablo$456','P009','C009'),
+('00000000J','Elena','Romero Sáez','600000111','elena.romero@mail.com','Elena@789','P010','C010'),
+('12345678K','Miguel','Fernández Cruz','601111222','miguel.fernandez@mail.com','Miguel!2024','P011','C011'),
+('23456789L','Carmen','Jiménez Vidal','602222333','carmen.jimenez@mail.com','Carmen#Pass','P012','C012'),
+('34567890M','Javier','Moreno Santos','603333444','javier.moreno@mail.com','Javier@456','P013','C013'),
+('45678901N','Lucía','Álvarez Ruiz','604444555','lucia.alvarez@mail.com','Lucia$2024','P014','C014'),
+('56789012O','Sergio','Gómez Martín','605555666','sergio.gomez@mail.com','Sergio!789','P015','C015'),
+('67890123P','Patricia','Díaz Soto','606666777','patricia.diaz@mail.com','Patricia@123','P016','C016'),
+('78901234Q','Alberto','Ruiz Campos','607777888','alberto.ruiz@mail.com','Alberto#456','P017','C017'),
+('89012345R','Raquel','Vargas Ponce','608888999','raquel.vargas@mail.com','Raquel!Pass','P018','C018'),
+('90123456S','Jorge','Molina Rivas','609999000','jorge.molina@mail.com','Jorge@2024','P019','C019'),
+('01234567T','Cristina','Ortiz Blanco','610000111','cristina.ortiz@mail.com','Cristina$789','P020','C020'),
+('11223344U','Roberto','Gil Serrano','611111222','roberto.gil@mail.com','Roberto!2024','P021','C021'),
+('22334455V','Beatriz','Peña Castro','612222333','beatriz.pena@mail.com','Beatriz#Pass','P022','C022'),
+('33445566W','Fernando','Vega Morales','613333444','fernando.vega@mail.com','Fernando@456','P023','C023'),
+('44556677X','Isabel','Ramos Fuentes','614444555','isabel.ramos@mail.com','Isabel$2024','P024','C024'),
+('55667788Y','Óscar','Iglesias Luna','615555666','oscar.iglesias@mail.com','Oscar!789','P025','C025'),
+('66778899Z','Silvia','Cabrera Nieto','616666777','silvia.cabrera@mail.com','Silvia@123','P026','C026'),
+('77889900A','Andrés','Méndez Rojas','617777888','andres.mendez@mail.com','Andres#456','P027','C027'),
+('88990011B','Alicia','Cruz Medina','618888999','alicia.cruz@mail.com','Alicia!Pass','P028','C028'),
+('99001122C','Iván','Flores Reyes','619999000','ivan.flores@mail.com','Ivan@2024','P029','C029'),
+('00112233D','Nuria','Santiago Prieto','620000111','nuria.santiago@mail.com','Nuria$789','P030','C030'),
+('10203040E','Diego','Cortés Aguilar','621111222','diego.cortes@mail.com','Diego!2024','P031',NULL),
+('20304050F','Mónica','Pascual Lozano','622222333','monica.pascual@mail.com','Monica#Pass','P032',NULL),
+('30405060G','Rubén','Gallego Herrera','623333444','ruben.gallego@mail.com','Ruben@456','P033','C001'),
+('40506070H','Teresa','Domínguez Cano','624444555','teresa.dominguez@mail.com','Teresa$2024','P034','C002'),
+('50607080I','Víctor','Giménez Sanz','625555666','victor.gimenez@mail.com','Victor!789','P035','C003'),
+('60708090J','Inmaculada','Rubio Carrasco','626666777','inmaculada.rubio@mail.com','Inmaculada@123','P036','C004'),
+('70809001K','Antonio','Marín Delgado','627777888','antonio.marin@mail.com','Antonio#456','P037','C005'),
+('80900112L','Esther','Soto Velasco','628888999','esther.soto@mail.com','Esther!Pass','P038','C006'),
+('90011223M','Francisco','Bravo Nuñez','629999000','francisco.bravo@mail.com','Francisco@2024','P039','C007'),
+('01122334N','Rocío','León Romero','630000111','rocio.leon@mail.com','Rocio$789','P040','C008'),
+('12233445O','Alejandro','Ramírez Silva','631111222','alejandro.ramirez@mail.com','Alejandro!2024','P041','C009'),
+('23344556P','Pilar','Castillo Mora','632222333','pilar.castillo@mail.com','Pilar#Pass','P042','C010'),
+('34455667Q','Guillermo','Ortega Vicente','633333444','guillermo.ortega@mail.com','Guillermo@456','P043',NULL),
+('45566778R','Rosa','Hidalgo Suárez','634444555','rosa.hidalgo@mail.com','Rosa$2024','P044',NULL),
+('56677889S','Manuel','Lorenzo Benítez','635555666','manuel.lorenzo@mail.com','Manuel!789','P045','C011'),
+('67788990T','Dolores','Guerrero Ibáñez','636666777','dolores.guerrero@mail.com','Dolores@123','P046','C012'),
+('78899001U','Enrique','Crespo Caballero','637777888','enrique.crespo@mail.com','Enrique#456','P047','C013'),
+('89900112V','Amparo','Méndez Durán','638888999','amparo.mendez@mail.com','Amparo!Pass','P048','C014'),
+('90011234W','Raúl','Santana Cortés','639999000','raul.santana@mail.com','Raul@2024','P049','C015'),
+('01122345X','Consuelo','Peña Gallardo','640000111','consuelo.pena@mail.com','Consuelo$789','P050','C016'),
+('11112222Y','Adrián','Vidal Pascual','641111222','adrian.vidal@mail.com','Adrian!2024','P051',NULL),
+('22223333Z','Yolanda','Campos Moya','642222333','yolanda.campos@mail.com','Yolanda#Pass','P052',NULL),
+('33334444A','Gonzalo','Soler Esteban','643333444','gonzalo.soler@mail.com','Gonzalo@456','P053','C017'),
+('44445555B','Mercedes','Navarro Blanco','644444555','mercedes.navarro@mail.com','Mercedes$2024','P054','C018'),
+('55556666C','Ignacio','Lozano Ramos','645555666','ignacio.lozano@mail.com','Ignacio!789','P055','C019'),
+('66667777D','Josefa','Herrera Campos','646666777','josefa.herrera@mail.com','Josefa@123','P056','C020'),
+('77778888E','Marcos','Carmona Iglesias','647777888','marcos.carmona@mail.com','Marcos#456','P057','C021'),
+('88889999F','Encarnación','Prieto Santos','648888999','encarnacion.prieto@mail.com','Encarna!Pass','P058','C022'),
+('99990000G','Jesús','Reyes Montero','649999000','jesus.reyes@mail.com','Jesus@2024','P059','C023'),
+('00001111H','Remedios','Medina Vega','650000111','remedios.medina@mail.com','Remedios$789','P060','C024'),
+('10101010I','Ángel','Garrido Molina','651111222','angel.garrido@mail.com','Angel!2024','P061',NULL),
+('20202020J','Victoria','Morales Flores','652222333','victoria.morales@mail.com','Victoria#Pass','P062',NULL),
+('30303030K','Daniel','Sánchez Ortiz','653333444','daniel.sanchez@mail.com','Daniel@456','P063','C025'),
+('40404040L','Aurora','León Cruz','654444555','aurora.leon@mail.com','Aurora$2024','P064','C026'),
+('50505050M','Ricardo','Romero Gil','655555666','ricardo.romero@mail.com','Ricardo!789','P065','C027'),
+('60606060N','Francisca','Torres Ruiz','656666777','francisca.torres@mail.com','Francisca@123','P066','C028'),
+('70707070O','Tomás','García Díaz','657777888','tomas.garcia@mail.com','Tomas#456','P067','C029'),
+('80808080P','Milagros','Pérez Moreno','658888999','milagros.perez@mail.com','Milagros!Pass','P068','C030'),
+('90909090Q','Felipe','Martínez López','659999000','felipe.martinez@mail.com','Felipe@2024','P069','C001'),
+('01010101R','Angustias','Fernández Gómez','660000111','angustias.fernandez@mail.com','Angustias$789','P070','C002'),
+('11001100S','Bernardo','Jiménez Sánchez','661111222','bernardo.jimenez@mail.com','Bernardo!2024','P071',NULL),
+('22002200T','Purificación','Álvarez Martín','662222333','purificacion.alvarez@mail.com','Purifica#Pass','P072',NULL),
+('33003300U','Emilio','Vargas Ruiz','663333444','emilio.vargas@mail.com','Emilio@456','P073','C003'),
+('44004400V','Trinidad','Molina Jiménez','664444555','trinidad.molina@mail.com','Trinidad$2024','P074','C004'),
+('55005500W','Jaime','Ortiz Álvarez','665555666','jaime.ortiz@mail.com','Jaime!789','P075','C005'),
+('66006600X','Asunción','Gil Vargas','666666777','asuncion.gil@mail.com','Asuncion@123','P076','C006'),
+('77007700Y','Agustín','Peña Molina','667777888','agustin.pena@mail.com','Agustin#456','P077','C007'),
+('88008800Z','Soledad','Vega Ortiz','668888999','soledad.vega@mail.com','Soledad!Pass','P078','C008'),
+('99009900A','César','Ramos Gil','669999000','cesar.ramos@mail.com','Cesar@2024','P079','C009'),
+('00100100B','Nieves','Iglesias Peña','670000111','nieves.iglesias@mail.com','Nieves$789','P080','C010'),
+('10203050C','Pascual','Cabrera Vega','671111222','pascual.cabrera@mail.com','Pascual!2024','P081',NULL),
+('20304060D','Visitación','Méndez Ramos','672222333','visitacion.mendez@mail.com','Visita#Pass','P082',NULL),
+('30405070E','Eugenio','Cruz Iglesias','673333444','eugenio.cruz@mail.com','Eugenio@456','P083','C011'),
+('40506080F','Casilda','Flores Cabrera','674444555','casilda.flores@mail.com','Casilda$2024','P084','C012'),
+('50607090G','Valentín','Santiago Méndez','675555666','valentin.santiago@mail.com','Valentin!789','P085','C013'),
+('60708001H','Elvira','Cortés Cruz','676666777','elvira.cortes@mail.com','Elvira@123','P086','C014'),
+('70809002I','Esteban','Pascual Flores','677777888','esteban.pascual@mail.com','Esteban#456','P087','C015'),
+('80900113J','Celestina','Gallego Santiago','678888999','celestina.gallego@mail.com','Celestina!Pass','P088','C016'),
+('90011224K','Ramiro','Domínguez Cortés','679999000','ramiro.dominguez@mail.com','Ramiro@2024','P089','C017'),
+('01122335L','Herminia','Giménez Pascual','680000111','herminia.gimenez@mail.com','Herminia$789','P090','C018'),
+('12233446M','Casimiro','Rubio Gallego','681111222','casimiro.rubio@mail.com','Casimiro!2024','P091',NULL),
+('23344557N','Genoveva','Marín Domínguez','682222333','genoveva.marin@mail.com','Genoveva#Pass','P092',NULL),
+('34455668O','Benjamín','Soto Giménez','683333444','benjamin.soto@mail.com','Benjamin@456','P093','C019'),
+('45566779P','Virtudes','Bravo Rubio','684444555','virtudes.bravo@mail.com','Virtudes$2024','P094','C020'),
+('56677880Q','Clemente','León Marín','685555666','clemente.leon@mail.com','Clemente!789','P095','C021'),
+('67788991R','Presentación','Ramírez Soto','686666777','presentacion.ramirez@mail.com','Presenta@123','P096','C022'),
+('78899002S','Fermín','Castillo Bravo','687777888','fermin.castillo@mail.com','Fermin#456','P097','C023'),
+('89900123T','Filomena','Ortega León','688888999','filomena.ortega@mail.com','Filomena!Pass','P098','C024'),
+('90011235U','Matías','Hidalgo Ramírez','689999000','matias.hidalgo@mail.com','Matias@2024','P099','C025'),
+('01122346V','Ascensión','Lorenzo Castillo','690000111','ascension.lorenzo@mail.com','Ascension$789','P100','C026'),
+('12121212W','Laureano','Guerrero Ortega','691111222','laureano.guerrero@mail.com','Laureano!2024','P101',NULL),
+('23232323X','Perpetua','Crespo Hidalgo','692222333','perpetua.crespo@mail.com','Perpetua#Pass','P102',NULL),
+('34343434Y','Baldomero','Santana Lorenzo','693333444','baldomero.santana@mail.com','Baldomero@456','P103','C027'),
+('45454545Z','Adoración','Vidal Guerrero','694444555','adoracion.vidal@mail.com','Adoracion$2024','P104','C028'),
+('56565656A','Severino','Campos Crespo','695555666','severino.campos@mail.com','Severino!789','P105','C029'),
+('67676767B','Leocadia','Soler Santana','696666777','leocadia.soler@mail.com','Leocadia@123','P106','C030'),
+('78787878C','Avelino','Navarro Vidal','697777888','avelino.navarro@mail.com','Avelino#456','P107','C001'),
+('89898989D','Basilisa','Lozano Campos','698888999','basilisa.lozano@mail.com','Basilisa!Pass','P108','C002'),
+('90901212E','Plácido','Herrera Soler','699999000','placido.herrera@mail.com','Placido@2024','P109','C003'),
+('01012323F','Escolástica','Carmona Navarro','700000111','escolastica.carmona@mail.com','Escolas$789','P110','C004'),
+('11223366G','Saturnino','Prieto Lozano','701111222','saturnino.prieto@mail.com','Saturnino!2024','P111',NULL),
+('22334477H','Tránsito','Reyes Herrera','702222333','transito.reyes@mail.com','Transito#Pass','P112',NULL),
+('33445588I','Hilario','Medina Carmona','703333444','hilario.medina@mail.com','Hilario@456','P113','C005'),
+('44556699J','Digna','Garrido Prieto','704444555','digna.garrido@mail.com','Digna$2024','P114','C006'),
+('55667700K','Abundio','Morales Reyes','705555666','abundio.morales@mail.com','Abundio!789','P115','C007'),
+('66778811L','Primitiva','Sánchez Medina','706666777','primitiva.sanchez@mail.com','Primitiva@123','P116','C008'),
+('77889922M','Hipólito','León Garrido','707777888','hipolito.leon@mail.com','Hipolito#456','P117','C009'),
+('88990033N','Cándida','Romero Morales','708888999','candida.romero@mail.com','Candida!Pass','P118','C010'),
+('99001144O','Fulgencio','Torres Sánchez','709999000','fulgencio.torres@mail.com','Fulgencio@2024','P119','C011'),
+('00112244P','Salvadora','García León','710000111','salvadora.garcia@mail.com','Salvadora$789','P120','C012');
 
+-- INSERTS PARA PARTICIPAR (algunos ejemplos)
 INSERT INTO PARTICIPAR VALUES
 ('E001','11111111A'),
 ('E002','22222222B'),
@@ -126,6 +376,7 @@ INSERT INTO PARTICIPAR VALUES
 ('E009','99999999I'),
 ('E010','00000000J');
 
+-- INSERTS PARA TENER_AMIGOS (algunos ejemplos)
 INSERT INTO TENER_AMIGOS VALUES
 ('11111111A','22222222B'),
 ('22222222B','33333333C'),
@@ -138,6 +389,7 @@ INSERT INTO TENER_AMIGOS VALUES
 ('99999999I','00000000J'),
 ('00000000J','11111111A');
 
+-- INSERTS PARA REALIZAR (algunos ejemplos)
 INSERT INTO REALIZAR VALUES
 ('11111111A','T001'),
 ('22222222B','T002'),
@@ -150,11 +402,11 @@ INSERT INTO REALIZAR VALUES
 ('99999999I','T009'),
 ('00000000J','T010');
 
+-- INSERTS PARA RECOMENDACIONES (algunos ejemplos)
 INSERT INTO RECOMENDACIONES VALUES
 ('R001','Mejorar técnica',1,'11111111A','T001'),
 ('R002','Aumentar intensidad',2,'22222222B','T002'),
 ('R003','Controlar respiración',1,'33333333C','T003'),
-('R004','Mantener ritmo',3,'44444444D','T004'),
 ('R005','Mayor flexibilidad',2,'55555555E','T005'),
 ('R006','Progresión de cargas',1,'66666666F','T006'),
 ('R007','Más volumen',2,'77777777G','T007'),
@@ -162,6 +414,7 @@ INSERT INTO RECOMENDACIONES VALUES
 ('R009','Más resistencia',3,'99999999I','T009'),
 ('R010','Control postural',2,'00000000J','T010');
 
+-- INSERTS PARA LOGRO (mantenemos los originales)
 INSERT INTO LOGRO VALUES
 ('L001','Constancia','Entrenar 7 días seguidos'),
 ('L002','Fuerza','Levantar 100kg'),
@@ -174,6 +427,7 @@ INSERT INTO LOGRO VALUES
 ('L009','Progreso','Mejorar marca personal'),
 ('L010','Disciplina','Cumplir plan mensual');
 
+-- INSERTS PARA OBTENER (algunos ejemplos)
 INSERT INTO OBTENER VALUES
 ('11111111A','L001'),
 ('22222222B','L002'),
@@ -186,6 +440,7 @@ INSERT INTO OBTENER VALUES
 ('99999999I','L009'),
 ('00000000J','L010');
 
+-- INSERTS PARA PROGRESO (algunos ejemplos)
 INSERT INTO PROGRESO VALUES
 ('PR01','2024-01-10 10:00','Bajo','11111111A'),
 ('PR02','2024-02-12 11:00','Medio','22222222B'),
