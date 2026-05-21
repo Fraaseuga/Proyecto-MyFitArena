@@ -42,7 +42,7 @@ public class VentanaIniciarSesion extends JFrame {
 	}
 	public VentanaIniciarSesion() {
 		setTitle("Inicio de Sesión");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("E:\\Proyecto\\Proyecto-MyFitArena-\\Aplicacion\\src\\Interfaces\\logoPequeño.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaIniciarSesion.class.getResource("/Interfaces/logo.png")));
 		//Ajustes de la ventana
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 700, 550);
@@ -80,7 +80,7 @@ public class VentanaIniciarSesion extends JFrame {
 		
 		JLabel LogoMFA = new JLabel("");
 		LogoMFA.setHorizontalAlignment(SwingConstants.CENTER);
-		LogoMFA.setIcon(new ImageIcon("E:\\Proyecto\\Proyecto-MyFitArena-\\Aplicacion\\src\\Interfaces\\logoPequeño.png"));
+		LogoMFA.setIcon(new ImageIcon(VentanaIniciarSesion.class.getResource("/Interfaces/logo.png")));
 		LogoMFA.setBounds(10, 10, 676, 166);
 		contentPane.add(LogoMFA);
 		//TEXTFIELDS

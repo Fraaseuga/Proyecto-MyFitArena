@@ -25,15 +25,15 @@ public class VentanaRegistrar extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField tfNombre;
-	private JTextField tfContraseña;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
+	private JTextField tfApellidos;
+	private JTextField tfDNI;
+	private JTextField tfTelefono;
+	private JTextField tfCorreo;
+	private JTextField tfContrasena;
+	private JTextField tfConfirmarContrasena;
 
 	/**
-	 * Launch the application./
+	 * Launch the application.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -49,7 +49,7 @@ public class VentanaRegistrar extends JFrame {
 	}
 	public VentanaRegistrar() {
 		setTitle("Resgistrar Nuevo Usuario");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("E:\\Proyecto\\Proyecto-MyFitArena-\\Aplicacion\\src\\Interfaces\\logoPequeño.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaRegistrar.class.getResource("/Interfaces/logo.png")));
 		//Ajustes de la ventana
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 700, 550);
@@ -79,38 +79,45 @@ public class VentanaRegistrar extends JFrame {
 		lblNombre.setForeground(Colores.amarilloVivo);
 		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		
-		JLabel lblContraseña = new JLabel("DNI/NIE/NIF:");
-		lblContraseña.setBounds(10, 165, 144, 38);
-		panelSecundario.add(lblContraseña);
-		lblContraseña.setForeground(Colores.amarilloVivo);
-		lblContraseña.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		JLabel lblDNI = new JLabel("DNI/NIE/NIF:");
+		lblDNI.setBounds(10, 165, 144, 38);
+		panelSecundario.add(lblDNI);
+		lblDNI.setForeground(Colores.amarilloVivo);
+		lblDNI.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		
 		JLabel LogoMFA = new JLabel("");
 		LogoMFA.setHorizontalAlignment(SwingConstants.CENTER);
-		LogoMFA.setIcon(new ImageIcon("E:\\Proyecto\\Proyecto-MyFitArena-\\Aplicacion\\src\\Interfaces\\logoPequeño.png"));
+		LogoMFA.setIcon(new ImageIcon(VentanaRegistrar.class.getResource("/Interfaces/logo.png")));
 		LogoMFA.setBounds(10, 10, 676, 166);
 		contentPane.add(LogoMFA);
+		
+		JLabel lblConfirmarContrasena = new JLabel("Confirmar contraseña:");
+		lblConfirmarContrasena.setForeground(new Color(255, 215, 0));
+		lblConfirmarContrasena.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblConfirmarContrasena.setBounds(356, 165, 144, 38);
+		panelSecundario.add(lblConfirmarContrasena);
+		
+		JLabel lblTelefono = new JLabel("Número de teléfono: ");
+		lblTelefono.setForeground(new Color(255, 215, 0));
+		lblTelefono.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblTelefono.setBounds(10, 234, 144, 38);
+		panelSecundario.add(lblTelefono);
+		
+		JLabel lblContrasena = new JLabel("Contraseña:");
+		lblContrasena.setForeground(new Color(255, 215, 0));
+		lblContrasena.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblContrasena.setBounds(356, 82, 144, 38);
+		panelSecundario.add(lblContrasena);
 		//TEXTFIELDS
 		tfNombre = new JTextField();
 		tfNombre.setBounds(10, 58, 300, 25);
 		panelSecundario.add(tfNombre);
 		tfNombre.setColumns(10);
 		
-		tfContraseña = new JTextField();
-		tfContraseña.setBounds(10, 133, 300, 25);
-		panelSecundario.add(tfContraseña);
-		tfContraseña.setColumns(10);
-		//BOTONES
-		JButton btnRegistrar = new JButton("Resgistrar");
-		btnRegistrar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
-		btnRegistrar.setBackground(Colores.amarilloVivo);
-		btnRegistrar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnRegistrar.setBounds(512, 282, 144, 25);
-		panelSecundario.add(btnRegistrar);
+		tfApellidos = new JTextField();
+		tfApellidos.setBounds(10, 133, 300, 25);
+		panelSecundario.add(tfApellidos);
+		tfApellidos.setColumns(10);
 		
 		JLabel lblApellidos = new JLabel("Apellidos:");
 		lblApellidos.setForeground(new Color(255, 215, 0));
@@ -118,54 +125,46 @@ public class VentanaRegistrar extends JFrame {
 		lblApellidos.setBounds(10, 82, 144, 38);
 		panelSecundario.add(lblApellidos);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(10, 213, 300, 25);
-		panelSecundario.add(textField);
+		JLabel lblCorreo = new JLabel("Correo eléctronico:");
+		lblCorreo.setForeground(new Color(255, 215, 0));
+		lblCorreo.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblCorreo.setBounds(356, 10, 144, 38);
+		panelSecundario.add(lblCorreo);
 		
-		JLabel lblCorreoElctronico = new JLabel("Correo eléctronico:");
-		lblCorreoElctronico.setForeground(new Color(255, 215, 0));
-		lblCorreoElctronico.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblCorreoElctronico.setBounds(356, 10, 144, 38);
-		panelSecundario.add(lblCorreoElctronico);
+		tfDNI = new JTextField();
+		tfDNI.setColumns(10);
+		tfDNI.setBounds(10, 213, 300, 25);
+		panelSecundario.add(tfDNI);
 		
-		JLabel lblNombre_1_1 = new JLabel("Número de teléfono: ");
-		lblNombre_1_1.setForeground(new Color(255, 215, 0));
-		lblNombre_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNombre_1_1.setBounds(10, 234, 144, 38);
-		panelSecundario.add(lblNombre_1_1);
+		tfConfirmarContrasena = new JTextField();
+		tfConfirmarContrasena.setColumns(10);
+		tfConfirmarContrasena.setBounds(356, 213, 300, 25);
+		panelSecundario.add(tfConfirmarContrasena);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(10, 282, 300, 25);
-		panelSecundario.add(textField_1);
+		tfTelefono = new JTextField();
+		tfTelefono.setColumns(10);
+		tfTelefono.setBounds(10, 282, 300, 25);
+		panelSecundario.add(tfTelefono);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(356, 58, 300, 25);
-		panelSecundario.add(textField_2);
+		tfCorreo = new JTextField();
+		tfCorreo.setColumns(10);
+		tfCorreo.setBounds(356, 58, 300, 25);
+		panelSecundario.add(tfCorreo);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(356, 133, 300, 25);
-		panelSecundario.add(textField_3);
-		
-		JLabel lblContrasea = new JLabel("Contraseña:");
-		lblContrasea.setForeground(new Color(255, 215, 0));
-		lblContrasea.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblContrasea.setBounds(356, 82, 144, 38);
-		panelSecundario.add(lblContrasea);
-		
-		JLabel lblConfirmarContraea = new JLabel("Confirmar contraeña:");
-		lblConfirmarContraea.setForeground(new Color(255, 215, 0));
-		lblConfirmarContraea.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblConfirmarContraea.setBounds(356, 165, 144, 38);
-		panelSecundario.add(lblConfirmarContraea);
-		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(356, 213, 300, 25);
-		panelSecundario.add(textField_4);
-		
+		tfContrasena = new JTextField();
+		tfContrasena.setColumns(10);
+		tfContrasena.setBounds(356, 133, 300, 25);
+		panelSecundario.add(tfContrasena);
+		//BOTONES
+		JButton btnRegistrar = new JButton("Resgistrar");
+		btnRegistrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("h");
+			}
+		});
+		btnRegistrar.setBackground(Colores.amarilloVivo);
+		btnRegistrar.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnRegistrar.setBounds(512, 282, 144, 25);
+		panelSecundario.add(btnRegistrar);	
 	}
 }
