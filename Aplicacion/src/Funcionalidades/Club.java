@@ -4,35 +4,22 @@ import java.util.ArrayList;
 public class Club {
 
 	String nombre;
+	int miembros;
+	int capacidad;
 	String descripcion;
-	String fechaCreacion;
 	
-	ArrayList<Usuario> miembros = new ArrayList<>();
 	ArrayList<Anuncio> anuncios = new ArrayList<>();
 	
 	public Club() {
 		
 	}
 	
-	public Club(String nombre, String descripcion, String fechaCreacion) {
+	public Club(String nombre, int miembros, int capacidad, String descripcion) {
 		
 		this.nombre = nombre;
-		this.descripcion = descripcion;
-		this.fechaCreacion = fechaCreacion;
-		
-	}
-	
-	// Metodo para añadir miembros a un club
-	
-	public void addMiembro(Usuario usuario) {
-		
-		miembros.add(usuario);
-	}
-	
-	// Metodo para quitar miembros de un club
-	
-	public void removeMiembro(Usuario usuario) {
-		miembros.remove(usuario);
+		this.miembros = miembros;
+		this.capacidad = capacidad;
+		this.descripcion = descripcion;	
 	}
 	
 	// Metodo para añadir auncio al club
@@ -57,20 +44,20 @@ public class Club {
 		this.descripcion = descripcion;
 	}
 
-	public String getFechaCreacion() {
-		return fechaCreacion;
-	}
-
-	public void setFechaCreacion(String fechaCreacion) {
-		this.fechaCreacion = fechaCreacion;
-	}
-
-	public ArrayList<Usuario> getMiembros() {
+	public int getMiembros() {
 		return miembros;
 	}
 
-	public void setMiembros(ArrayList<Usuario> miembros) {
+	public void setMiembros(int miembros) {
 		this.miembros = miembros;
+	}
+
+	public int getCapacidad() {
+		return capacidad;
+	}
+
+	public void setCapacidad(int capacidad) {
+		this.capacidad = capacidad;
 	}
 
 	public ArrayList<Anuncio> getAnuncios() {
