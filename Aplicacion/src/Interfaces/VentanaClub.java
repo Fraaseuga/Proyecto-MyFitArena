@@ -3,10 +3,13 @@ package Interfaces;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
+import Funcionalidades.Club;
 import Funcionalidades.Colores;
+import dao.ClubDAO;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class VentanaClub extends JFrame {
 
@@ -14,6 +17,7 @@ public class VentanaClub extends JFrame {
     private JPanel contentPane;
     private JTable tablaClubs;
     private DefaultTableModel modelo;
+    private ArrayList<Club> clubs;
 
     public VentanaClub(VentanaPrincipal vp) {
     	setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaClub.class.getResource("/Interfaces/logo.png")));
@@ -55,10 +59,17 @@ public class VentanaClub extends JFrame {
         tablaClubs.setGridColor(Colores.grisClaro);
 
         JScrollPane spTabla = new JScrollPane(tablaClubs);
+        spTabla.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         spTabla.setBounds(30, 80, 570, 350);
         spTabla.setBorder(null);
         contentPane.add(spTabla);
 
+        clubs = ClubDAO.getTodosLosClubs();
+        
+        for(Club c : clubs) {
+        	modelo.addRow(new Object[] {c.getNombre(),c.getMiembros(),c.getCapacidad(),c.getDescripcion()});
+        }
+        
         // BOTONES
         JButton btnOrdenarNombre = new JButton("Ordenar por Club");
         btnOrdenarNombre.setBackground(Colores.grisMedio);
@@ -150,11 +161,6 @@ public class VentanaClub extends JFrame {
                 VentanaClub.this.setVisible(false);
             }
         });
-
-        // Datos de ejemplo
-        modelo.addRow(new Object[]{"PowerGym", 120, 200, "Club de fuerza y rendimiento"});
-        modelo.addRow(new Object[]{"StrongFit", 80, 150, "Entrenamiento funcional y pesas"});
-        modelo.addRow(new Object[]{"OldSchool", 40, 100, "Estilo clásico, pesas libres"});
     }
 
     // ORDENACIÓN CLÁSICA
