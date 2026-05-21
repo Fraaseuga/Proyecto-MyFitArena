@@ -3,6 +3,7 @@ package Interfaces;
 import javax.swing.*;
 
 import Funcionalidades.Colores;
+import dao.ClubDAO;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -95,7 +96,38 @@ public class VentanaCrearClub extends JFrame {
 
         btnCrear.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+            	if(tfNombre.getText().equalsIgnoreCase("")
+            		||tfCapacidad.getText().equalsIgnoreCase("")
+            		||taDescripcion.getText().equalsIgnoreCase("")) {
+            		JOptionPane.showMessageDialog(contentPane, 
+            				"Debes rellenar los tres campos",
+							"ERROR",
+							JOptionPane.ERROR_MESSAGE);
+            	}else {
+            		try {
+            			int capacidad = Integer.parseInt(tfCapacidad.getText());
+            			String mensaje = ClubDAO.crearClub(
+            					tfNombre.getText(),
+            					taDescripcion.getText(),
+            					0,
+            					capacidad,
+            					VentanaPrincipal.propietario);
+            			
+            			JOptionPane.showMessageDialog(contentPane, 
+            					mensaje,
+            					"Club",
+            					JOptionPane.INFORMATION_MESSAGE);    
+            			
+            			VentanaCrearClub.this.dispose();
+            			VentanaClub vc = new VentanaClub(vp);
+            			vc.setVisible(true);
+            		}catch(Exception er) {
+            			JOptionPane.showMessageDialog(contentPane, 
+            					"La capacidad debe de ser un número",
+            					"ERROR",
+            					JOptionPane.ERROR_MESSAGE);
+            		}
+            	}
             }
         });
 

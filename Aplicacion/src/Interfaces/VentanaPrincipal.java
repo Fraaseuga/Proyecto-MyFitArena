@@ -230,7 +230,7 @@ public class VentanaPrincipal extends JFrame {
 		lblClubsTotales.setBounds(1002, 621, 123, 41);
 		contentPane.add(lblClubsTotales);
 		
-		int cantidadUsuarios = UsuarioDAO.getTodosLosUsuarios();
+		int cantidadUsuarios = UsuarioDAO.getTodosLosUsuariosConClub();
 		JLabel lblUsuariosTotales = new JLabel(cantidadUsuarios+"");
 		lblUsuariosTotales.setHorizontalAlignment(SwingConstants.CENTER);
 		lblUsuariosTotales.setForeground(new Color(255, 215, 0));
