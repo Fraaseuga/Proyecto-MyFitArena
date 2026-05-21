@@ -37,6 +37,8 @@ import javax.swing.JScrollPane;
 import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class VentanaPrincipal extends JFrame {
 
@@ -45,6 +47,8 @@ public class VentanaPrincipal extends JFrame {
 	private JTextField tfPeso;
 	private JTextField tfAltura;
 	private JTable tablaIMC;
+	
+	public static String propietario = null;
 	
 	public static void main(String[] args) {
 		VentanaPrincipal frame = new VentanaPrincipal();
@@ -83,31 +87,69 @@ public class VentanaPrincipal extends JFrame {
 		mnConfiguracion.setBackground(Colores.grisMedio);
 		barraMenu.add(mnConfiguracion);
 		
-		JMenuItem mniIniciarSesion = new JMenuItem("Iniciar sesión");
-		mniIniciarSesion.setBorder(null);
-		mniIniciarSesion.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		mniIniciarSesion.setForeground(Colores.amarilloSuave);
-		mniIniciarSesion.setBackground(Colores.grisMedio);
-		mnConfiguracion.add(mniIniciarSesion);
-		
-		JMenuItem mniRegistrarse = new JMenuItem("Registrarse");
-		mniRegistrarse.setBorder(null);
-		mniRegistrarse.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		mniRegistrarse.setForeground(Colores.amarilloSuave);
-		mniRegistrarse.setBackground(Colores.grisMedio);
-		mnConfiguracion.add(mniRegistrarse);
+		// Si no hay cuenta iniciada saldrán los menus Iniciar sesión y Registrarse
+		if(propietario == null) {
+			JMenuItem mniIniciarSesion = new JMenuItem("Iniciar sesión");
+			mniIniciarSesion.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					VentanaIniciarSesion vis = new VentanaIniciarSesion();
+					vis.setVisible(true);
+					VentanaPrincipal.this.setVisible(false);
+				}
+			});
+			mniIniciarSesion.setBorder(null);
+			mniIniciarSesion.setFont(new Font("Tahoma", Font.PLAIN, 16));
+			mniIniciarSesion.setForeground(Colores.amarilloSuave);
+			mniIniciarSesion.setBackground(Colores.grisMedio);
+			mnConfiguracion.add(mniIniciarSesion);
 			
-		// Tanto 'Cuenta' y 'Cerrar sesión' aparecerán cuando el usuario tenga la cuenta iniciada
-		JMenuItem mniCuenta = new JMenuItem("Cuenta");
-		mniCuenta.setFont(new Font("Rockwell", Font.PLAIN, 16));
-		mniCuenta.setForeground(Colores.amarilloSuave);
-		mniCuenta.setBackground(Colores.grisMedio);
-//		mnConfiguracion.add(mniCuenta);
-		
-		JMenuItem mniCerrarSesion = new JMenuItem("Cerrar sesión");
-		mniCerrarSesion.setFont(new Font("Rockwell", Font.PLAIN, 16));
-		mniCerrarSesion.setForeground(Colores.amarilloSuave);
-		mniCerrarSesion.setBackground(Colores.grisMedio);
+			JMenuItem mniRegistrarse = new JMenuItem("Registrarse");
+			mniRegistrarse.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					VentanaRegistrar vr = new VentanaRegistrar();
+					vr.setVisible(true);
+					VentanaPrincipal.this.setVisible(false);
+				}
+			});
+			mniRegistrarse.setBorder(null);
+			mniRegistrarse.setFont(new Font("Tahoma", Font.PLAIN, 16));
+			mniRegistrarse.setForeground(Colores.amarilloSuave);
+			mniRegistrarse.setBackground(Colores.grisMedio);
+			mnConfiguracion.add(mniRegistrarse);			
+		}else {
+			// Tanto 'Cuenta' y 'Cerrar sesión' aparecerán cuando el usuario tenga la cuenta iniciada
+			JMenuItem mniCuenta = new JMenuItem("Cuenta");
+			mniCuenta.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+				}
+			});
+			mniCuenta.setFont(new Font("Rockwell", Font.PLAIN, 16));
+			mniCuenta.setForeground(Colores.amarilloSuave);
+			mniCuenta.setBackground(Colores.grisMedio);
+			mnConfiguracion.add(mniCuenta);
+			
+			JMenuItem mniCerrarSesion = new JMenuItem("Cerrar sesión");
+			mniCerrarSesion.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					int opcion = JOptionPane.showConfirmDialog(contentPane,
+							"¿Seguro que quieres cerrar sesión?",
+							"Confirmación",
+							JOptionPane.YES_NO_OPTION);
+					if(opcion == JOptionPane.YES_OPTION) {
+						VentanaPrincipal.propietario = null;
+						
+						VentanaPrincipal.this.dispose();
+						VentanaPrincipal nueva = new VentanaPrincipal();
+						nueva.setVisible(true);
+					}
+				}
+			});
+			mniCerrarSesion.setFont(new Font("Rockwell", Font.PLAIN, 16));
+			mniCerrarSesion.setForeground(Colores.amarilloSuave);
+			mniCerrarSesion.setBackground(Colores.grisMedio);
+			mnConfiguracion.add(mniCerrarSesion);
+		}			
 		
 		String[] columnas = {"IMC","Estado"};
 		DefaultTableModel modeloTabla = new DefaultTableModel(null,columnas);
@@ -188,7 +230,7 @@ public class VentanaPrincipal extends JFrame {
 		lblClubsTotales.setBounds(1002, 621, 123, 41);
 		contentPane.add(lblClubsTotales);
 		
-		int cantidadUsuarios = UsuarioDAO.getTodosLosUsuarios();
+		int cantidadUsuarios = UsuarioDAO.getTodosLosUsuariosConClub();
 		JLabel lblUsuariosTotales = new JLabel(cantidadUsuarios+"");
 		lblUsuariosTotales.setHorizontalAlignment(SwingConstants.CENTER);
 		lblUsuariosTotales.setForeground(new Color(255, 215, 0));
@@ -199,9 +241,16 @@ public class VentanaPrincipal extends JFrame {
 		JButton btnVerClubs = new JButton("Ver clubs");
 		btnVerClubs.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaClub vc = new VentanaClub(VentanaPrincipal.this);
-				vc.setVisible(true);
-				VentanaPrincipal.this.setVisible(false);
+				if(propietario == null) {
+					JOptionPane.showMessageDialog(contentPane, 
+							"Primero tienes que tener una cuenta iniciada",
+							"ERROR",
+							JOptionPane.ERROR_MESSAGE);
+				}else {					
+					VentanaClub vc = new VentanaClub(VentanaPrincipal.this);
+					vc.setVisible(true);
+					VentanaPrincipal.this.setVisible(false);
+				}
 			}
 		});
 		btnVerClubs.setForeground(new Color(255, 215, 0));
@@ -402,6 +451,18 @@ public class VentanaPrincipal extends JFrame {
 		contentPane.add(separator_3_4);
 		
 		JButton btnElasticidad = new JButton("Elasticidad");
+		btnElasticidad.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(propietario == null) {
+					JOptionPane.showMessageDialog(contentPane, 
+							"Primero tienes que tener una cuenta iniciada",
+							"ERROR",
+							JOptionPane.ERROR_MESSAGE);
+				}else {
+					
+				}
+			}
+		});
 		btnElasticidad.setForeground(Colores.amarilloVivo);
 		btnElasticidad.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnElasticidad.setBorder(null);
@@ -410,6 +471,18 @@ public class VentanaPrincipal extends JFrame {
 		contentPane.add(btnElasticidad);
 		
 		JButton btnCardio = new JButton("Cardio");
+		btnCardio.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(propietario == null) {
+					JOptionPane.showMessageDialog(contentPane, 
+							"Primero tienes que tener una cuenta iniciada",
+							"ERROR",
+							JOptionPane.ERROR_MESSAGE);
+				}else {
+					
+				}
+			}
+		});
 		btnCardio.setForeground(Colores.amarilloVivo);
 		btnCardio.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnCardio.setBorder(null);
@@ -418,6 +491,18 @@ public class VentanaPrincipal extends JFrame {
 		contentPane.add(btnCardio);
 		
 		JButton btnHipertrofia = new JButton("Hipertrofia");
+		btnHipertrofia.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(propietario == null) {
+					JOptionPane.showMessageDialog(contentPane, 
+							"Primero tienes que tener una cuenta iniciada",
+							"ERROR",
+							JOptionPane.ERROR_MESSAGE);
+				}else {
+					
+				}
+			}
+		});
 		btnHipertrofia.setForeground(Colores.amarilloVivo);
 		btnHipertrofia.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnHipertrofia.setBorder(null);
@@ -426,6 +511,18 @@ public class VentanaPrincipal extends JFrame {
 		contentPane.add(btnHipertrofia);
 		
 		JButton btnPowerlifting = new JButton("Powerlifting");
+		btnPowerlifting.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(propietario == null) {
+					JOptionPane.showMessageDialog(contentPane, 
+							"Primero tienes que tener una cuenta iniciada",
+							"ERROR",
+							JOptionPane.ERROR_MESSAGE);
+				}else {
+					
+				}
+			}
+		});
 		btnPowerlifting.setForeground(Colores.amarilloVivo);
 		btnPowerlifting.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnPowerlifting.setBorder(null);
@@ -434,6 +531,18 @@ public class VentanaPrincipal extends JFrame {
 		contentPane.add(btnPowerlifting);
 		
 		JButton btnCalistenia = new JButton("Calistenia");
+		btnCalistenia.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(propietario == null) {
+					JOptionPane.showMessageDialog(contentPane, 
+							"Primero tienes que tener una cuenta iniciada",
+							"ERROR",
+							JOptionPane.ERROR_MESSAGE);
+				}else {
+					
+				}
+			}
+		});
 		btnCalistenia.setBorder(null);
 		btnCalistenia.setBackground(Colores.grisMedio);
 		btnCalistenia.setForeground(Colores.amarilloVivo);

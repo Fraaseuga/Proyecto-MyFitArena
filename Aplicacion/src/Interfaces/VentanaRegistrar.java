@@ -9,7 +9,10 @@ import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 
 import Funcionalidades.Colores;
+import dao.UsuarioDAO;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
@@ -19,39 +22,33 @@ import javax.swing.JButton;
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class VentanaRegistrar extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField tfNombre;
-	private JTextField tfContraseña;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
+	private JTextField tfApellidos;
+	private JTextField tfDNI;
+	private JTextField tfTelefono;
+	private JTextField tfCorreo;
+	private JTextField tfContrasena;
+	private JTextField tfConfirmarContrasena;
 
-	/**
-	 * Launch the application./
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VentanaRegistrar frame = new VentanaRegistrar();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+	public VentanaRegistrar() {
+		VentanaPrincipal vp = new VentanaPrincipal();
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				vp.setVisible(true);
+				VentanaRegistrar.this.dispose();
 			}
 		});
-	}
-	public VentanaRegistrar() {
 		setTitle("Resgistrar Nuevo Usuario");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("E:\\Proyecto\\Proyecto-MyFitArena-\\Aplicacion\\src\\Interfaces\\logoPequeño.png"));
 		//Ajustes de la ventana
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 700, 550);
 		//Hace que la ventana aparezca en medio de la pantalla
 		setLocationRelativeTo(null);
@@ -87,7 +84,7 @@ public class VentanaRegistrar extends JFrame {
 		
 		JLabel LogoMFA = new JLabel("");
 		LogoMFA.setHorizontalAlignment(SwingConstants.CENTER);
-		LogoMFA.setIcon(new ImageIcon("E:\\Proyecto\\Proyecto-MyFitArena-\\Aplicacion\\src\\Interfaces\\logoPequeño.png"));
+		LogoMFA.setIcon(new ImageIcon(VentanaRegistrar.class.getResource("/Interfaces/logo.png")));
 		LogoMFA.setBounds(10, 10, 676, 166);
 		contentPane.add(LogoMFA);
 		//TEXTFIELDS
@@ -96,21 +93,11 @@ public class VentanaRegistrar extends JFrame {
 		panelSecundario.add(tfNombre);
 		tfNombre.setColumns(10);
 		
-		tfContraseña = new JTextField();
-		tfContraseña.setBounds(10, 133, 300, 25);
-		panelSecundario.add(tfContraseña);
-		tfContraseña.setColumns(10);
+		tfApellidos = new JTextField();
+		tfApellidos.setBounds(10, 133, 300, 25);
+		panelSecundario.add(tfApellidos);
+		tfApellidos.setColumns(10);
 		//BOTONES
-		JButton btnRegistrar = new JButton("Resgistrar");
-		btnRegistrar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
-		btnRegistrar.setBackground(Colores.amarilloVivo);
-		btnRegistrar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnRegistrar.setBounds(512, 282, 144, 25);
-		panelSecundario.add(btnRegistrar);
 		
 		JLabel lblApellidos = new JLabel("Apellidos:");
 		lblApellidos.setForeground(new Color(255, 215, 0));
@@ -118,10 +105,10 @@ public class VentanaRegistrar extends JFrame {
 		lblApellidos.setBounds(10, 82, 144, 38);
 		panelSecundario.add(lblApellidos);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(10, 213, 300, 25);
-		panelSecundario.add(textField);
+		tfDNI = new JTextField();
+		tfDNI.setColumns(10);
+		tfDNI.setBounds(10, 213, 300, 25);
+		panelSecundario.add(tfDNI);
 		
 		JLabel lblCorreoElctronico = new JLabel("Correo eléctronico:");
 		lblCorreoElctronico.setForeground(new Color(255, 215, 0));
@@ -135,20 +122,20 @@ public class VentanaRegistrar extends JFrame {
 		lblNombre_1_1.setBounds(10, 234, 144, 38);
 		panelSecundario.add(lblNombre_1_1);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(10, 282, 300, 25);
-		panelSecundario.add(textField_1);
+		tfTelefono = new JTextField();
+		tfTelefono.setColumns(10);
+		tfTelefono.setBounds(10, 282, 300, 25);
+		panelSecundario.add(tfTelefono);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(356, 58, 300, 25);
-		panelSecundario.add(textField_2);
+		tfCorreo = new JTextField();
+		tfCorreo.setColumns(10);
+		tfCorreo.setBounds(356, 58, 300, 25);
+		panelSecundario.add(tfCorreo);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(356, 133, 300, 25);
-		panelSecundario.add(textField_3);
+		tfContrasena = new JTextField();
+		tfContrasena.setColumns(10);
+		tfContrasena.setBounds(356, 133, 300, 25);
+		panelSecundario.add(tfContrasena);
 		
 		JLabel lblContrasea = new JLabel("Contraseña:");
 		lblContrasea.setForeground(new Color(255, 215, 0));
@@ -162,10 +149,67 @@ public class VentanaRegistrar extends JFrame {
 		lblConfirmarContraea.setBounds(356, 165, 144, 38);
 		panelSecundario.add(lblConfirmarContraea);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(356, 213, 300, 25);
-		panelSecundario.add(textField_4);
+		tfConfirmarContrasena = new JTextField();
+		tfConfirmarContrasena.setColumns(10);
+		tfConfirmarContrasena.setBounds(356, 213, 300, 25);
+		panelSecundario.add(tfConfirmarContrasena);
 		
+		JButton btnRegistrar = new JButton("Registrar");
+		btnRegistrar.setBackground(Colores.amarilloVivo);
+		btnRegistrar.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnRegistrar.setBounds(512, 282, 144, 25);
+		panelSecundario.add(btnRegistrar);
+		btnRegistrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					// Se comprueba si todos los campos están rellenados
+					if(tfNombre.getText() != null
+							|| tfApellidos.getText() != null
+							|| tfDNI.getText() != null
+							|| tfTelefono.getText() != null
+							|| tfCorreo.getText() != null
+							|| tfContrasena.getText() != null) {	
+						int telefono = Integer.parseInt(tfTelefono.getText());
+						
+						// Se comprueba si las dos contraseñas coinciden
+						if(tfContrasena.getText().equals(tfConfirmarContrasena.getText())) {
+							// Se crea el usuario con el método crearUsuario de la clase UsuarioDAO
+							String mensaje = UsuarioDAO.crearUsuario(
+									tfDNI.getText(),
+									tfNombre.getText(),
+									tfApellidos.getText(),
+									telefono,
+									tfCorreo.getText(),
+									tfContrasena.getText());
+							JOptionPane.showMessageDialog(contentPane, 
+									mensaje,
+									"Confirmación",
+									JOptionPane.INFORMATION_MESSAGE);
+							
+							VentanaPrincipal.propietario = tfDNI.getText();
+							VentanaRegistrar.this.dispose();
+							vp.dispose();
+							VentanaPrincipal nueva = new VentanaPrincipal();
+							nueva.setVisible(true);
+						}else {
+							JOptionPane.showMessageDialog(contentPane, 
+									"Las contraseñas no coinciden",
+									"ERROR",
+									JOptionPane.ERROR_MESSAGE);
+						}
+					}else {
+						JOptionPane.showMessageDialog(contentPane, 
+								"Debes rellenar todos los campos",
+								"ERROR",
+								JOptionPane.ERROR_MESSAGE);
+					}
+				}catch(Exception er) {
+					JOptionPane.showMessageDialog(contentPane, 
+							"El teléfono debe ser un número",
+							"ERROR",
+							JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
 	}
 }
