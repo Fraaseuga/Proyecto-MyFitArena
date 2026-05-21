@@ -45,7 +45,6 @@ public class VentanaRegistrar extends JFrame {
 			public void windowClosing(WindowEvent e) {
 				vp.setVisible(true);
 				VentanaRegistrar.this.dispose();
-
 			}
 		});
 		setTitle("Resgistrar Nuevo Usuario");
@@ -125,7 +124,7 @@ public class VentanaRegistrar extends JFrame {
 		lblApellidos.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblApellidos.setBounds(10, 82, 144, 38);
 		panelSecundario.add(lblApellidos);
-		
+
 
 		JLabel lblCorreo = new JLabel("Correo eléctronico:");
 		lblCorreo.setForeground(new Color(255, 215, 0));
@@ -133,10 +132,6 @@ public class VentanaRegistrar extends JFrame {
 		lblCorreo.setBounds(356, 10, 144, 38);
 		panelSecundario.add(lblCorreo);
 
-		tfDNI = new JTextField();
-		tfDNI.setColumns(10);
-		tfDNI.setBounds(10, 213, 300, 25);
-		panelSecundario.add(tfDNI);		
 		tfDNI = new JTextField();
 		tfDNI.setColumns(10);
 		tfDNI.setBounds(10, 213, 300, 25);
@@ -151,7 +146,7 @@ public class VentanaRegistrar extends JFrame {
 		tfTelefono.setColumns(10);
 		tfTelefono.setBounds(10, 282, 300, 25);
 		panelSecundario.add(tfTelefono);
-		
+
 		tfCorreo = new JTextField();
 		tfCorreo.setColumns(10);
 		tfCorreo.setBounds(356, 58, 300, 25);
@@ -161,23 +156,6 @@ public class VentanaRegistrar extends JFrame {
 		tfContrasena.setColumns(10);
 		tfContrasena.setBounds(356, 133, 300, 25);
 		panelSecundario.add(tfContrasena);
-		//BOTONES
-		tfContrasena = new JTextField();
-		tfContrasena.setColumns(10);
-		tfContrasena.setBounds(356, 133, 300, 25);
-		panelSecundario.add(tfContrasena);
-		
-		JLabel lblContrasea = new JLabel("Contraseña:");
-		lblContrasea.setForeground(new Color(255, 215, 0));
-		lblContrasea.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblContrasea.setBounds(356, 82, 144, 38);
-		panelSecundario.add(lblContrasea);
-		
-		JLabel lblConfirmarContraea = new JLabel("Confirmar contraeña:");
-		lblConfirmarContraea.setForeground(new Color(255, 215, 0));
-		lblConfirmarContraea.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblConfirmarContraea.setBounds(356, 165, 144, 38);
-		panelSecundario.add(lblConfirmarContraea);
 		
 		tfConfirmarContrasena = new JTextField();
 		tfConfirmarContrasena.setColumns(10);
