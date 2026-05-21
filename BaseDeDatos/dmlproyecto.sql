@@ -168,38 +168,38 @@ INSERT INTO PLAN_ALIMENTICIO VALUES
 ('P119',2390,117.0,57.5,247.0),
 ('P120',2890,152.0,82.5,307.0);
 
--- INSERTS PARA 30 CLUBS
+-- INSERTS PARA 30 CLUBS (con capacidad, num_miembros reales y propietarios)
 INSERT INTO CLUB VALUES
-('C001','Fitness Pro','Club de entrenamiento avanzado','2020-01-10',45),
-('C002','CardioMax','Club de cardio y running','2019-05-22',38),
-('C003','PowerClub','Powerlifting y fuerza','2021-03-15',42),
-('C004','FlexFit','Elasticidad y movilidad','2018-11-30',35),
-('C005','NutriLife','Club de nutrición','2022-02-18',29),
-('C006','CalisTeam','Calistenia y street workout','2020-07-09',40),
-('C007','MuscleLab','Hipertrofia avanzada','2019-09-12',48),
-('C008','ZenFit','Bienestar y estiramientos','2021-12-01',32),
-('C009','RunFast','Running profesional','2017-04-25',44),
-('C010','StrongNation','Fuerza general','2023-01-05',28),
-('C011','BodyBalance','Equilibrio cuerpo-mente','2020-06-15',36),
-('C012','IronWarriors','Levantamiento de pesas','2019-08-20',41),
-('C013','SpeedDemon','Velocidad y agilidad','2021-05-10',33),
-('C014','YogaFlow','Yoga y meditación','2018-03-25',39),
-('C015','CrossFit Elite','CrossFit competitivo','2022-09-12',47),
-('C016','SwimPro','Natación profesional','2020-02-28',31),
-('C017','FitFamily','Fitness familiar','2019-11-05',43),
-('C018','GymRats','Entrenamiento hardcore','2021-07-18',37),
-('C019','HealthFirst','Salud preventiva','2018-12-08',34),
-('C020','AthleteZone','Alto rendimiento','2022-04-22',46),
-('C021','FlexZone','Flexibilidad avanzada','2020-10-14',30),
-('C022','EnduranceCrew','Resistencia extrema','2019-06-30',42),
-('C023','MindBody','Conexión mente-cuerpo','2021-02-17',35),
-('C024','StrengthHub','Centro de fuerza','2018-09-05',40),
-('C025','ActiveLife','Vida activa','2022-11-28',33),
-('C026','FitnessFusion','Entrenamiento mixto','2020-03-11',38),
-('C027','WellnessClub','Bienestar integral','2019-12-22',36),
-('C028','PeakPerformance','Rendimiento máximo','2021-08-09',45),
-('C029','VitalityGroup','Vitalidad y energía','2018-05-15',31),
-('C030','UltraFit','Fitness ultra','2022-07-03',39);
+('C001','Fitness Pro','Club de entrenamiento avanzado','2020-01-10',4,50,NULL),
+('C002','CardioMax','Club de cardio y running','2019-05-22',4,45,NULL),
+('C003','PowerClub','Powerlifting y fuerza','2021-03-15',4,48,NULL),
+('C004','FlexFit','Elasticidad y movilidad','2018-11-30',4,40,NULL),
+('C005','NutriLife','Club de nutrición','2022-02-18',4,35,NULL),
+('C006','CalisTeam','Calistenia y street workout','2020-07-09',4,45,NULL),
+('C007','MuscleLab','Hipertrofia avanzada','2019-09-12',4,55,NULL),
+('C008','ZenFit','Bienestar y estiramientos','2021-12-01',4,38,NULL),
+('C009','RunFast','Running profesional','2017-04-25',4,50,NULL),
+('C010','StrongNation','Fuerza general','2023-01-05',4,32,NULL),
+('C011','BodyBalance','Equilibrio cuerpo-mente','2020-06-15',4,42,NULL),
+('C012','IronWarriors','Levantamiento de pesas','2019-08-20',4,46,NULL),
+('C013','SpeedDemon','Velocidad y agilidad','2021-05-10',3,38,NULL),
+('C014','YogaFlow','Yoga y meditación','2018-03-25',3,44,NULL),
+('C015','CrossFit Elite','CrossFit competitivo','2022-09-12',3,52,NULL),
+('C016','SwimPro','Natación profesional','2020-02-28',3,36,NULL),
+('C017','FitFamily','Fitness familiar','2019-11-05',3,48,NULL),
+('C018','GymRats','Entrenamiento hardcore','2021-07-18',3,42,NULL),
+('C019','HealthFirst','Salud preventiva','2018-12-08',3,40,NULL),
+('C020','AthleteZone','Alto rendimiento','2022-04-22',3,50,NULL),
+('C021','FlexZone','Flexibilidad avanzada','2020-10-14',3,35,NULL),
+('C022','EnduranceCrew','Resistencia extrema','2019-06-30',3,46,NULL),
+('C023','MindBody','Conexión mente-cuerpo','2021-02-17',3,40,NULL),
+('C024','StrengthHub','Centro de fuerza','2018-09-05',3,44,NULL),
+('C025','ActiveLife','Vida activa','2022-11-28',3,38,NULL),
+('C026','FitnessFusion','Entrenamiento mixto','2020-03-11',3,42,NULL),
+('C027','WellnessClub','Bienestar integral','2019-12-22',3,40,NULL),
+('C028','PeakPerformance','Rendimiento máximo','2021-08-09',3,50,NULL),
+('C029','VitalityGroup','Vitalidad y energía','2018-05-15',3,36,NULL),
+('C030','UltraFit','Fitness ultra','2022-07-03',3,44,NULL);
 
 -- INSERTS PARA ANUNCIO (mantenemos los originales)
 INSERT INTO ANUNCIO VALUES
@@ -362,6 +362,37 @@ INSERT INTO USUARIO VALUES
 ('88990033N','Cándida','Romero Morales','708888999','candida.romero@mail.com','Candida!Pass','P118','C010'),
 ('99001144O','Fulgencio','Torres Sánchez','709999000','fulgencio.torres@mail.com','Fulgencio@2024','P119','C011'),
 ('00112244P','Salvadora','García León','710000111','salvadora.garcia@mail.com','Salvadora$789','P120','C012');
+
+UPDATE CLUB SET dni_propietario='11111111A' WHERE CodClub='C001';
+UPDATE CLUB SET dni_propietario='22222222B' WHERE CodClub='C002';
+UPDATE CLUB SET dni_propietario='33333333C' WHERE CodClub='C003';
+UPDATE CLUB SET dni_propietario='44444444D' WHERE CodClub='C004';
+UPDATE CLUB SET dni_propietario='55555555E' WHERE CodClub='C005';
+UPDATE CLUB SET dni_propietario='66666666F' WHERE CodClub='C006';
+UPDATE CLUB SET dni_propietario='77777777G' WHERE CodClub='C007';
+UPDATE CLUB SET dni_propietario='88888888H' WHERE CodClub='C008';
+UPDATE CLUB SET dni_propietario='99999999I' WHERE CodClub='C009';
+UPDATE CLUB SET dni_propietario='00000000J' WHERE CodClub='C010';
+UPDATE CLUB SET dni_propietario='12345678K' WHERE CodClub='C011';
+UPDATE CLUB SET dni_propietario='23456789L' WHERE CodClub='C012';
+UPDATE CLUB SET dni_propietario='34567890M' WHERE CodClub='C013';
+UPDATE CLUB SET dni_propietario='45678901N' WHERE CodClub='C014';
+UPDATE CLUB SET dni_propietario='56789012O' WHERE CodClub='C015';
+UPDATE CLUB SET dni_propietario='67890123P' WHERE CodClub='C016';
+UPDATE CLUB SET dni_propietario='78901234Q' WHERE CodClub='C017';
+UPDATE CLUB SET dni_propietario='89012345R' WHERE CodClub='C018';
+UPDATE CLUB SET dni_propietario='90123456S' WHERE CodClub='C019';
+UPDATE CLUB SET dni_propietario='01234567T' WHERE CodClub='C020';
+UPDATE CLUB SET dni_propietario='11223344U' WHERE CodClub='C021';
+UPDATE CLUB SET dni_propietario='22334455V' WHERE CodClub='C022';
+UPDATE CLUB SET dni_propietario='33445566W' WHERE CodClub='C023';
+UPDATE CLUB SET dni_propietario='44556677X' WHERE CodClub='C024';
+UPDATE CLUB SET dni_propietario='55667788Y' WHERE CodClub='C025';
+UPDATE CLUB SET dni_propietario='66778899Z' WHERE CodClub='C026';
+UPDATE CLUB SET dni_propietario='77889900A' WHERE CodClub='C027';
+UPDATE CLUB SET dni_propietario='88990011B' WHERE CodClub='C028';
+UPDATE CLUB SET dni_propietario='99001122C' WHERE CodClub='C029';
+UPDATE CLUB SET dni_propietario='00112233D' WHERE CodClub='C030';
 
 -- INSERTS PARA PARTICIPAR (algunos ejemplos)
 INSERT INTO PARTICIPAR VALUES

@@ -92,7 +92,9 @@ CREATE TABLE CLUB(
 	nombre VARCHAR(30),
 	descripcion VARCHAR(60),
 	fechaCreacion DATE,
-	num_miembros NUMERIC(4)
+	num_miembros NUMERIC(4),
+	capacidad_miembros NUMERIC(4),
+	dni_propietario VARCHAR(9)
 );
 
 CREATE TABLE ANUNCIO (
@@ -196,3 +198,8 @@ CREATE TABLE PROGRESO (
 
 	FOREIGN KEY (dni_usuario) REFERENCES USUARIO(DNI)
 );
+
+-- Añadir constraint de propietario después de crear todas las tablas
+ALTER TABLE CLUB
+ADD CONSTRAINT FK_club_propietario 
+FOREIGN KEY (dni_propietario) REFERENCES USUARIO(DNI);
