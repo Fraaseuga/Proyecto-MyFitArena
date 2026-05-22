@@ -19,11 +19,12 @@ public class ClubDAO {
 				ResultSet rs = ps.executeQuery();
 		){
 			if(rs.next()) {
-				int cantidad = rs.getInt(1);
-				return cantidad;
+				return rs.getInt(1);
+				
 			}
 		}catch(SQLException er) {
-			System.out.println("Hay un error en la consulta");
+			
+			er.printStackTrace();
 		}
 		return 0;
 	}
@@ -32,7 +33,7 @@ public class ClubDAO {
 	public static ArrayList<Club> getTodosLosClubs(){
 		try(
 				Connection con = Conexion.getConexion();
-				PreparedStatement ps = con.prepareStatement("SELECT nombre,num_miembros,capacidad_miembros,descripcion FROM club");
+				PreparedStatement ps = con.prepareStatement("SELECT nombre,num_miembros,capacidad_miembros,descripcion,codclub,dni_propietario FROM club");
 				ResultSet rs = ps.executeQuery();
 		){
 			ArrayList<Club> listaClubs = new ArrayList<Club>();
@@ -41,13 +42,16 @@ public class ClubDAO {
 						rs.getString("nombre"),
 						rs.getInt("num_miembros"),
 						rs.getInt("capacidad_miembros"),
-						rs.getString("descripcion"));
+						rs.getString("descripcion"),
+						rs.getString("codclub"),
+						rs.getString("dni_propietario"));
 				
 				listaClubs.add(c);				
 			}
 			return listaClubs;
 		}catch(SQLException er) {
-			System.out.println("Hay un error en la consulta");
+
+			er.printStackTrace();
 		}
 		return null;
 	}
@@ -118,5 +122,26 @@ public class ClubDAO {
 	        e.printStackTrace();
 	        return "Error al crear el club";
 	    }
+	}
+	
+	public static boolean eliminarClub(String codClub) {
+
+	    try(
+	        Connection con = Conexion.getConexion();
+
+	        PreparedStatement ps = con.prepareStatement(
+	                "DELETE FROM club WHERE codclub = ?"
+	        );
+	    ){
+
+	        ps.setString(1, codClub);
+
+	        return ps.executeUpdate() > 0;
+
+	    }catch(Exception e) {
+	        e.printStackTrace();
+	    }
+
+	    return false;
 	}
 }

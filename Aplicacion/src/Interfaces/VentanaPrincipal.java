@@ -55,7 +55,7 @@ public class VentanaPrincipal extends JFrame {
 		frame.setVisible(true);
 	}
 
-	
+
 	public VentanaPrincipal() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaPrincipal.class.getResource("/Interfaces/logo.png")));
 		setForeground(new Color(64, 0, 64));

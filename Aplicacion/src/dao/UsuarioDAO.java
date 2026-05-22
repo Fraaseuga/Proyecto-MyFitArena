@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class UsuarioDAO {
 	// Este método se utiliza para obtener la cantidad de usuarios que pertenecen a clubs
@@ -76,5 +77,64 @@ public class UsuarioDAO {
 	        er.printStackTrace();
 	        return "Error al crear el usuario";
 	    }
+	}
+	
+	public static ArrayList<String[]> getMiembrosClub(String codClub){
+
+	    ArrayList<String[]> lista = new ArrayList<>();
+
+	    try(
+	        Connection con = Conexion.getConexion();
+
+	        PreparedStatement ps = con.prepareStatement(
+	            "SELECT dni, nombre, apellidos, telefono, correo_electronico " +
+	            "FROM usuario " +
+	            "WHERE cod_club = ?"
+	        );
+	    ){
+
+	        ps.setString(1, codClub);
+
+	        ResultSet rs = ps.executeQuery();
+
+	        while(rs.next()){
+
+	            lista.add(new String[] {
+	            	rs.getString("dni"),
+	                rs.getString("nombre"),
+	                rs.getString("apellidos"),
+	                rs.getString("telefono"),
+	                rs.getString("correo_electronico")
+	            });
+	        }
+
+	    }catch(Exception e){
+	        e.printStackTrace();
+	    }
+
+	    return lista;
+	}
+	
+	public static boolean eliminarMiembroClub(String dni){
+
+	    try(
+	        Connection con = Conexion.getConexion();
+
+	        PreparedStatement ps = con.prepareStatement(
+	            "UPDATE usuario " +
+	            "SET cod_club = NULL " +
+	            "WHERE dni = ?"
+	        );
+	    ){
+
+	        ps.setString(1, dni);
+
+	        return ps.executeUpdate() > 0;
+
+	    }catch(Exception e){
+	        e.printStackTrace();
+	    }
+
+	    return false;
 	}
 }

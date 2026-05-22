@@ -151,12 +151,9 @@ public class VentanaClub extends JFrame {
                     return;
                 }
 
-                String nombre = modelo.getValueAt(fila, 0).toString();
-                String miembros = modelo.getValueAt(fila, 1).toString();
-                String capacidad = modelo.getValueAt(fila, 2).toString();
-                String descripcion = modelo.getValueAt(fila, 3).toString();
-
-                VentanaDetallesClub vdc = new VentanaDetallesClub(vp, nombre, miembros, capacidad, descripcion);
+                Club clubSeleccionado = clubs.get(fila);
+                
+                VentanaDetallesClub vdc = new VentanaDetallesClub(vp, clubSeleccionado);
                 vdc.setVisible(true);
                 VentanaClub.this.setVisible(false);
             }

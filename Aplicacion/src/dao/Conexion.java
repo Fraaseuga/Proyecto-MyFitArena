@@ -16,10 +16,13 @@ public class Conexion {
 		
 		try {
 			con = DriverManager.getConnection(url,user,password);
-
+			
 		}catch(SQLException e) {
+			
 			System.out.println("");
 		}
 		return con;
+		
 	}
 }
+
