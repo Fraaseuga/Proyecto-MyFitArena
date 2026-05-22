@@ -2,11 +2,17 @@ package Funcionalidades;
 
 public class Calistenia extends Entrenamiento{
 	private double lastre;
+	private String nombre;
+	private String enfoque;
+	private String descripcion;
 
 	// Contructor
-	public Calistenia(String dificultad, int duracion, double lastre){
+	public Calistenia(String dificultad, int duracion, double lastre, String nombre, String enfoque, String descripcion){
 		super(dificultad,duracion);
 		this.lastre = lastre;
+		this.nombre = nombre;
+		this.enfoque = enfoque;
+		this.descripcion = descripcion;
 	}
 	
 	// Getters - Setters
@@ -18,6 +24,30 @@ public class Calistenia extends Entrenamiento{
 		this.lastre = lastre;
 	}
 	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getEnfoque() {
+		return enfoque;
+	}
+
+	public void setEnfoque(String enfoque) {
+		this.enfoque = enfoque;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
 	// Método para comprobar si está usando lastre
 	public boolean usaLastre() {
 		if(lastre > 0) {

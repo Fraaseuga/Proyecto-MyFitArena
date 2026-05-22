@@ -2,11 +2,19 @@ package Funcionalidades;
 
 public class Powerlifting extends Entrenamiento{
 	private double pesoMaximo;
+	private String nombre;
+	private String repeticiones;
+	private String equipamiento;
+	private String descripcion;
 	
 	// Constructor
-	public Powerlifting(String dificultad, int duracion, double pesoMaximo){
+	public Powerlifting(String dificultad, int duracion, double pesoMaximo, String nombre, String repeticiones, String equipamiento, String descripcion){
 		super(dificultad,duracion);
 		this.pesoMaximo = pesoMaximo;
+		this.nombre = nombre;
+		this.repeticiones = repeticiones;
+		this.equipamiento = equipamiento;
+		this.descripcion = descripcion;
 	}
 
 	// Getters - Setters
@@ -18,6 +26,38 @@ public class Powerlifting extends Entrenamiento{
 		this.pesoMaximo = pesoMaximo;
 	}
 	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getRepeticiones() {
+		return repeticiones;
+	}
+
+	public void setRepeticiones(String repeticiones) {
+		this.repeticiones = repeticiones;
+	}
+
+	public String getEquipamiento() {
+		return equipamiento;
+	}
+
+	public void setEquipamiento(String equipamiento) {
+		this.equipamiento = equipamiento;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
 	// Comprobar si ha superado si pesoMaximo antiguo
 	public boolean esRecord(double antiguo) {
 		if(pesoMaximo > antiguo) {

@@ -123,7 +123,7 @@ public class ClubDAO {
 	        return "Error al crear el club";
 	    }
 	}
-	
+
 	public static boolean eliminarClub(String codClub) {
 
 	    try(

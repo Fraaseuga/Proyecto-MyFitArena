@@ -1,4 +1,4 @@
--- INSERTS PARA EJERCICIO (mantenemos los originales)
+-- INSERTS PARA EJERCICIO
 INSERT INTO EJERCICIO VALUES
 ('E001','Flexiones',4,12),
 ('E002','Sentadillas',4,15),
@@ -11,41 +11,262 @@ INSERT INTO EJERCICIO VALUES
 ('E009','Curl bíceps',4,10),
 ('E010','Remo',4,12);
 
--- INSERTS PARA ENTRENAMIENTO (mantenemos los originales)
+-- INSERTS PARA ENTRENAMIENTO
 INSERT INTO ENTRENAMIENTO VALUES
-('T001','Fácil',30,5,'Entrenamiento básico de movilidad'),
-('T002','Media',45,6,'Rutina de fuerza general'),
-('T003','Difícil',60,8,'Entrenamiento avanzado'),
-('T004','Media',40,5,'Cardio moderado'),
-('T005','Fácil',25,4,'Estiramientos guiados'),
-('T006','Difícil',70,10,'Powerlifting intensivo'),
-('T007','Media',50,7,'Hipertrofia de torso'),
-('T008','Fácil',20,3,'Calistenia básica'),
-('T009','Difícil',55,8,'Cardio HIIT'),
-('T010','Media',45,6,'Elasticidad y movilidad');
+('T001','Fácil',30,5,
+'Entrenamiento básico de movilidad.
+Movimientos suaves y controlados.
+Ideal para empezar.'),
+('T002','Media',45,6,
+'Rutina de fuerza general.
+Incluye ejercicios multiarticulares.
+Perfecta para progreso constante.'),
+('T003','Difícil',60,8,
+'Entrenamiento avanzado.
+Alta intensidad y volumen.
+Recomendado para usuarios experimentados.'),
+('T004','Media',40,5,
+'Cardio moderado.
+Ritmo estable y sostenido.
+Mejora la resistencia aeróbica.'),
+('T005','Fácil',25,4,
+'Estiramientos guiados.
+Movilidad suave y progresiva.
+Perfecto para relajación.'),
+('T006','Difícil',70,10,
+'Powerlifting intensivo.
+Trabajo pesado en los tres básicos.
+Enfoque en fuerza máxima.'),
+('T007','Media',50,7,
+'Hipertrofia de torso.
+Ejercicios de empuje y tirón.
+Ideal para ganar masa muscular.'),
+('T008','Fácil',20,3,
+'Calistenia básica.
+Control corporal y movimientos simples.
+Perfecto para principiantes.'),
+('T009','Difícil',55,8,
+'Cardio HIIT.
+Intervalos de alta intensidad.
+Excelente para quemar calorías.'),
+('T010','Media',45,6,
+'Elasticidad y movilidad.
+Movimientos dinámicos y estáticos.
+Mejora el rango articular.'),
+('T011','Media',35,5,
+'Dominadas progresivas.
+Trabajo de tirón vertical.
+Fortalece espalda y brazos.'),
+('T012','Difícil',50,6,
+'Handstand y equilibrio.
+Trabajo avanzado de control corporal.
+Requiere fuerza y técnica.'),
+('T013','Difícil',55,7,
+'Muscle-up explosivo.
+Combinación de tirón y empuje.
+Muy demandante técnicamente.'),
+('T014','Media',30,4,
+'L-sit y core isométrico.
+Trabajo intenso del abdomen.
+Mejora estabilidad y control.'),
+('T015','Media',60,8,
+'Pirámides ascendentes.
+Incremento progresivo de carga.
+Ideal para fuerza e hipertrofia.'),
+('T016','Difícil',70,10,
+'Entrenamiento al fallo.
+Alta intensidad y volumen.
+Solo para avanzados.'),
+('T017','Media',55,7,
+'Hipertrofia de piernas.
+Trabajo completo de cuádriceps e isquios.
+Sesión muy completa.'),
+('T018','Difícil',65,5,
+'Método 5x5 modificado.
+Series pesadas con descansos largos.
+Enfoque en fuerza.'),
+('T019','Difícil',75,5,
+'Sentadilla pesada.
+Trabajo técnico y profundo.
+Requiere movilidad avanzada.'),
+('T020','Media',45,6,
+'Press banca técnico.
+Trabajo de pausa y control.
+Mejora fuerza y estabilidad.'),
+('T021','Difícil',80,4,
+'Peso muerto pesado.
+Enfoque en fuerza máxima.
+Muy demandante físicamente.'),
+('T022','Media',50,6,
+'Sentadilla técnica.
+Peso moderado y buena forma.
+Ideal para progresar seguro.'),
+('T023','Fácil',25,3,
+'Caminata ligera.
+Bajo impacto y ritmo suave.
+Perfecto para recuperación.'),
+('T024','Difícil',90,7,
+'Carrera larga.
+Trabajo aeróbico sostenido.
+Requiere buena base cardiovascular.'),
+('T025','Media',40,5,
+'Bicicleta continua.
+Ritmo estable y fluido.
+Excelente para resistencia.'),
+('T026','Fácil',20,3,
+'Elíptica suave.
+Movimiento fluido y sin impacto.
+Ideal para principiantes.'),
+('T027','Media',30,4,
+'Estiramientos PNF.
+Contracción y relajación.
+Mejora flexibilidad rápidamente.'),
+('T028','Difícil',50,6,
+'Yoga avanzado.
+Secuencias exigentes y controladas.
+Requiere experiencia previa.'),
+('T029','Fácil',20,3,
+'Estiramientos suaves.
+Movimientos lentos y relajantes.
+Reduce tensión muscular.'),
+('T030','Difícil',45,5,
+'Movilidad articular avanzada.
+Trabajo profundo de hombros y cadera.
+Mejora rango y control.');
 
 -- INSERTS PARA ESPECIALIZACIONES DE ENTRENAMIENTO
 INSERT INTO CALISTENIA VALUES
-('T001','Movilidad general'),
-('T008','Calistenia básica');
+('T001','Movilidad general',0.00,'Básico',FALSE,FALSE,'Movilidad',TRUE,'Fácil',
+'Entrenamiento enfocado en mejorar la movilidad general.
+Incluye movimientos suaves y controlados.
+Ideal para principiantes.'),
+('T008','Calistenia básica',0.00,'Inicial',TRUE,FALSE,'Control corporal',FALSE,'Fácil',
+'Rutina básica de calistenia.
+Se trabaja fuerza relativa y coordinación.
+Perfecto para empezar.'),
+('T011','Dominadas',5.00,'Intermedio',TRUE,FALSE,'Fuerza tirón',FALSE,'Media',
+'Ejercicio clásico de tirón vertical.
+Desarrolla espalda y brazos.
+Progresión fundamental en calistenia.'),
+('T012','Handstand',0.00,'Avanzado',FALSE,FALSE,'Equilibrio',TRUE,'Difícil',
+'Trabajo avanzado de equilibrio sobre manos.
+Requiere fuerza de hombros y control corporal.
+Incluye progresiones desde pared.'),
+('T013','Muscle-up',10.00,'Avanzado',TRUE,TRUE,'Explosividad',FALSE,'Difícil',
+'Movimiento explosivo combinando dominada y fondo.
+Requiere técnica, potencia y coordinación.
+Muy usado en calistenia avanzada.'),
+('T014','L-sit',0.00,'Intermedio',FALSE,TRUE,'Core isométrico',TRUE,'Media',
+'Isométrico avanzado para core.
+Fortalece abdominales y flexores de cadera.
+Excelente para control corporal.');
 
 INSERT INTO HIPERTROFIA VALUES
-('T002','Técnica de repeticiones lentas'),
-('T003','Super series'),
-('T007','Drop sets');
+('T002','Técnica de repeticiones lentas',40.00,'Pectoral','Tríceps','10-12',50,90,'Push/Pull/Legs',480.00,'Media',
+'Método centrado en aumentar el tiempo bajo tensión.
+Mejora la conexión mente-músculo.
+Ideal para fases de volumen controlado.'),
+('T003','Super series',35.00,'Espalda','Bíceps','12-15',40,60,'Torso/Pierna',520.00,'Difícil',
+'Super series combinadas sin descanso.
+Aumentan intensidad y congestión muscular.
+Recomendado para usuarios avanzados.'),
+('T007','Drop sets',30.00,'Hombro','Trapecio','12-20',45,75,'Fullbody',450.00,'Media',
+'Método avanzado reduciendo peso sin descanso.
+Estimula fibras profundas.
+Muy efectivo para romper estancamientos.'),
+('T015','Pirámides ascendentes',50.00,'Piernas','Glúteos','8-12',55,120,'Pierna',600.00,'Media',
+'Progresión aumentando peso en cada serie.
+Excelente para fuerza e hipertrofia.
+Muy usado en rutinas de pierna.'),
+('T016','Entrenamiento al fallo',45.00,'Pectoral','Hombro','6-10',60,150,'Push',700.00,'Difícil',
+'Entrenamiento llevado al fallo muscular.
+Alta intensidad y demanda física.
+Solo recomendado para avanzados.'),
+('T017','Hipertrofia de piernas',55.00,'Cuádriceps','Isquios','10-15',50,120,'Pierna',650.00,'Media',
+'Rutina enfocada en volumen de piernas.
+Incluye sentadilla, prensa y extensiones.
+Ideal para crecimiento muscular.'),
+('T018','Método 5x5 modificado',60.00,'Espalda','Bíceps','5',30,180,'Torso',750.00,'Difícil',
+'Método clásico de fuerza adaptado a hipertrofia.
+Series pesadas con descansos largos.
+Excelente para progresión.');
 
 INSERT INTO POWERLIFTING VALUES
-('T006',180.50);
+('T006',180.50,'Peso muerto',85,3,0.45,TRUE,'Cinturón',FALSE,'Reglamentaria','Difícil',
+'Sesión centrada en peso muerto pesado.
+Incluye técnica, velocidad y control postural.
+Ideal para fases de fuerza máxima.'),
+('T019',200.00,'Sentadilla',80,5,0.40,TRUE,'Rodilleras',FALSE,'Profunda','Difícil',
+'Sentadilla pesada con profundidad reglamentaria.
+Requiere movilidad y técnica avanzada.
+Muy demandante para piernas.'),
+('T020',150.00,'Press banca',70,6,0.50,FALSE,'No se usa',TRUE,'Normal','Media',
+'Press banca con pausa en pecho.
+Mejora control y fuerza en el movimiento.
+Ideal para progresión técnica.'),
+('T021',220.00,'Peso muerto',90,2,0.35,TRUE,'Cinturón y straps',FALSE,'Reglamentaria','Difícil',
+'Peso muerto muy pesado.
+Enfocado en fuerza máxima.
+Requiere calentamiento específico.'),
+('T022',130.00,'Sentadilla',65,8,0.55,FALSE,'No se usa',FALSE,'Paralela','Media',
+'Sentadilla técnica con peso moderado.
+Ideal para mejorar forma y resistencia.
+Perfecta para fases de volumen.');
 
 INSERT INTO CARDIO VALUES
-('T004',30),
-('T009',45);
+('T004','Cinta',5.00,'6:00',135,160,'Zona 2',280,'Continuo',1.0,NULL,'Media',
+'Cardio continuo en cinta.
+Ritmo estable y controlado.
+Ideal para mejorar resistencia general.'),
+('T009','HIIT',3.00,'4:30',155,185,'Zona 4',420,'Intervalos',2.5,'40/20','Difícil',
+'Entrenamiento HIIT de alta intensidad.
+Incluye intervalos cortos de esfuerzo máximo.
+Excelente para mejorar VO2max.'),
+('T023','Caminata',2.00,'10:00',110,130,'Zona 1',120,'Suave',0.0,NULL,'Fácil',
+'Caminata ligera.
+Perfecta para principiantes o recuperación.
+Bajo impacto y fácil de mantener.'),
+('T024','Carrera larga',10.00,'5:30',145,170,'Zona 3',600,'Continuo',1.0,NULL,'Difícil',
+'Carrera de larga distancia.
+Mejora resistencia aeróbica.
+Requiere buena base cardiovascular.'),
+('T025','Bicicleta',8.00,'4:20',140,165,'Zona 2',350,'Continuo',0.5,NULL,'Media',
+'Sesión de bicicleta.
+Trabajo constante y fluido.
+Ideal para resistencia y quema de calorías.'),
+('T026','Elíptica',3.50,'6:30',130,150,'Zona 1',200,'Suave',0.0,NULL,'Fácil',
+'Entrenamiento suave en elíptica.
+Bajo impacto y fácil de mantener.
+Perfecto para principiantes.');
 
 INSERT INTO ELASTICIDAD VALUES
-('T005','Baja'),
-('T010','Alta');
+('T005','Estático',1,'Cuerpo completo','Estático',30,TRUE,FALSE,NULL,'Relajación','Baja','Fácil',
+'Estiramientos estáticos mantenidos.
+Mejoran relajación muscular.
+Perfecto para sesiones suaves.'),
+('T010','Dinámico',3,'Cadera','Dinámico',20,TRUE,TRUE,'Banda elástica','Apertura','Media','Media',
+'Movilidad dinámica enfocada en articulaciones.
+Incluye movimientos fluidos.
+Ideal para calentar.'),
+('T027','PNF',2,'Isquios','PNF',15,TRUE,FALSE,NULL,'Flexibilidad','Alta','Media',
+'Método PNF para mejorar flexibilidad.
+Incluye contracción y relajación.
+Muy efectivo para isquios.'),
+('T028','Yoga avanzado',4,'Columna','Yoga',40,TRUE,TRUE,'Bloques','Control','Alta','Difícil',
+'Secuencia avanzada de yoga.
+Requiere control corporal y respiración.
+Ideal para usuarios experimentados.'),
+('T029','Estático suave',1,'Cuello','Estático',20,TRUE,FALSE,NULL,'Relajación','Baja','Fácil',
+'Estiramientos suaves para cuello.
+Reducen tensión acumulada.
+Perfecto para sesiones de relajación.'),
+('T030','Movilidad articular',3,'Hombros','Dinámico',25,TRUE,FALSE,NULL,'Rango articular','Media','Difícil',
+'Movilidad enfocada en hombros.
+Mejora rango articular y control.
+Muy útil para deportes overhead.');
 
--- INSERTS PARA PLAN_ALIMENTICIO (120 planes para 120 usuarios)
+
+-- INSERTS PARA PLAN_ALIMENTICIO
 INSERT INTO PLAN_ALIMENTICIO VALUES
 ('P001',2200,120.5,60.2,250.3),
 ('P002',1800,90.0,50.0,200.0),
@@ -168,7 +389,7 @@ INSERT INTO PLAN_ALIMENTICIO VALUES
 ('P119',2390,117.0,57.5,247.0),
 ('P120',2890,152.0,82.5,307.0);
 
--- INSERTS PARA 30 CLUBS (con capacidad, num_miembros reales y propietarios)
+-- INSERTS PARA 30 CLUBS
 INSERT INTO CLUB VALUES
 ('C001','Fitness Pro','Club de entrenamiento avanzado','2020-01-10',4,50,NULL),
 ('C002','CardioMax','Club de cardio y running','2019-05-22',4,45,NULL),
@@ -201,7 +422,7 @@ INSERT INTO CLUB VALUES
 ('C029','VitalityGroup','Vitalidad y energía','2018-05-15',3,36,NULL),
 ('C030','UltraFit','Fitness ultra','2022-07-03',3,44,NULL);
 
--- INSERTS PARA ANUNCIO (mantenemos los originales)
+-- INSERTS PARA ANUNCIO
 INSERT INTO ANUNCIO VALUES
 ('A001','Nuevo evento','Participa en nuestro evento mensual','2024-01-10'),
 ('A002','Promoción','Descuento en planes','2024-02-15'),
@@ -214,7 +435,7 @@ INSERT INTO ANUNCIO VALUES
 ('A009','Seminario','Seminario de salud','2024-09-14'),
 ('A010','Fiesta','Fiesta anual del club','2024-10-01');
 
--- INSERTS PARA EVENTO (mantenemos los originales)
+-- INSERTS PARA EVENTO
 INSERT INTO EVENTO VALUES
 ('E001','Competencia','Competencia mensual','Gimnasio','2024-01-15 10:00'),
 ('E002','Taller','Taller de cocina','Sala 2','2024-02-20 17:00'),
@@ -227,7 +448,7 @@ INSERT INTO EVENTO VALUES
 ('E009','Entrenamiento','Clase grupal','Pista','2024-09-22 19:00'),
 ('E010','Fiesta','Fiesta anual','Terraza','2024-10-10 21:00');
 
--- INSERTS PARA TENER (mantenemos los originales)
+-- INSERTS PARA TENER
 INSERT INTO TENER VALUES
 ('E001','A001','C001'),
 ('E002','A002','C002'),
@@ -240,7 +461,7 @@ INSERT INTO TENER VALUES
 ('E009','A009','C009'),
 ('E010','A010','C010');
 
--- INSERTS PARA 120 USUARIOS (algunos con club, otros sin club NULL)
+-- INSERTS PARA 120 USUARIOS
 INSERT INTO USUARIO VALUES
 ('11111111A','Juan','Pérez López','600111222','juan.perez@mail.com','Pass1234!','P001','C001'),
 ('22222222B','Ana','García Ruiz','600222333','ana.garcia@mail.com','Ana2024@','P002','C002'),
@@ -394,7 +615,7 @@ UPDATE CLUB SET dni_propietario='88990011B' WHERE CodClub='C028';
 UPDATE CLUB SET dni_propietario='99001122C' WHERE CodClub='C029';
 UPDATE CLUB SET dni_propietario='00112233D' WHERE CodClub='C030';
 
--- INSERTS PARA PARTICIPAR (algunos ejemplos)
+-- INSERTS PARA PARTICIPAR
 INSERT INTO PARTICIPAR VALUES
 ('E001','11111111A'),
 ('E002','22222222B'),
@@ -407,7 +628,7 @@ INSERT INTO PARTICIPAR VALUES
 ('E009','99999999I'),
 ('E010','00000000J');
 
--- INSERTS PARA TENER_AMIGOS (algunos ejemplos)
+-- INSERTS PARA TENER_AMIGOS
 INSERT INTO TENER_AMIGOS VALUES
 ('11111111A','22222222B'),
 ('22222222B','33333333C'),
@@ -420,7 +641,7 @@ INSERT INTO TENER_AMIGOS VALUES
 ('99999999I','00000000J'),
 ('00000000J','11111111A');
 
--- INSERTS PARA REALIZAR (algunos ejemplos)
+-- INSERTS PARA REALIZAR
 INSERT INTO REALIZAR VALUES
 ('11111111A','T001'),
 ('22222222B','T002'),
@@ -433,7 +654,7 @@ INSERT INTO REALIZAR VALUES
 ('99999999I','T009'),
 ('00000000J','T010');
 
--- INSERTS PARA RECOMENDACIONES (algunos ejemplos)
+-- INSERTS PARA RECOMENDACIONES
 INSERT INTO RECOMENDACIONES VALUES
 ('R001','Mejorar técnica',1,'11111111A','T001'),
 ('R002','Aumentar intensidad',2,'22222222B','T002'),
@@ -445,7 +666,7 @@ INSERT INTO RECOMENDACIONES VALUES
 ('R009','Más resistencia',3,'99999999I','T009'),
 ('R010','Control postural',2,'00000000J','T010');
 
--- INSERTS PARA LOGRO (mantenemos los originales)
+-- INSERTS PARA LOGRO
 INSERT INTO LOGRO VALUES
 ('L001','Constancia','Entrenar 7 días seguidos'),
 ('L002','Fuerza','Levantar 100kg'),
@@ -458,7 +679,7 @@ INSERT INTO LOGRO VALUES
 ('L009','Progreso','Mejorar marca personal'),
 ('L010','Disciplina','Cumplir plan mensual');
 
--- INSERTS PARA OBTENER (algunos ejemplos)
+-- INSERTS PARA OBTENER
 INSERT INTO OBTENER VALUES
 ('11111111A','L001'),
 ('22222222B','L002'),
@@ -471,7 +692,7 @@ INSERT INTO OBTENER VALUES
 ('99999999I','L009'),
 ('00000000J','L010');
 
--- INSERTS PARA PROGRESO (algunos ejemplos)
+-- INSERTS PARA PROGRESO
 INSERT INTO PROGRESO VALUES
 ('PR01','2024-01-10 10:00','Bajo','11111111A'),
 ('PR02','2024-02-12 11:00','Medio','22222222B'),
