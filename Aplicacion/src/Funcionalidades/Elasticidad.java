@@ -2,11 +2,19 @@ package Funcionalidades;
 
 public class Elasticidad extends Entrenamiento{
 	private int nivelElasticidad;
+	private String nombre;
+	private String zonaCorporal;
+	private String objetivo;
+	private String descripcion;
 	
 	// Constructor
-	public Elasticidad(String dificultad, int duracion, int nivelElasticidad){
+	public Elasticidad(String dificultad, int duracion, int nivelElasticidad, String nombre, String zonaCorporal, String objectivo, String descripcion){
 		super(dificultad,duracion);
 		this.nivelElasticidad = nivelElasticidad;
+		this.nombre = nombre;
+		this.zonaCorporal = zonaCorporal;
+		this.objetivo = objectivo;
+		this.descripcion = descripcion;
 	}
 
 	// Getters - Setters
@@ -18,6 +26,38 @@ public class Elasticidad extends Entrenamiento{
 		this.nivelElasticidad = nivelElasticidad;
 	}
 	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getZonaCorporal() {
+		return zonaCorporal;
+	}
+
+	public void setZonaCorporal(String zonaCorporal) {
+		this.zonaCorporal = zonaCorporal;
+	}
+
+	public String getObjetivo() {
+		return objetivo;
+	}
+
+	public void setObjetivo(String objetivo) {
+		this.objetivo = objetivo;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
 	// Método para comprobar si es avanzado según su nivel de elasticidad
 	public boolean esAvanzado() {
 		if(nivelElasticidad > 7) {

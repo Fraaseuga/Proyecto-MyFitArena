@@ -2,16 +2,56 @@ package Funcionalidades;
 
 public class Hipertrofia extends Entrenamiento {
 	private double pesoMedio;
+	private String nombre;
+	private String musculoPrincipal;
+	private String repeticiones;
+	private String descripcion;
 	
 	// Constructor
-	public Hipertrofia(String dificultad, int duracion, double pesoMedio){
+	public Hipertrofia(String dificultad, int duracion, double pesoMedio, String nombre, String musculoPrincipal, String repeticiones, String descripcion){
 		super(dificultad,duracion);
 		this.pesoMedio = pesoMedio;
+		this.nombre = nombre;
+		this.musculoPrincipal = musculoPrincipal;
+		this.repeticiones = repeticiones;
+		this.descripcion = descripcion;
 	}
 
 	// Getters - Setters
 	public double getPesoMedio() {
 		return pesoMedio;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getMusculoPrincipal() {
+		return musculoPrincipal;
+	}
+
+	public void setMusculoPrincipal(String musculoPrincipal) {
+		this.musculoPrincipal = musculoPrincipal;
+	}
+
+	public String getRepeticiones() {
+		return repeticiones;
+	}
+
+	public void setRepeticiones(String repeticiones) {
+		this.repeticiones = repeticiones;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
 	public void setPesoMedio(double pesoMedio) {

@@ -2,11 +2,19 @@ package Funcionalidades;
 
 public class Cardio extends Entrenamiento{
 	private int ritmo;
+	private String nombre;
+	private String tipoSesion;
+	private int caloriasQuemadas;
+	private String descripcion;
 	
 	// Constructor
-	public Cardio(String dificultad, int duracion, int ritmo) {
+	public Cardio(String dificultad, int duracion, int ritmo, String nombre, String tipoSesion, int caloriasQuemadas, String descripcion) {
 		super(dificultad,duracion);
 		this.ritmo = ritmo;
+		this.nombre = nombre;
+		this.tipoSesion = tipoSesion;
+		this.caloriasQuemadas = caloriasQuemadas;
+		this.descripcion = descripcion;
 	}
 
 	// Getters - Setters
@@ -18,6 +26,38 @@ public class Cardio extends Entrenamiento{
 		this.ritmo = ritmo;
 	}
 	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getTipoSesion() {
+		return tipoSesion;
+	}
+
+	public void setTipoSesion(String tipoSesion) {
+		this.tipoSesion = tipoSesion;
+	}
+
+	public int getCaloriasQuemadas() {
+		return caloriasQuemadas;
+	}
+
+	public void setCaloriasQuemadas(int caloriasQuemadas) {
+		this.caloriasQuemadas = caloriasQuemadas;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
 	// Método para calcular las calorias
 	@Override
 	public int calcularCalorias(int edad, double pesoUsuario, double alturaUsuario,boolean esHombre) {
