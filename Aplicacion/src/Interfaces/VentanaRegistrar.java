@@ -157,11 +157,6 @@ public class VentanaRegistrar extends JFrame {
 		tfContrasena.setBounds(356, 133, 300, 25);
 		panelSecundario.add(tfContrasena);
 		
-		tfConfirmarContrasena = new JTextField();
-		tfConfirmarContrasena.setColumns(10);
-		tfConfirmarContrasena.setBounds(356, 213, 300, 25);
-		panelSecundario.add(tfConfirmarContrasena);
-		
 		JButton btnRegistrar = new JButton("Registrar");
 		btnRegistrar.setBackground(Colores.amarilloVivo);
 		btnRegistrar.setFont(new Font("Tahoma", Font.BOLD, 14));
