@@ -95,6 +95,8 @@ public class VentanaDetallesClub extends JFrame {
         btnGestionMIembros.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		
+        		VentanaDetallesClub.this.dispose();
+
         		VentanaGestionMiembros vgm = new VentanaGestionMiembros(vp, club);
 
                 vgm.setVisible(true);
