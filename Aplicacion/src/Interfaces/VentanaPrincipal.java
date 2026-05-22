@@ -459,7 +459,9 @@ public class VentanaPrincipal extends JFrame {
 							"ERROR",
 							JOptionPane.ERROR_MESSAGE);
 				}else {
-					
+					VentanaEntrenamiento ve = new VentanaEntrenamiento(VentanaPrincipal.this,5);
+					ve.setVisible(true);
+					VentanaPrincipal.this.setVisible(false);
 				}
 			}
 		});
@@ -479,7 +481,9 @@ public class VentanaPrincipal extends JFrame {
 							"ERROR",
 							JOptionPane.ERROR_MESSAGE);
 				}else {
-					
+					VentanaEntrenamiento ve = new VentanaEntrenamiento(VentanaPrincipal.this,4);
+					ve.setVisible(true);
+					VentanaPrincipal.this.setVisible(false);
 				}
 			}
 		});
@@ -499,7 +503,9 @@ public class VentanaPrincipal extends JFrame {
 							"ERROR",
 							JOptionPane.ERROR_MESSAGE);
 				}else {
-					
+					VentanaEntrenamiento ve = new VentanaEntrenamiento(VentanaPrincipal.this,2);
+					ve.setVisible(true);
+					VentanaPrincipal.this.setVisible(false);
 				}
 			}
 		});
@@ -519,7 +525,9 @@ public class VentanaPrincipal extends JFrame {
 							"ERROR",
 							JOptionPane.ERROR_MESSAGE);
 				}else {
-					
+					VentanaEntrenamiento ve = new VentanaEntrenamiento(VentanaPrincipal.this,3);
+					ve.setVisible(true);
+					VentanaPrincipal.this.setVisible(false);
 				}
 			}
 		});
@@ -539,7 +547,9 @@ public class VentanaPrincipal extends JFrame {
 							"ERROR",
 							JOptionPane.ERROR_MESSAGE);
 				}else {
-					
+					VentanaEntrenamiento ve = new VentanaEntrenamiento(VentanaPrincipal.this,1);
+					ve.setVisible(true);
+					VentanaPrincipal.this.setVisible(false);
 				}
 			}
 		});

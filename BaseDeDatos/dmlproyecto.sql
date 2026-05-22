@@ -14,136 +14,257 @@ INSERT INTO EJERCICIO VALUES
 -- INSERTS PARA ENTRENAMIENTO
 INSERT INTO ENTRENAMIENTO VALUES
 ('T001','Fácil',30,5,
- 'Entrenamiento básico de movilidad.\nMovimientos suaves y controlados.\nIdeal para empezar.'),
+'Entrenamiento básico de movilidad.
+Movimientos suaves y controlados.
+Ideal para empezar.'),
 ('T002','Media',45,6,
- 'Rutina de fuerza general.\nIncluye ejercicios multiarticulares.\nPerfecta para progreso constante.'),
+'Rutina de fuerza general.
+Incluye ejercicios multiarticulares.
+Perfecta para progreso constante.'),
 ('T003','Difícil',60,8,
- 'Entrenamiento avanzado.\nAlta intensidad y volumen.\nRecomendado para usuarios experimentados.'),
+'Entrenamiento avanzado.
+Alta intensidad y volumen.
+Recomendado para usuarios experimentados.'),
 ('T004','Media',40,5,
- 'Cardio moderado.\nRitmo estable y sostenido.\nMejora la resistencia aeróbica.'),
+'Cardio moderado.
+Ritmo estable y sostenido.
+Mejora la resistencia aeróbica.'),
 ('T005','Fácil',25,4,
- 'Estiramientos guiados.\nMovilidad suave y progresiva.\nPerfecto para relajación.'),
+'Estiramientos guiados.
+Movilidad suave y progresiva.
+Perfecto para relajación.'),
 ('T006','Difícil',70,10,
- 'Powerlifting intensivo.\nTrabajo pesado en los tres básicos.\nEnfoque en fuerza máxima.'),
+'Powerlifting intensivo.
+Trabajo pesado en los tres básicos.
+Enfoque en fuerza máxima.'),
 ('T007','Media',50,7,
- 'Hipertrofia de torso.\nEjercicios de empuje y tirón.\nIdeal para ganar masa muscular.'),
+'Hipertrofia de torso.
+Ejercicios de empuje y tirón.
+Ideal para ganar masa muscular.'),
 ('T008','Fácil',20,3,
- 'Calistenia básica.\nControl corporal y movimientos simples.\nPerfecto para principiantes.'),
+'Calistenia básica.
+Control corporal y movimientos simples.
+Perfecto para principiantes.'),
 ('T009','Difícil',55,8,
- 'Cardio HIIT.\nIntervalos de alta intensidad.\nExcelente para quemar calorías.'),
+'Cardio HIIT.
+Intervalos de alta intensidad.
+Excelente para quemar calorías.'),
 ('T010','Media',45,6,
- 'Elasticidad y movilidad.\nMovimientos dinámicos y estáticos.\nMejora el rango articular.'),
+'Elasticidad y movilidad.
+Movimientos dinámicos y estáticos.
+Mejora el rango articular.'),
 ('T011','Media',35,5,
- 'Dominadas progresivas.\nTrabajo de tirón vertical.\nFortalece espalda y brazos.'),
+'Dominadas progresivas.
+Trabajo de tirón vertical.
+Fortalece espalda y brazos.'),
 ('T012','Difícil',50,6,
- 'Handstand y equilibrio.\nTrabajo avanzado de control corporal.\nRequiere fuerza y técnica.'),
+'Handstand y equilibrio.
+Trabajo avanzado de control corporal.
+Requiere fuerza y técnica.'),
 ('T013','Difícil',55,7,
- 'Muscle-up explosivo.\nCombinación de tirón y empuje.\nMuy demandante técnicamente.'),
+'Muscle-up explosivo.
+Combinación de tirón y empuje.
+Muy demandante técnicamente.'),
 ('T014','Media',30,4,
- 'L-sit y core isométrico.\nTrabajo intenso del abdomen.\nMejora estabilidad y control.'),
+'L-sit y core isométrico.
+Trabajo intenso del abdomen.
+Mejora estabilidad y control.'),
 ('T015','Media',60,8,
- 'Pirámides ascendentes.\nIncremento progresivo de carga.\nIdeal para fuerza e hipertrofia.'),
+'Pirámides ascendentes.
+Incremento progresivo de carga.
+Ideal para fuerza e hipertrofia.'),
 ('T016','Difícil',70,10,
- 'Entrenamiento al fallo.\nAlta intensidad y volumen.\nSolo para avanzados.'),
+'Entrenamiento al fallo.
+Alta intensidad y volumen.
+Solo para avanzados.'),
 ('T017','Media',55,7,
- 'Hipertrofia de piernas.\nTrabajo completo de cuádriceps e isquios.\nSesión muy completa.'),
+'Hipertrofia de piernas.
+Trabajo completo de cuádriceps e isquios.
+Sesión muy completa.'),
 ('T018','Difícil',65,5,
- 'Método 5x5 modificado.\nSeries pesadas con descansos largos.\nEnfoque en fuerza.'),
+'Método 5x5 modificado.
+Series pesadas con descansos largos.
+Enfoque en fuerza.'),
 ('T019','Difícil',75,5,
- 'Sentadilla pesada.\nTrabajo técnico y profundo.\nRequiere movilidad avanzada.'),
+'Sentadilla pesada.
+Trabajo técnico y profundo.
+Requiere movilidad avanzada.'),
 ('T020','Media',45,6,
- 'Press banca técnico.\nTrabajo de pausa y control.\nMejora fuerza y estabilidad.'),
+'Press banca técnico.
+Trabajo de pausa y control.
+Mejora fuerza y estabilidad.'),
 ('T021','Difícil',80,4,
- 'Peso muerto pesado.\nEnfoque en fuerza máxima.\nMuy demandante físicamente.'),
+'Peso muerto pesado.
+Enfoque en fuerza máxima.
+Muy demandante físicamente.'),
 ('T022','Media',50,6,
- 'Sentadilla técnica.\nPeso moderado y buena forma.\nIdeal para progresar seguro.'),
+'Sentadilla técnica.
+Peso moderado y buena forma.
+Ideal para progresar seguro.'),
 ('T023','Fácil',25,3,
- 'Caminata ligera.\nBajo impacto y ritmo suave.\nPerfecto para recuperación.'),
+'Caminata ligera.
+Bajo impacto y ritmo suave.
+Perfecto para recuperación.'),
 ('T024','Difícil',90,7,
- 'Carrera larga.\nTrabajo aeróbico sostenido.\nRequiere buena base cardiovascular.'),
+'Carrera larga.
+Trabajo aeróbico sostenido.
+Requiere buena base cardiovascular.'),
 ('T025','Media',40,5,
- 'Bicicleta continua.\nRitmo estable y fluido.\nExcelente para resistencia.'),
+'Bicicleta continua.
+Ritmo estable y fluido.
+Excelente para resistencia.'),
 ('T026','Fácil',20,3,
- 'Elíptica suave.\nMovimiento fluido y sin impacto.\nIdeal para principiantes.'),
+'Elíptica suave.
+Movimiento fluido y sin impacto.
+Ideal para principiantes.'),
 ('T027','Media',30,4,
- 'Estiramientos PNF.\nContracción y relajación.\nMejora flexibilidad rápidamente.'),
+'Estiramientos PNF.
+Contracción y relajación.
+Mejora flexibilidad rápidamente.'),
 ('T028','Difícil',50,6,
- 'Yoga avanzado.\nSecuencias exigentes y controladas.\nRequiere experiencia previa.'),
+'Yoga avanzado.
+Secuencias exigentes y controladas.
+Requiere experiencia previa.'),
 ('T029','Fácil',20,3,
- 'Estiramientos suaves.\nMovimientos lentos y relajantes.\nReduce tensión muscular.'),
+'Estiramientos suaves.
+Movimientos lentos y relajantes.
+Reduce tensión muscular.'),
 ('T030','Difícil',45,5,
- 'Movilidad articular avanzada.\nTrabajo profundo de hombros y cadera.\nMejora rango y control.');
+'Movilidad articular avanzada.
+Trabajo profundo de hombros y cadera.
+Mejora rango y control.');
 
 -- INSERTS PARA ESPECIALIZACIONES DE ENTRENAMIENTO
 INSERT INTO CALISTENIA VALUES
 ('T001','Movilidad general',0.00,'Básico',FALSE,FALSE,'Movilidad',TRUE,'Fácil',
- 'Entrenamiento enfocado en mejorar la movilidad general.\nIncluye movimientos suaves y controlados.\nIdeal para principiantes.'),
+'Entrenamiento enfocado en mejorar la movilidad general.
+Incluye movimientos suaves y controlados.
+Ideal para principiantes.'),
 ('T008','Calistenia básica',0.00,'Inicial',TRUE,FALSE,'Control corporal',FALSE,'Fácil',
- 'Rutina básica de calistenia.\nSe trabaja fuerza relativa y coordinación.\nPerfecto para empezar.'),
+'Rutina básica de calistenia.
+Se trabaja fuerza relativa y coordinación.
+Perfecto para empezar.'),
 ('T011','Dominadas',5.00,'Intermedio',TRUE,FALSE,'Fuerza tirón',FALSE,'Media',
- 'Ejercicio clásico de tirón vertical.\nDesarrolla espalda y brazos.\nProgresión fundamental en calistenia.'),
+'Ejercicio clásico de tirón vertical.
+Desarrolla espalda y brazos.
+Progresión fundamental en calistenia.'),
 ('T012','Handstand',0.00,'Avanzado',FALSE,FALSE,'Equilibrio',TRUE,'Difícil',
- 'Trabajo avanzado de equilibrio sobre manos.\nRequiere fuerza de hombros y control corporal.\nIncluye progresiones desde pared.'),
+'Trabajo avanzado de equilibrio sobre manos.
+Requiere fuerza de hombros y control corporal.
+Incluye progresiones desde pared.'),
 ('T013','Muscle-up',10.00,'Avanzado',TRUE,TRUE,'Explosividad',FALSE,'Difícil',
- 'Movimiento explosivo combinando dominada y fondo.\nRequiere técnica, potencia y coordinación.\nMuy usado en calistenia avanzada.'),
+'Movimiento explosivo combinando dominada y fondo.
+Requiere técnica, potencia y coordinación.
+Muy usado en calistenia avanzada.'),
 ('T014','L-sit',0.00,'Intermedio',FALSE,TRUE,'Core isométrico',TRUE,'Media',
- 'Isométrico avanzado para core.\nFortalece abdominales y flexores de cadera.\nExcelente para control corporal.');
+'Isométrico avanzado para core.
+Fortalece abdominales y flexores de cadera.
+Excelente para control corporal.');
 
 INSERT INTO HIPERTROFIA VALUES
 ('T002','Técnica de repeticiones lentas',40.00,'Pectoral','Tríceps','10-12',50,90,'Push/Pull/Legs',480.00,'Media',
- 'Método centrado en aumentar el tiempo bajo tensión.\nMejora la conexión mente-músculo.\nIdeal para fases de volumen controlado.'),
+'Método centrado en aumentar el tiempo bajo tensión.
+Mejora la conexión mente-músculo.
+Ideal para fases de volumen controlado.'),
 ('T003','Super series',35.00,'Espalda','Bíceps','12-15',40,60,'Torso/Pierna',520.00,'Difícil',
- 'Super series combinadas sin descanso.\nAumentan intensidad y congestión muscular.\nRecomendado para usuarios avanzados.'),
+'Super series combinadas sin descanso.
+Aumentan intensidad y congestión muscular.
+Recomendado para usuarios avanzados.'),
 ('T007','Drop sets',30.00,'Hombro','Trapecio','12-20',45,75,'Fullbody',450.00,'Media',
- 'Método avanzado reduciendo peso sin descanso.\nEstimula fibras profundas.\nMuy efectivo para romper estancamientos.'),
+'Método avanzado reduciendo peso sin descanso.
+Estimula fibras profundas.
+Muy efectivo para romper estancamientos.'),
 ('T015','Pirámides ascendentes',50.00,'Piernas','Glúteos','8-12',55,120,'Pierna',600.00,'Media',
- 'Progresión aumentando peso en cada serie.\nExcelente para fuerza e hipertrofia.\nMuy usado en rutinas de pierna.'),
+'Progresión aumentando peso en cada serie.
+Excelente para fuerza e hipertrofia.
+Muy usado en rutinas de pierna.'),
 ('T016','Entrenamiento al fallo',45.00,'Pectoral','Hombro','6-10',60,150,'Push',700.00,'Difícil',
- 'Entrenamiento llevado al fallo muscular.\nAlta intensidad y demanda física.\nSolo recomendado para avanzados.'),
+'Entrenamiento llevado al fallo muscular.
+Alta intensidad y demanda física.
+Solo recomendado para avanzados.'),
 ('T017','Hipertrofia de piernas',55.00,'Cuádriceps','Isquios','10-15',50,120,'Pierna',650.00,'Media',
- 'Rutina enfocada en volumen de piernas.\nIncluye sentadilla, prensa y extensiones.\nIdeal para crecimiento muscular.'),
+'Rutina enfocada en volumen de piernas.
+Incluye sentadilla, prensa y extensiones.
+Ideal para crecimiento muscular.'),
 ('T018','Método 5x5 modificado',60.00,'Espalda','Bíceps','5',30,180,'Torso',750.00,'Difícil',
- 'Método clásico de fuerza adaptado a hipertrofia.\nSeries pesadas con descansos largos.\nExcelente para progresión.');
+'Método clásico de fuerza adaptado a hipertrofia.
+Series pesadas con descansos largos.
+Excelente para progresión.');
 
 INSERT INTO POWERLIFTING VALUES
 ('T006',180.50,'Peso muerto',85,3,0.45,TRUE,'Cinturón',FALSE,'Reglamentaria','Difícil',
- 'Sesión centrada en peso muerto pesado.\nIncluye técnica, velocidad y control postural.\nIdeal para fases de fuerza máxima.'),
+'Sesión centrada en peso muerto pesado.
+Incluye técnica, velocidad y control postural.
+Ideal para fases de fuerza máxima.'),
 ('T019',200.00,'Sentadilla',80,5,0.40,TRUE,'Rodilleras',FALSE,'Profunda','Difícil',
- 'Sentadilla pesada con profundidad reglamentaria.\nRequiere movilidad y técnica avanzada.\nMuy demandante para piernas.'),
-('T020',150.00,'Press banca',70,6,0.50,FALSE,NULL,TRUE,'Normal','Media',
- 'Press banca con pausa en pecho.\nMejora control y fuerza en el movimiento.\nIdeal para progresión técnica.'),
+'Sentadilla pesada con profundidad reglamentaria.
+Requiere movilidad y técnica avanzada.
+Muy demandante para piernas.'),
+('T020',150.00,'Press banca',70,6,0.50,FALSE,'No se usa',TRUE,'Normal','Media',
+'Press banca con pausa en pecho.
+Mejora control y fuerza en el movimiento.
+Ideal para progresión técnica.'),
 ('T021',220.00,'Peso muerto',90,2,0.35,TRUE,'Cinturón y straps',FALSE,'Reglamentaria','Difícil',
- 'Peso muerto muy pesado.\nEnfocado en fuerza máxima.\nRequiere calentamiento específico.'),
-('T022',130.00,'Sentadilla',65,8,0.55,FALSE,NULL,FALSE,'Paralela','Media',
- 'Sentadilla técnica con peso moderado.\nIdeal para mejorar forma y resistencia.\nPerfecta para fases de volumen.');
+'Peso muerto muy pesado.
+Enfocado en fuerza máxima.
+Requiere calentamiento específico.'),
+('T022',130.00,'Sentadilla',65,8,0.55,FALSE,'No se usa',FALSE,'Paralela','Media',
+'Sentadilla técnica con peso moderado.
+Ideal para mejorar forma y resistencia.
+Perfecta para fases de volumen.');
 
 INSERT INTO CARDIO VALUES
 ('T004','Cinta',5.00,'6:00',135,160,'Zona 2',280,'Continuo',1.0,NULL,'Media',
- 'Cardio continuo en cinta.\nRitmo estable y controlado.\nIdeal para mejorar resistencia general.'),
+'Cardio continuo en cinta.
+Ritmo estable y controlado.
+Ideal para mejorar resistencia general.'),
 ('T009','HIIT',3.00,'4:30',155,185,'Zona 4',420,'Intervalos',2.5,'40/20','Difícil',
- 'Entrenamiento HIIT de alta intensidad.\nIncluye intervalos cortos de esfuerzo máximo.\nExcelente para mejorar VO2max.'),
+'Entrenamiento HIIT de alta intensidad.
+Incluye intervalos cortos de esfuerzo máximo.
+Excelente para mejorar VO2max.'),
 ('T023','Caminata',2.00,'10:00',110,130,'Zona 1',120,'Suave',0.0,NULL,'Fácil',
- 'Caminata ligera.\nPerfecta para principiantes o recuperación.\nBajo impacto y fácil de mantener.'),
+'Caminata ligera.
+Perfecta para principiantes o recuperación.
+Bajo impacto y fácil de mantener.'),
 ('T024','Carrera larga',10.00,'5:30',145,170,'Zona 3',600,'Continuo',1.0,NULL,'Difícil',
- 'Carrera de larga distancia.\nMejora resistencia aeróbica.\nRequiere buena base cardiovascular.'),
+'Carrera de larga distancia.
+Mejora resistencia aeróbica.
+Requiere buena base cardiovascular.'),
 ('T025','Bicicleta',8.00,'4:20',140,165,'Zona 2',350,'Continuo',0.5,NULL,'Media',
- 'Sesión de bicicleta.\nTrabajo constante y fluido.\nIdeal para resistencia y quema de calorías.'),
+'Sesión de bicicleta.
+Trabajo constante y fluido.
+Ideal para resistencia y quema de calorías.'),
 ('T026','Elíptica',3.50,'6:30',130,150,'Zona 1',200,'Suave',0.0,NULL,'Fácil',
- 'Entrenamiento suave en elíptica.\nBajo impacto y fácil de mantener.\nPerfecto para principiantes.');
+'Entrenamiento suave en elíptica.
+Bajo impacto y fácil de mantener.
+Perfecto para principiantes.');
 
 INSERT INTO ELASTICIDAD VALUES
 ('T005','Estático',1,'Cuerpo completo','Estático',30,TRUE,FALSE,NULL,'Relajación','Baja','Fácil',
- 'Estiramientos estáticos mantenidos.\nMejoran relajación muscular.\nPerfecto para sesiones suaves.'),
+'Estiramientos estáticos mantenidos.
+Mejoran relajación muscular.
+Perfecto para sesiones suaves.'),
 ('T010','Dinámico',3,'Cadera','Dinámico',20,TRUE,TRUE,'Banda elástica','Apertura','Media','Media',
- 'Movilidad dinámica enfocada en articulaciones.\nIncluye movimientos fluidos.\nIdeal para calentar.'),
+'Movilidad dinámica enfocada en articulaciones.
+Incluye movimientos fluidos.
+Ideal para calentar.'),
 ('T027','PNF',2,'Isquios','PNF',15,TRUE,FALSE,NULL,'Flexibilidad','Alta','Media',
- 'Método PNF para mejorar flexibilidad.\nIncluye contracción y relajación.\nMuy efectivo para isquios.'),
+'Método PNF para mejorar flexibilidad.
+Incluye contracción y relajación.
+Muy efectivo para isquios.'),
 ('T028','Yoga avanzado',4,'Columna','Yoga',40,TRUE,TRUE,'Bloques','Control','Alta','Difícil',
- 'Secuencia avanzada de yoga.\nRequiere control corporal y respiración.\nIdeal para usuarios experimentados.'),
+'Secuencia avanzada de yoga.
+Requiere control corporal y respiración.
+Ideal para usuarios experimentados.'),
 ('T029','Estático suave',1,'Cuello','Estático',20,TRUE,FALSE,NULL,'Relajación','Baja','Fácil',
- 'Estiramientos suaves para cuello.\nReducen tensión acumulada.\nPerfecto para sesiones de relajación.'),
+'Estiramientos suaves para cuello.
+Reducen tensión acumulada.
+Perfecto para sesiones de relajación.'),
 ('T030','Movilidad articular',3,'Hombros','Dinámico',25,TRUE,FALSE,NULL,'Rango articular','Media','Difícil',
- 'Movilidad enfocada en hombros.\nMejora rango articular y control.\nMuy útil para deportes overhead.');
+'Movilidad enfocada en hombros.
+Mejora rango articular y control.
+Muy útil para deportes overhead.');
+
 
 -- INSERTS PARA PLAN_ALIMENTICIO
 INSERT INTO PLAN_ALIMENTICIO VALUES
