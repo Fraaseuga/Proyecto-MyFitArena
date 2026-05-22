@@ -3,15 +3,15 @@ package Funcionalidades;
 public class Usuario {
 
 	private String dni;
-	String nombre;
-	String apellidos;
-	int edad;
-	boolean esHombre;
-	String poblacion;
-	double peso;
-	double estatura;
-	int telefono;
-	String correoElectronico;
+	private String nombre;
+	private String apellidos;
+	private int edad;
+	private boolean esHombre;
+	private String poblacion;
+	private double peso;
+	private double estatura;
+	private int telefono;
+	private String correoElectronico;
 	
 	public Usuario() {
 		

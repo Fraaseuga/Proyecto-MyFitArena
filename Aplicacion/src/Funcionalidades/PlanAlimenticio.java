@@ -2,11 +2,11 @@ package Funcionalidades;
 
 public class PlanAlimenticio {
 
-	int caloriasTotales;
-	double proteinas;
-	double grasas;
-	double carbohidratos;
-	String objetivo;
+	private int caloriasTotales;
+	private double proteinas;
+	private double grasas;
+	private double carbohidratos;
+	private String objetivo;
 	
 	public PlanAlimenticio() {
 		
