@@ -166,12 +166,17 @@ public class VentanaRegistrar extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					// Se comprueba si todos los campos están rellenados
-					if(tfNombre.getText() != null
-							|| tfApellidos.getText() != null
-							|| tfDNI.getText() != null
-							|| tfTelefono.getText() != null
-							|| tfCorreo.getText() != null
-							|| tfContrasena.getText() != null) {	
+					if(tfNombre.getText().equalsIgnoreCase("")
+							|| tfApellidos.getText().equalsIgnoreCase("")
+							|| tfDNI.getText().equalsIgnoreCase("")
+							|| tfTelefono.getText().equalsIgnoreCase("")
+							|| tfCorreo.getText().equalsIgnoreCase("")
+							|| tfContrasena.getText().equalsIgnoreCase("")) {	
+						JOptionPane.showMessageDialog(contentPane, 
+								"Debes rellenar todos los campos",
+								"ERROR",
+								JOptionPane.ERROR_MESSAGE);
+					}else {
 						int telefono = Integer.parseInt(tfTelefono.getText());
 						
 						// Se comprueba si las dos contraseñas coinciden
@@ -200,11 +205,6 @@ public class VentanaRegistrar extends JFrame {
 									"ERROR",
 									JOptionPane.ERROR_MESSAGE);
 						}
-					}else {
-						JOptionPane.showMessageDialog(contentPane, 
-								"Debes rellenar todos los campos",
-								"ERROR",
-								JOptionPane.ERROR_MESSAGE);
 					}
 				}catch(Exception er) {
 					JOptionPane.showMessageDialog(contentPane, 

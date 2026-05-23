@@ -144,4 +144,27 @@ public class ClubDAO {
 
 	    return false;
 	}
+	
+	// Este método devolverá el cod_club del club según el nombre que reciba
+	public static String getCodClubPorNombre(String nombreClub) {
+	    try (
+	        Connection con = Conexion.getConexion();
+	        PreparedStatement ps = con.prepareStatement("SELECT codclub FROM club WHERE nombre = ?")
+	    ) {
+
+	        ps.setString(1, nombreClub);
+
+	        ResultSet rs = ps.executeQuery();
+
+	        if (rs.next()) {
+	        	return rs.getString("codclub"); // Devuelve el código del club
+	        } else {
+	        	return null; // No existe un club con ese nombre
+	        }
+	    } catch (SQLException er) {
+	        er.printStackTrace();
+	        return null;
+	    }
+	}
+
 }

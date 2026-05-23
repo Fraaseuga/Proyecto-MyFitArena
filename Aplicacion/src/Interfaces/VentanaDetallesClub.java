@@ -4,6 +4,7 @@ import javax.swing.*;
 
 import Funcionalidades.Colores;
 import dao.ClubDAO;
+import dao.UsuarioDAO;
 import Funcionalidades.Club;
 import java.awt.*;
 import java.awt.event.*;
@@ -42,7 +43,7 @@ public class VentanaDetallesClub extends JFrame {
         JLabel lblNombre = new JLabel("Nombre: " + club.getNombre());
         lblNombre.setForeground(Colores.amarilloTexto);
         lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 18));
-        lblNombre.setBounds(30, 90, 400, 25);
+        lblNombre.setBounds(30, 90, 247, 25);
         contentPane.add(lblNombre);
 
         JLabel lblMiembros = new JLabel("Miembros: " + club.getMiembros());
@@ -57,7 +58,7 @@ public class VentanaDetallesClub extends JFrame {
         lblCapacidad.setBounds(30, 170, 400, 25);
         contentPane.add(lblCapacidad);
 
-        JLabel lblDescripcion = new JLabel(club.getDescripcion());
+        JLabel lblDescripcion = new JLabel("Descripción:");
         lblDescripcion.setForeground(Colores.amarilloTexto);
         lblDescripcion.setFont(new Font("Tahoma", Font.PLAIN, 18));
         lblDescripcion.setBounds(30, 210, 200, 25);
@@ -92,6 +93,7 @@ public class VentanaDetallesClub extends JFrame {
         contentPane.add(btnVolver);
         
         btnGestionMIembros = new JButton("Gestion de Miembros");
+        btnGestionMIembros.setFont(new Font("Tahoma", Font.PLAIN, 12));
         btnGestionMIembros.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		
@@ -102,7 +104,7 @@ public class VentanaDetallesClub extends JFrame {
                 vgm.setVisible(true);
         	}
         });
-        btnGestionMIembros.setBounds(268, 46, 170, 20);
+        btnGestionMIembros.setBounds(322, 90, 128, 25);
         btnGestionMIembros.setBackground(Colores.grisMedio);
 		btnGestionMIembros.setForeground(Colores.amarilloVivo);
 		btnGestionMIembros.setBorder(null);
@@ -111,6 +113,7 @@ public class VentanaDetallesClub extends JFrame {
        
 
 		JButton btnEliminarClub = new JButton("Eliminar club");
+		btnEliminarClub.setFont(new Font("Tahoma", Font.PLAIN, 12));
         btnEliminarClub.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		
@@ -146,12 +149,26 @@ public class VentanaDetallesClub extends JFrame {
                 }
         	}
         });
-        btnEliminarClub.setBounds(290, 75, 126, 20);
+        btnEliminarClub.setBounds(322, 124, 128, 25);
         btnEliminarClub.setBackground(Colores.grisMedio);
 		btnEliminarClub.setForeground(Colores.amarilloVivo);
 		btnEliminarClub.setBorder(null);
         contentPane.add(btnEliminarClub);
         btnEliminarClub.setVisible(esPropietario);
+        
+        JButton btnUnirseAlClub = new JButton("Unirse al club");
+        btnUnirseAlClub.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		UsuarioDAO.actualizarClubUsuario(VentanaPrincipal.propietario, ClubDAO.getCodClubPorNombre(club.getNombre()));
+        	}
+        });
+        btnUnirseAlClub.setForeground(new Color(255, 215, 0));
+        btnUnirseAlClub.setFont(new Font("Tahoma", Font.PLAIN, 12));
+        btnUnirseAlClub.setBorder(null);
+        btnUnirseAlClub.setBackground(new Color(51, 51, 51));
+        btnUnirseAlClub.setBounds(322, 189, 128, 25);
+        contentPane.add(btnUnirseAlClub);
+        btnUnirseAlClub.setVisible(!UsuarioDAO.perteneceAClub(VentanaPrincipal.propietario));
 
     }
 }

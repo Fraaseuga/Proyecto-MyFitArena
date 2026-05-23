@@ -137,4 +137,49 @@ public class UsuarioDAO {
 
 	    return false;
 	}
+	
+	// Este método se va a utilizar para comprobar si un usuario ya pertenece a un club
+	public static boolean perteneceAClub(String dni) {
+		try (
+		        Connection con = Conexion.getConexion();
+		        PreparedStatement ps = con.prepareStatement("SELECT cod_club FROM usuario WHERE dni = ?");
+		    ) {
+			ps.setString(1, dni);
+
+		    ResultSet rs = ps.executeQuery();
+		        
+		    if (rs.next()) {
+		       	String valor = rs.getString("cod_club");
+		       	if(valor != null) {
+		       		return true; // Si que pertence a un club
+		       	}
+		        return false; // No pertence a un club
+		    }
+		    return true; // En caso de que no exista el usuario
+		} catch (SQLException er) {
+		        er.printStackTrace();
+		        return false;
+		}
+	}
+
+	// Este método actualiza el cod_club de un usuario al valor recibido
+	public static boolean actualizarClubUsuario(String dni, String nuevoCodClub) {
+	    try (
+	        Connection con = Conexion.getConexion();
+	        PreparedStatement ps = con.prepareStatement("UPDATE usuario SET cod_club = ? WHERE dni = ?")
+	    ) {
+
+	        ps.setString(1, nuevoCodClub);
+	        ps.setString(2, dni);
+
+	        int filas = ps.executeUpdate();
+
+	        return filas > 0; // true si se actualizó, false si no existe el usuario
+
+	    } catch (SQLException er) {
+	        er.printStackTrace();
+	        return false;
+	    }
+	}
+
 }
