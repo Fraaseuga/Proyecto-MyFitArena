@@ -2,9 +2,9 @@ package Funcionalidades;
 
 public class Anuncio {
 
-	String titulo;
-	String contenido;
-	String fechaPublicacion;
+	private String titulo;
+	private String contenido;
+	private String fechaPublicacion;
 	
 	public Anuncio() {
 		

@@ -2,8 +2,8 @@ package Funcionalidades;
 
 public class Recomendacion {
 
-	String mensaje;
-	int prioridad;
+	private String mensaje;
+	private int prioridad;
 			
 	public Recomendacion() {
 		
