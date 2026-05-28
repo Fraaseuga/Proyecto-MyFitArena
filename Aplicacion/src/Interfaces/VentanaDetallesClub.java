@@ -160,6 +160,8 @@ public class VentanaDetallesClub extends JFrame {
         btnUnirseAlClub.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		UsuarioDAO.actualizarClubUsuario(VentanaPrincipal.propietario, ClubDAO.getCodClubPorNombre(club.getNombre()));
+        		JOptionPane.showMessageDialog(contentPane, 
+        				"Te has unido al club "+ClubDAO.getNombreClubPorDni(VentanaPrincipal.propietario));
         	}
         });
         btnUnirseAlClub.setForeground(new Color(255, 215, 0));
