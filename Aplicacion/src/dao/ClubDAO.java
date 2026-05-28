@@ -167,4 +167,53 @@ public class ClubDAO {
 	    }
 	}
 
+	// Este método devuelve el nombre del club al que pertenece un usuario según su DNI
+	public static String getNombreClubPorDni(String dni) {
+
+	    String sqlUsuario = "SELECT cod_club FROM usuario WHERE dni = ?";
+	    String sqlClub = "SELECT nombre FROM club WHERE codclub = ?";
+
+	    try (
+	        Connection con = Conexion.getConexion();
+	        PreparedStatement psUsuario = con.prepareStatement(sqlUsuario)
+	    ) {
+
+	        psUsuario.setString(1, dni);
+
+	        try (ResultSet rsUsuario = psUsuario.executeQuery()) {
+
+	            if (rsUsuario.next()) {
+
+	                String codClub = rsUsuario.getString("cod_club");
+
+	                if (codClub == null) {
+	                    return null; // El usuario no pertenece a ningún club
+	                }
+
+	                // Buscar el nombre del club
+	                try (PreparedStatement psClub = con.prepareStatement(sqlClub)) {
+
+	                    psClub.setString(1, codClub);
+
+	                    try (ResultSet rsClub = psClub.executeQuery()) {
+
+	                        if (rsClub.next()) {
+	                            return rsClub.getString("nombre");
+	                        } else {
+	                            return null; // No existe el club (inconsistencia)
+	                        }
+	                    }
+	                }
+
+	            } else {
+	                return null; // No existe el usuario
+	            }
+	        }
+
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	        return null;
+	    }
+	}
+
 }
