@@ -5,7 +5,9 @@ import javax.swing.table.DefaultTableModel;
 
 import Funcionalidades.Club;
 import Funcionalidades.Colores;
+import Funcionalidades.Usuario;
 import dao.ClubDAO;
+import dao.UsuarioDAO;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -100,7 +102,11 @@ public class VentanaClub extends JFrame {
         btnCrearClub.setForeground(Colores.amarilloVivo);
         btnCrearClub.setBorder(null);
         btnCrearClub.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        btnCrearClub.setBounds(632, 104, 180, 35);
+        if(UsuarioDAO.perteneceAClub(VentanaPrincipal.propietario)) {        	
+        	btnCrearClub.setBounds(632, 80, 180, 35);
+        }else {        	
+        	btnCrearClub.setBounds(632, 104, 180, 35);
+        }
         contentPane.add(btnCrearClub);
 
         JButton btnVerDetalles = new JButton("Ver Detalles");
@@ -108,13 +114,43 @@ public class VentanaClub extends JFrame {
         btnVerDetalles.setForeground(Colores.amarilloVivo);
         btnVerDetalles.setBorder(null);
         btnVerDetalles.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        if(UsuarioDAO.perteneceAClub(VentanaPrincipal.propietario)) {
+        	btnVerDetalles.setBounds(632, 130, 180, 35);        	
+        }else {        	
         btnVerDetalles.setBounds(632, 154, 180, 35);
+        }
         contentPane.add(btnVerDetalles);
         
         JSeparator separator_2_5_2 = new JSeparator();
         separator_2_5_2.setBackground(Color.WHITE);
-        separator_2_5_2.setBounds(681, 226, 83, 68);
+        separator_2_5_2.setBounds(681, 239, 83, 68);
         contentPane.add(separator_2_5_2);
+        
+        if(UsuarioDAO.perteneceAClub(VentanaPrincipal.propietario)) {        	
+        	JButton btnAbandonarClub = new JButton("Abandonar club");
+        	btnAbandonarClub.addActionListener(new ActionListener() {
+        		public void actionPerformed(ActionEvent e) {
+        			String club = ClubDAO.getNombreClubPorDni(VentanaPrincipal.propietario);
+        			int decision = JOptionPane.showConfirmDialog(contentPane, 
+        					"¿Seguro que quieres abandonar el club "+club+"?",
+    	                    "Confirmación",
+    	                    JOptionPane.YES_NO_OPTION);
+        			
+        			if(decision == JOptionPane.YES_OPTION) {
+        				UsuarioDAO.eliminarMiembroClub(VentanaPrincipal.propietario);    
+        				VentanaClub.this.dispose();
+        				VentanaClub vc = new VentanaClub(vp);
+        				vc.setVisible(true);
+        			}
+        		}
+        	});
+        	btnAbandonarClub.setForeground(new Color(255, 128, 128));
+        	btnAbandonarClub.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        	btnAbandonarClub.setBorder(null);
+        	btnAbandonarClub.setBackground(new Color(51, 51, 51));
+        	btnAbandonarClub.setBounds(632, 181, 180, 35);
+        	contentPane.add(btnAbandonarClub);
+        }
 
         // ACCIONES
         btnOrdenarNombre.addActionListener(new ActionListener() {
