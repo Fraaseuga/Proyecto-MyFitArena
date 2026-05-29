@@ -704,3 +704,16 @@ INSERT INTO PROGRESO VALUES
 ('PR08','2024-08-28 17:00','Bajo','88888888H'),
 ('PR09','2024-09-30 18:00','Alto','99999999I'),
 ('PR10','2024-10-05 19:00','Medio','00000000J');
+
+-- INSERTS PARA TICKETS
+INSERT INTO tickets (nombre, email, asunto, mensaje) VALUES
+('Juan Pérez', 'juan.perez@example.com', 'Consulta general', 'Quisiera saber los horarios de atención.'),
+('María García', 'maria.garcia@example.com', 'Soporte técnico', 'La aplicación no me deja iniciar sesión.'),
+('Carlos López', 'carlos.lopez@example.com', 'Sugerencia', 'Sería útil añadir un modo oscuro.'),
+('Ana Martínez', 'ana.martinez@example.com', 'Otro', 'Tengo una consulta que no encaja en las categorías.'),
+('Laura Torres', 'laura.torres@example.com', 'Consulta general', '¿Cómo puedo cambiar mi contraseña?'),
+('Pedro Sánchez', 'pedro.sanchez@example.com', 'Soporte técnico', 'El sistema se queda congelado al cargar mi perfil.'),
+('Lucía Romero', 'lucia.romero@example.com', 'Sugerencia', 'Podrían añadir más opciones de personalización.'),
+('David Ruiz', 'david.ruiz@example.com', 'Consulta general', '¿Dónde puedo ver mis facturas anteriores?'),
+('Sofía Navarro', 'sofia.navarro@example.com', 'Otro', 'Quiero eliminar mi cuenta definitivamente.'),
+('Miguel Torres', 'miguel.torres@example.com', 'Soporte técnico', 'No recibo el correo de verificación.');
