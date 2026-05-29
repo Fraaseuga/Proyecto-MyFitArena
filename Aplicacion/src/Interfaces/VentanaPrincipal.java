@@ -1,6 +1,7 @@
 package Interfaces;
 
 import dao.ClubDAO;
+import dao.TicketsDAO;
 import dao.UsuarioDAO;
 
 import java.awt.EventQueue;
@@ -160,6 +161,16 @@ public class VentanaPrincipal extends JFrame {
 		modeloTabla.addRow(new Object[]{"30.0 - 34.9", "Obesidad grado I"});
 		modeloTabla.addRow(new Object[]{"35.0 - 39.9", "Obesidad grado II"});
 		modeloTabla.addRow(new Object[]{"40 o más", "Obesidad grado III"});
+		
+		JSeparator separator_4_1 = new JSeparator();
+		separator_4_1.setBackground(Color.YELLOW);
+		separator_4_1.setBounds(10, 692, 186, 155);
+		contentPane.add(separator_4_1);
+		
+		JSeparator separator_4 = new JSeparator();
+		separator_4.setBackground(Color.YELLOW);
+		separator_4.setBounds(10, 480, 186, 155);
+		contentPane.add(separator_4);
 		
 		JSeparator separator_2_5_2_1_2_2_1 = new JSeparator();
 		separator_2_5_2_1_2_2_1.setOrientation(SwingConstants.VERTICAL);
@@ -354,6 +365,7 @@ public class VentanaPrincipal extends JFrame {
 		tablaIMC.setBounds(943, 95, 212, 128);
 		
 		JScrollPane spTabla = new JScrollPane(tablaIMC);
+		spTabla.setIgnoreRepaint(true);
 		spTabla.setBorder(null);
 		spTabla.setBackground(new Color(255, 0, 255));
 		spTabla.setBounds(921, 77, 231, 203);
@@ -686,6 +698,65 @@ public class VentanaPrincipal extends JFrame {
 		list_1_1.setBackground(new Color(22, 22, 22));
 		list_1_1.setBounds(695, 321, 471, 372);
 		contentPane.add(list_1_1);
+		
+		JLabel lblConsultasRealizadas = new JLabel("Consultas realizadas");
+		lblConsultasRealizadas.setForeground(Colores.amarilloSuave);
+		lblConsultasRealizadas.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblConsultasRealizadas.setBounds(21, 474, 189, 73);
+		contentPane.add(lblConsultasRealizadas);
+		
+		JSeparator separator_2_3_1 = new JSeparator();
+		separator_2_3_1.setBackground(Color.WHITE);
+		separator_2_3_1.setBounds(20, 550, 8, 57);
+		contentPane.add(separator_2_3_1);
+		
+		int cantidadConsultaGeneral= TicketsDAO.contarTicketsPorAsunto("Consulta general");
+		JLabel lblConsultaGeneral = new JLabel("Consulta general: "+cantidadConsultaGeneral);
+		lblConsultaGeneral.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblConsultaGeneral.setForeground(Colores.amarilloTexto);
+		lblConsultaGeneral.setBounds(38, 538, 156, 24);
+		contentPane.add(lblConsultaGeneral);
+		
+		JSeparator separator_2_3_1_1 = new JSeparator();
+		separator_2_3_1_1.setBackground(Color.WHITE);
+		separator_2_3_1_1.setBounds(20, 584, 8, 57);
+		contentPane.add(separator_2_3_1_1);
+		
+		int cantidadSoporteTecnico = TicketsDAO.contarTicketsPorAsunto("Soporte técnico");
+		JLabel lblSoporteTécnico = new JLabel("Soporte técnico: "+cantidadSoporteTecnico);
+		lblSoporteTécnico.setForeground(Colores.amarilloTexto);
+		lblSoporteTécnico.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblSoporteTécnico.setBounds(38, 572, 156, 24);
+		contentPane.add(lblSoporteTécnico);
+		
+		JSeparator separator_2_3_1_2 = new JSeparator();
+		separator_2_3_1_2.setBackground(Color.WHITE);
+		separator_2_3_1_2.setBounds(21, 618, 8, 57);
+		contentPane.add(separator_2_3_1_2);
+		
+		int cantidadSugerencia = TicketsDAO.contarTicketsPorAsunto("Sugerencia");
+		JLabel lblSugerencia = new JLabel("Sugerencia: "+cantidadSugerencia);
+		lblSugerencia.setForeground(Colores.amarilloTexto);
+		lblSugerencia.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblSugerencia.setBounds(39, 606, 156, 24);
+		contentPane.add(lblSugerencia);
+		
+		JSeparator separator_2_3_1_3 = new JSeparator();
+		separator_2_3_1_3.setBackground(Color.WHITE);
+		separator_2_3_1_3.setBounds(21, 654, 8, 57);
+		contentPane.add(separator_2_3_1_3);
+		
+		int cantidadOtro= TicketsDAO.contarTicketsPorAsunto("Otro");
+		JLabel lblOtro = new JLabel("Otro: "+cantidadOtro);
+		lblOtro.setForeground(Colores.amarilloTexto);
+		lblOtro.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblOtro.setBounds(39, 642, 156, 24);
+		contentPane.add(lblOtro);
+		
+		JList<String> list_2 = new JList<String>();
+		list_2.setBackground(new Color(22, 22, 22));
+		list_2.setBounds(10, 480, 186, 213);
+		contentPane.add(list_2);
 		
 	}
 }
