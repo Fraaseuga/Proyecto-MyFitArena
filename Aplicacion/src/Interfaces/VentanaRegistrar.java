@@ -197,6 +197,8 @@ public class VentanaRegistrar extends JFrame {
 										JOptionPane.INFORMATION_MESSAGE);
 								
 								VentanaPrincipal.propietario = tfDNI.getText();
+								VentanaIniciarSesion.usuarioActual = UsuarioDAO.getUsuarioPorDni(tfDNI.getText());
+								
 								VentanaRegistrar.this.dispose();
 								vp.dispose();
 								VentanaPrincipal nueva = new VentanaPrincipal();

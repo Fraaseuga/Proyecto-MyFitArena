@@ -1,5 +1,5 @@
 // URL de la API
-const API_URL = 'http://localhost/my_fit_arena/API/tickets.php';
+const API_URL = '../API/tickets.php';
 
 // Traducciones para tickets
 const traduccionesTickets = {

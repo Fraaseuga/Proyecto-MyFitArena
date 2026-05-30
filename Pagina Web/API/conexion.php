@@ -1,33 +1,50 @@
 <?php
-// Configuración de la cabecera para evitar problemas de CORS y definir JSON como salida
+// =======================================================
+// CABECERAS (CORS + JSON)
+// =======================================================
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 header("Content-Type: application/json; charset=UTF-8");
 
-// Si es una petición OPTIONS, salir de inmediato (Pre-flight request de CORS)
+// Preflight request (CORS)
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit(0);
 }
 
-// Configuración de la base de datos (XAMPP por defecto)
-$host = "localhost";
-$db_name = "my_fit_arena_db";
-$username = "root";
-$password = "";
+// =======================================================
+// CONFIGURACIÓN POSTGRESQL (MV)
+// =======================================================
+$host = "10.192.91.220";
+$port = "5432";
+$db_name = "MyFitArena";
+$username = "postgres";
+$password = "1234";
 
-/* ========================================================
-   CONEXIÓN USANDO PDO (Recomendada y Moderna)
-   ======================================================== */
+// =======================================================
+// CONEXIÓN PDO POSTGRESQL
+// =======================================================
 try {
-    $conexion = new PDO("mysql:host=" . $host . ";dbname=" . $db_name . ";charset=utf8mb4", $username, $password);
-    // Configurar el modo de error de PDO a excepción
+    $conexion = new PDO(
+        "pgsql:host=$host;port=$port;dbname=$db_name",
+        $username,
+        $password
+    );
+
+    // Modo de errores
     $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // Configurar la persistencia de datos devueltos en forma de arrays asociativos
+
+    // Resultados como arrays asociativos
     $conexion->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
 } catch (PDOException $exception) {
-    http_response_code(500); // 500 Internal Server Error
-    echo json_encode(array("mensaje" => "Error de conexión a la base de datos: " . $exception->getMessage()));
+    http_response_code(500);
+
+    echo json_encode([
+        "mensaje" => "Error de conexión a la base de datos",
+        "error" => $exception->getMessage()
+    ]);
+
     exit();
 }
 ?>

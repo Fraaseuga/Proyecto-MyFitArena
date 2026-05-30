@@ -7,7 +7,7 @@ import java.sql.Connection;
 public class Conexion {
 	private static final String nombredb = "MyFitArena";
 	private static final String puerto = "5432";
-	private static final String url = "jdbc:postgresql://localhost:"+puerto+"/"+nombredb;
+	private static final String url = "jdbc:postgresql://10.192.91.220:"+puerto+"/"+nombredb;
 	private static final String user = "postgres";
 	private static final String password = "1234";
 	
