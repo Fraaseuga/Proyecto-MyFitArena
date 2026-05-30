@@ -181,24 +181,33 @@ public class VentanaRegistrar extends JFrame {
 						
 						// Se comprueba si las dos contraseñas coinciden
 						if(tfContrasena.getText().equals(tfConfirmarContrasena.getText())) {
-							// Se crea el usuario con el método crearUsuario de la clase UsuarioDAO
-							String mensaje = UsuarioDAO.crearUsuario(
-									tfDNI.getText(),
-									tfNombre.getText(),
-									tfApellidos.getText(),
-									telefono,
-									tfCorreo.getText(),
-									tfContrasena.getText());
-							JOptionPane.showMessageDialog(contentPane, 
-									mensaje,
-									"Confirmación",
-									JOptionPane.INFORMATION_MESSAGE);
+							// Se comprueba si el email es válido
+							if(VentanaRegistrar.esEmailValido(tfCorreo.getText())) {								
+								// Se crea el usuario con el método crearUsuario de la clase UsuarioDAO
+								String mensaje = UsuarioDAO.crearUsuario(
+										tfDNI.getText(),
+										tfNombre.getText(),
+										tfApellidos.getText(),
+										telefono,
+										tfCorreo.getText(),
+										tfContrasena.getText());
+								JOptionPane.showMessageDialog(contentPane, 
+										mensaje,
+										"Confirmación",
+										JOptionPane.INFORMATION_MESSAGE);
+								
+								VentanaPrincipal.propietario = tfDNI.getText();
+								VentanaRegistrar.this.dispose();
+								vp.dispose();
+								VentanaPrincipal nueva = new VentanaPrincipal();
+								nueva.setVisible(true);
+							}else {
+								JOptionPane.showMessageDialog(contentPane, 
+										"El correo no es válido",
+										"ERROR",
+										JOptionPane.ERROR_MESSAGE);	
+							}
 							
-							VentanaPrincipal.propietario = tfDNI.getText();
-							VentanaRegistrar.this.dispose();
-							vp.dispose();
-							VentanaPrincipal nueva = new VentanaPrincipal();
-							nueva.setVisible(true);
 						}else {
 							JOptionPane.showMessageDialog(contentPane, 
 									"Las contraseñas no coinciden",
@@ -216,4 +225,52 @@ public class VentanaRegistrar extends JFrame {
 		});
 
 	}
+	
+	public static boolean esEmailValido(String email) {
+	    if (email == null) return false;
+
+	    int length = email.length();
+
+	    // No puede ser demasiado corto
+	    if (length < 5) return false;
+
+	    int posArroba = -1;
+	    int posPunto = -1;
+
+	    // 1. Buscar la @ y el último punto usando charAt
+	    for (int i = 0; i < length; i++) {
+	        char c = email.charAt(i);
+
+	        if (c == '@') {
+	            // Si ya había una @ → inválido
+	            if (posArroba != -1) return false;
+	            posArroba = i;
+	        }
+
+	        if (c == '.') {
+	            posPunto = i;
+	        }
+
+	        // No permitir espacios
+	        if (c == ' ') return false;
+	    }
+
+	    // Debe haber exactamente una @
+	    if (posArroba == -1) return false;
+
+	    // La @ no puede estar al principio ni al final
+	    if (posArroba == 0 || posArroba == length - 1) return false;
+
+	    // Debe haber un punto DESPUÉS de la @
+	    if (posPunto == -1 || posPunto < posArroba) return false;
+
+	    // El punto no puede ser el último carácter
+	    if (posPunto == length - 1) return false;
+
+	    // La extensión debe tener al menos 2 caracteres
+	    if (length - posPunto - 1 < 2) return false;
+
+	    return true;
+	}
+
 }

@@ -40,7 +40,11 @@ public class VentanaGestionMiembros extends JFrame {
         
         modelo = new DefaultTableModel();
         tableMiembros = new JTable(modelo);
+        tableMiembros.setForeground(Colores.amarilloTexto);
+        tableMiembros.setFillsViewportHeight(true);
+        tableMiembros.setBackground(Colores.grisMedio);
         JScrollPane scrollTablaMiembros = new JScrollPane(tableMiembros);
+        scrollTablaMiembros.setBackground(new Color(0, 128, 0));
         scrollTablaMiembros.setBounds(20, 100, 445, 196);
         contentPane.add(scrollTablaMiembros);
         

@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import Funcionalidades.Usuario;
+
 public class UsuarioDAO {
 	// Este método se utiliza para obtener la cantidad de usuarios que pertenecen a clubs
 	public static int getTodosLosUsuariosConClub() {
@@ -182,4 +184,168 @@ public class UsuarioDAO {
 	    }
 	}
 
+	// Este método devolverá un Usuario según el DNI que reciba el método
+	public static Usuario getUsuarioPorDni(String dni) {
+
+	    String sql = "SELECT dni, nombre, apellidos, telefono, correo_electronico, contrasena " +
+	                 "FROM usuario WHERE dni = ?";
+
+	    try (
+	        Connection con = Conexion.getConexion();
+	        PreparedStatement ps = con.prepareStatement(sql)
+	    ) {
+
+	        ps.setString(1, dni);
+
+	        try (ResultSet rs = ps.executeQuery()) {
+
+	            if (rs.next()) {
+
+	                // Campos que sí existen en la BBDD
+	                String dniBD = rs.getString("dni");
+	                String nombre = rs.getString("nombre");
+	                String apellidos = rs.getString("apellidos");
+	                String contrasena = rs.getString("contrasena");
+	                int telefono = 0;
+	                try {
+	                    telefono = Integer.parseInt(rs.getString("telefono"));
+	                } catch (Exception e) {
+	                    telefono = 0;
+	                }
+	                String correo = rs.getString("correo_electronico");
+
+	                // Crear el objeto Usuario
+	                return new Usuario(
+	                    dniBD,
+	                    nombre,
+	                    apellidos,
+	                    0,
+	                    true,
+	                    "",
+	                    0.0,
+	                    0.0,
+	                    telefono,
+	                    correo,
+	                    contrasena
+	                );
+	            }
+	        }
+
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+
+	    return null; // No existe el usuario o error
+	}
+
+	// Este método modificará los datos de un usuario por los que reciba
+	public static boolean actualizarUsuario(
+	        String dni,
+	        String nombre,
+	        String apellidos,
+	        String telefono,
+	        String correoElectronico,
+	        String contrasenaNueva
+	) {
+
+	    String sql = "UPDATE usuario SET nombre = ?, apellidos = ?, telefono = ?, correo_electronico = ?, contrasena = ? " +
+	                 "WHERE dni = ?";
+
+	    try (
+	        Connection con = Conexion.getConexion();
+	        PreparedStatement ps = con.prepareStatement(sql)
+	    ) {
+
+	        ps.setString(1, nombre);
+	        ps.setString(2, apellidos);
+	        ps.setString(3, telefono);
+	        ps.setString(4, correoElectronico);
+	        ps.setString(5, contrasenaNueva);
+	        ps.setString(6, dni);
+
+	        return ps.executeUpdate() > 0;
+
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	        return false;
+	    }
+	}
+
+	// Este método eliminará un usuario según el dni que reciba
+	public static boolean eliminarUsuario(String dni) {
+
+	    String sqlRecomendaciones = 
+	        "DELETE FROM recomendaciones " +
+	        "WHERE dni_usuario IN (SELECT dni_usuario FROM realizar WHERE dni_usuario = ?)";
+
+	    String sqlParticipar = "DELETE FROM participar WHERE dni_usuario = ?";
+	    String sqlAmigos1 = "DELETE FROM tener_amigos WHERE amigo1 = ?";
+	    String sqlAmigos2 = "DELETE FROM tener_amigos WHERE amigo2 = ?";
+	    String sqlObtener = "DELETE FROM obtener WHERE dni_usuario = ?";
+	    String sqlProgreso = "DELETE FROM progreso WHERE dni_usuario = ?";
+	    String sqlRealizar = "DELETE FROM realizar WHERE dni_usuario = ?";
+	    String sqlClubPropietario = 
+	        "UPDATE club SET dni_propietario = NULL WHERE dni_propietario = ?";
+	    String sqlUsuario = "DELETE FROM usuario WHERE dni = ?";
+
+	    try (Connection con = Conexion.getConexion()) {
+
+	        // 1. Borrar recomendaciones (depende de REALIZAR)
+	        try (PreparedStatement ps = con.prepareStatement(sqlRecomendaciones)) {
+	            ps.setString(1, dni);
+	            ps.executeUpdate();
+	        }
+
+	        // 2. Borrar participaciones en eventos
+	        try (PreparedStatement ps = con.prepareStatement(sqlParticipar)) {
+	            ps.setString(1, dni);
+	            ps.executeUpdate();
+	        }
+
+	        // 3. Borrar amistades
+	        try (PreparedStatement ps = con.prepareStatement(sqlAmigos1)) {
+	            ps.setString(1, dni);
+	            ps.executeUpdate();
+	        }
+	        try (PreparedStatement ps = con.prepareStatement(sqlAmigos2)) {
+	            ps.setString(1, dni);
+	            ps.executeUpdate();
+	        }
+
+	        // 4. Borrar logros obtenidos
+	        try (PreparedStatement ps = con.prepareStatement(sqlObtener)) {
+	            ps.setString(1, dni);
+	            ps.executeUpdate();
+	        }
+
+	        // 5. Borrar progreso
+	        try (PreparedStatement ps = con.prepareStatement(sqlProgreso)) {
+	            ps.setString(1, dni);
+	            ps.executeUpdate();
+	        }
+
+	        // 6. Borrar entrenamientos realizados (REALIZAR)
+	        try (PreparedStatement ps = con.prepareStatement(sqlRealizar)) {
+	            ps.setString(1, dni);
+	            ps.executeUpdate();
+	        }
+
+	        // 7. Si es propietario de un club → dejarlo sin propietario
+	        try (PreparedStatement ps = con.prepareStatement(sqlClubPropietario)) {
+	            ps.setString(1, dni);
+	            ps.executeUpdate();
+	        }
+
+	        // 8. Finalmente borrar el usuario
+	        try (PreparedStatement ps = con.prepareStatement(sqlUsuario)) {
+	            ps.setString(1, dni);
+	            int filas = ps.executeUpdate();
+	            return filas > 0;
+	        }
+
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	        return false;
+	    }
+	}
 }
