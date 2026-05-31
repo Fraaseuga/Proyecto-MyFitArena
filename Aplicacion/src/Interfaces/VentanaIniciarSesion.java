@@ -9,6 +9,7 @@ import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 
 import Funcionalidades.Colores;
+import Funcionalidades.Usuario;
 import dao.UsuarioDAO;
 
 import javax.swing.JLabel;
@@ -32,6 +33,7 @@ public class VentanaIniciarSesion extends JFrame {
 	private JTextField tfDNI;
 	private JTextField tfContraseña;
 
+	public static Usuario usuarioActual;
 	public VentanaIniciarSesion() {
 		VentanaPrincipal vp = new VentanaPrincipal();
 		addWindowListener(new WindowAdapter() {
@@ -109,6 +111,8 @@ public class VentanaIniciarSesion extends JFrame {
 								JOptionPane.INFORMATION_MESSAGE);
 						
 						VentanaPrincipal.propietario = existe;
+						VentanaIniciarSesion.usuarioActual = UsuarioDAO.getUsuarioPorDni(existe);
+						
 						VentanaIniciarSesion.this.dispose();
 						vp.dispose();
 						VentanaPrincipal nueva = new VentanaPrincipal();

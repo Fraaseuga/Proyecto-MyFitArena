@@ -122,7 +122,9 @@ public class VentanaPrincipal extends JFrame {
 			JMenuItem mniCuenta = new JMenuItem("Cuenta");
 			mniCuenta.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					
+					VentanaCuenta vc = new VentanaCuenta();
+					vc.setVisible(true);
+					VentanaPrincipal.this.dispose();
 				}
 			});
 			mniCuenta.setFont(new Font("Rockwell", Font.PLAIN, 16));
@@ -356,6 +358,7 @@ public class VentanaPrincipal extends JFrame {
 		contentPane.add(separator_2_5_1);
 		
 		tablaIMC = new JTable(modeloTabla);
+		tablaIMC.setFillsViewportHeight(true);
 		tablaIMC.setEnabled(false);
 		tablaIMC.setGridColor(Colores.grisClaro);
 		tablaIMC.setRowHeight(30);
@@ -367,7 +370,7 @@ public class VentanaPrincipal extends JFrame {
 		JScrollPane spTabla = new JScrollPane(tablaIMC);
 		spTabla.setIgnoreRepaint(true);
 		spTabla.setBorder(null);
-		spTabla.setBackground(new Color(255, 0, 255));
+		spTabla.setBackground(new Color(0, 0, 0));
 		spTabla.setBounds(921, 77, 231, 203);
 		contentPane.add(spTabla);
 		

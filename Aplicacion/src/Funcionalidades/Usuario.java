@@ -12,12 +12,13 @@ public class Usuario {
 	private double estatura;
 	private int telefono;
 	private String correoElectronico;
+	private String contrasena;
 	
 	public Usuario() {
 		
 	}
 	
-	public Usuario(String dni, String nombre, String apellidos, int edad, boolean esHombre, String poblacion, double peso, double estatura, int telefono, String correoElectronico) {
+	public Usuario(String dni, String nombre, String apellidos, int edad, boolean esHombre, String poblacion, double peso, double estatura, int telefono, String correoElectronico, String contrasena) {
 		
 		this.dni = dni;
 		this.nombre = nombre;
@@ -29,6 +30,7 @@ public class Usuario {
 		this.estatura = estatura;
 		this.telefono = telefono;
 		this.correoElectronico = correoElectronico;
+		this.contrasena = contrasena;
 	}
 
 	public String getDni() {
@@ -111,6 +113,14 @@ public class Usuario {
 		this.correoElectronico = correoElectronico;
 	}
 	
+	public String getContrasena() {
+		return contrasena;
+	}
+
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
+	}
+
 	@Override
 	public String toString() {
 		
