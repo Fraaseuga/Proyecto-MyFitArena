@@ -81,6 +81,7 @@ public class UsuarioDAO {
 	    }
 	}
 	
+	// Este método devuelve todos los miembros del club menos el propietario
 	public static ArrayList<String[]> getMiembrosClub(String codClub){
 
 	    ArrayList<String[]> lista = new ArrayList<>();
@@ -88,21 +89,37 @@ public class UsuarioDAO {
 	    try(
 	        Connection con = Conexion.getConexion();
 
+	        // 1. Obtener el propietario del club
+	        PreparedStatement psProp = con.prepareStatement(
+	            "SELECT dni_propietario FROM club WHERE codclub = ?"
+	        );
+
+	        // 2. Obtener los miembros del club excepto el propietario
 	        PreparedStatement ps = con.prepareStatement(
 	            "SELECT dni, nombre, apellidos, telefono, correo_electronico " +
 	            "FROM usuario " +
-	            "WHERE cod_club = ?"
+	            "WHERE cod_club = ? AND dni <> ?"
 	        );
 	    ){
 
+	        // Obtener propietario
+	        psProp.setString(1, codClub);
+	        ResultSet rsProp = psProp.executeQuery();
+
+	        String propietario = null;
+	        if (rsProp.next()) {
+	            propietario = rsProp.getString(1);
+	        }
+
+	        // Obtener miembros excluyendo al propietario
 	        ps.setString(1, codClub);
+	        ps.setString(2, propietario);
 
 	        ResultSet rs = ps.executeQuery();
 
 	        while(rs.next()){
-
 	            lista.add(new String[] {
-	            	rs.getString("dni"),
+	                rs.getString("dni"),
 	                rs.getString("nombre"),
 	                rs.getString("apellidos"),
 	                rs.getString("telefono"),
@@ -116,6 +133,7 @@ public class UsuarioDAO {
 
 	    return lista;
 	}
+
 	
 	public static boolean eliminarMiembroClub(String dni){
 
@@ -344,6 +362,28 @@ public class UsuarioDAO {
 	        }
 
 	    } catch (SQLException e) {
+	        e.printStackTrace();
+	        return false;
+	    }
+	}
+	
+	// Este método comprobará si un usuario es dueño de un club
+	public static boolean esDuenoDeClub(String dni) {
+
+	    String sql = "SELECT 1 FROM club WHERE dni_propietario = ? LIMIT 1";
+
+	    try (
+	        Connection con = Conexion.getConexion();
+	        PreparedStatement ps = con.prepareStatement(sql)
+	    ) {
+
+	        ps.setString(1, dni);
+
+	        try (ResultSet rs = ps.executeQuery()) {
+	            return rs.next();   // true si existe un club con ese propietario
+	        }
+
+	    } catch (Exception e) {
 	        e.printStackTrace();
 	        return false;
 	    }

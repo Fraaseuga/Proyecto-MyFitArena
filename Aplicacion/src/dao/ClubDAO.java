@@ -72,7 +72,7 @@ public class ClubDAO {
 	        String ultimo = null;
 	        String codClub = "C001";
 
-	        // Aquí se obtiene el código del último club
+	        // Obtener el último código
 	        if (rs.next()) {
 	            ultimo = rs.getString(1);
 
@@ -80,27 +80,25 @@ public class ClubDAO {
 
 	            // Recorrer carácter a carácter ignorando la 'C'
 	            for (int i = 1; i < ultimo.length(); i++) {
-
 	                char c = ultimo.charAt(i);
-
 	                numero = numero * 10 + (c - '0');
 	            }
 
 	            numero++;
 
-	            // Creación del código del club
+	            // Crear el nuevo código
 	            codClub = "C";
 
 	            if (numero < 10) {
-	                codClub = codClub + "00" + numero;
+	                codClub += "00" + numero;
 	            } else if (numero < 100) {
-	                codClub = codClub + "0" + numero;
+	                codClub += "0" + numero;
 	            } else {
-	                codClub = codClub + numero;
+	                codClub += numero;
 	            }
 	        }
 
-	        // Inserción del club a la base de datos
+	        // Insertar el club
 	        PreparedStatement psInsert = con.prepareStatement(
 	            "INSERT INTO club " +
 	            "(codclub, nombre, descripcion, fechaCreacion, num_miembros, capacidad_miembros, dni_propietario) " +
@@ -116,6 +114,15 @@ public class ClubDAO {
 
 	        psInsert.executeUpdate();
 
+	        // Actualizar el propietario para que pertenezca a ese club
+	        PreparedStatement psUpdate = con.prepareStatement(
+	            "UPDATE usuario SET cod_club = ? WHERE dni = ?"
+	        );
+
+	        psUpdate.setString(1, codClub);
+	        psUpdate.setString(2, propietario);
+	        psUpdate.executeUpdate();
+
 	        return "Club creado correctamente";
 
 	    } catch (Exception e) {
@@ -124,26 +131,36 @@ public class ClubDAO {
 	    }
 	}
 
+	// Este método eliminará el club y también expulsará a todos los miembros
 	public static boolean eliminarClub(String codClub) {
 
-	    try(
+	    String sqlQuitarUsuarios = 
+	        "UPDATE usuario SET cod_club = NULL WHERE cod_club = ?";
+
+	    String sqlEliminarClub = 
+	        "DELETE FROM club WHERE codclub = ?";
+
+	    try (
 	        Connection con = Conexion.getConexion();
+	        PreparedStatement ps1 = con.prepareStatement(sqlQuitarUsuarios);
+	        PreparedStatement ps2 = con.prepareStatement(sqlEliminarClub)
+	    ) {
 
-	        PreparedStatement ps = con.prepareStatement(
-	                "DELETE FROM club WHERE codclub = ?"
-	        );
-	    ){
+	        // 1. Quitar el club a todos los usuarios que lo tengan asignado
+	        ps1.setString(1, codClub);
+	        ps1.executeUpdate();
 
-	        ps.setString(1, codClub);
+	        // 2. Eliminar el club
+	        ps2.setString(1, codClub);
+	        return ps2.executeUpdate() > 0;
 
-	        return ps.executeUpdate() > 0;
-
-	    }catch(Exception e) {
+	    } catch (Exception e) {
 	        e.printStackTrace();
 	    }
 
 	    return false;
 	}
+
 	
 	// Este método devolverá el cod_club del club según el nombre que reciba
 	public static String getCodClubPorNombre(String nombreClub) {

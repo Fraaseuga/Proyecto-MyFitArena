@@ -59,6 +59,16 @@ switch($metodo) {
                 $asunto = htmlspecialchars(strip_tags($datos->asunto));
                 $mensaje = htmlspecialchars(strip_tags($datos->mensaje));
 
+                // Convertir las claves del frontend a los valores permitidos por PostgreSQL
+                $mapaAsuntos = [
+                    'consulta' => 'Consulta general',
+                    'soporte' => 'Soporte técnico',
+                    'sugerencia' => 'Sugerencia',
+                    'otro' => 'Otro'
+                ];
+
+                $asunto = $mapaAsuntos[$asunto] ?? $asunto;
+
                 $stmt->bindParam(":nombre", $nombre);
                 $stmt->bindParam(":email", $email);
                 $stmt->bindParam(":asunto", $asunto);

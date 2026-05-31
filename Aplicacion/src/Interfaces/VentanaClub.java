@@ -107,7 +107,9 @@ public class VentanaClub extends JFrame {
         }else {        	
         	btnCrearClub.setBounds(632, 104, 180, 35);
         }
-        contentPane.add(btnCrearClub);
+        if(!UsuarioDAO.esDuenoDeClub(VentanaPrincipal.propietario)) {        	
+        	contentPane.add(btnCrearClub);
+        }
 
         JButton btnVerDetalles = new JButton("Ver Detalles");
         btnVerDetalles.setBackground(Colores.grisMedio);
@@ -126,7 +128,7 @@ public class VentanaClub extends JFrame {
         separator_2_5_2.setBounds(681, 239, 83, 68);
         contentPane.add(separator_2_5_2);
         
-        if(UsuarioDAO.perteneceAClub(VentanaPrincipal.propietario)) {        	
+        if(UsuarioDAO.perteneceAClub(VentanaPrincipal.propietario) && !UsuarioDAO.esDuenoDeClub(VentanaPrincipal.propietario)) {        	
         	JButton btnAbandonarClub = new JButton("Abandonar club");
         	btnAbandonarClub.addActionListener(new ActionListener() {
         		public void actionPerformed(ActionEvent e) {
@@ -181,17 +183,35 @@ public class VentanaClub extends JFrame {
 
         btnVerDetalles.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                int fila = tablaClubs.getSelectedRow();
-                if (fila == -1) {
-                    JOptionPane.showMessageDialog(contentPane, "Selecciona un club primero");
-                    return;
-                }
+            	int fila = tablaClubs.getSelectedRow();
 
-                Club clubSeleccionado = clubs.get(fila);
-                
-                VentanaDetallesClub vdc = new VentanaDetallesClub(vp, clubSeleccionado);
-                vdc.setVisible(true);
-                VentanaClub.this.setVisible(false);
+            	if (fila == -1) {
+            	    JOptionPane.showMessageDialog(contentPane, "Selecciona un club primero");
+            	    return;
+            	}
+
+            	String nombreSeleccionado = modelo.getValueAt(fila, 0).toString();
+
+            	Club clubSeleccionado = null;
+
+            	for (Club c : clubs) {
+            	    if (c.getNombre().equals(nombreSeleccionado)) {
+            	        clubSeleccionado = c;
+            	        break;
+            	    }
+            	}
+
+            	if (clubSeleccionado == null) {
+            	    JOptionPane.showMessageDialog(contentPane,
+            	            "No se pudo encontrar el club seleccionado",
+            	            "ERROR",
+            	            JOptionPane.ERROR_MESSAGE);
+            	    return;
+            	}
+
+            	VentanaDetallesClub vdc = new VentanaDetallesClub(vp, clubSeleccionado);
+            	vdc.setVisible(true);
+            	VentanaClub.this.setVisible(false);
             }
         });
     }
